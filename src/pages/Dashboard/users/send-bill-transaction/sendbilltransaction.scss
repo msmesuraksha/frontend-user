@@ -1,0 +1,597 @@
+
+.input-group {
+    position: relative;
+  }
+  
+  .input-group-text {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+  
+  /* Style for the displayed file name input */
+  .form-control[readonly] {
+    cursor: not-allowed;
+  }
+
+
+   body {
+     background-color: #f9f9fa
+ }
+
+ .flex {
+     -webkit-box-flex: 1;
+     -ms-flex: 1 1 auto;
+     flex: 1 1 auto
+ }
+
+ @media (max-width:991.98px) {
+     .padding {
+         padding: 1.5rem
+     }
+ }
+
+ @media (max-width:767.98px) {
+     .padding {
+         padding: 1rem
+     }
+ }
+
+ .padding {
+     padding: 5rem
+ }
+
+ .card {
+     box-shadow: none;
+     -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+     -ms-box-shadow: none
+ }
+
+ .pl-3,
+ .px-3 {
+     padding-left: 1rem !important
+ }
+
+ .card {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     min-width: 0;
+     word-wrap: break-word;
+     background-color: #fff;
+     background-clip: border-box;
+     border: 1px solid #d2d2dc;
+     border-radius: 0
+ }
+
+ .card .card-title {
+     color: #000000;
+     margin-bottom: 0.625rem;
+     font-size: 0.875rem;
+     font-weight: 500
+ }
+
+ .card .card-description {
+     margin-bottom: .875rem;
+     font-weight: 400;
+     color: #76838f
+ }
+
+ p {
+     font-size: 0.875rem;
+     margin-bottom: .5rem;
+     line-height: 1.5rem
+ }
+
+ .table-responsive {
+     display: block;
+     width: 100%;
+     overflow-x: auto;
+     -webkit-overflow-scrolling: touch;
+     -ms-overflow-style: -ms-autohiding-scrollbar
+ }
+
+ .table,
+ .jsgrid .jsgrid-table {
+     width: 100%;
+     max-width: 100%;
+     margin-bottom: 1rem;
+     background-color: transparent
+ }
+
+ .table thead th,
+ .jsgrid .jsgrid-table thead th {
+     border-top: 0;
+     border-bottom-width: 1px;
+     font-weight: 500;
+     font-size: .875rem;
+     text-transform: uppercase
+ }
+
+ .table td,
+ .jsgrid .jsgrid-table td {
+     font-size: 0.875rem;
+     padding: .475rem 0.4375rem
+ }
+
+ .mt-10 {
+     padding: 0.875rem 0.3375rem !important
+ }
+
+ button {
+     outline: 0 !important
+ }
+
+ .form-control:focus {
+     box-shadow: 0 0 0 0rem rgba(0, 123, 255, .25) !important
+ }
+
+ .badge {
+     border-radius: 0;
+     font-size: 12px;
+     line-height: 1;
+     padding: .375rem .5625rem;
+     font-weight: normal;
+     border: none
+ }
+
+ /* Custom Delete Icon */
+.custom-icon-delete {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-icon-delete::before {
+    content: "\f1f8"; /* Unicode for a trash can icon (Font Awesome) */
+    font-family: FontAwesome; /* Use a custom icon font like FontAwesome */
+    margin-right: 5px; /* Adjust spacing as needed */
+  }
+  
+  /* Custom Add Icon */
+  .custom-icon-add {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-icon-add::before {
+    content: "\f067"; /* Unicode for a plus icon (Font Awesome) */
+    font-family: FontAwesome; /* Use a custom icon font like FontAwesome */
+    margin-right: 5px; /* Adjust spacing as needed */
+  }
+
+
+  
+/* CSS for the delete icon */
+.icon-container.delete-icon {
+    cursor: pointer;
+  }
+  
+  .icon-container.delete-icon .mdi {
+    color: red;
+    font-size: 25px; /* Adjust the size as needed */
+  }
+  
+  /* CSS for the add icon */
+  .icon-container.add-icon {
+    cursor: pointer;
+  }
+  
+  .icon-container.add-icon .mdi {
+    color: rgb(171, 185, 14);
+    font-size: 25px; /* Adjust the size as needed */
+  }
+
+ /* Custom table styles */
+.custom-table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd; /* Add a border to the table */
+  }
+  
+  .custom-table th, .custom-table td {
+    border: 1px solid #ddd; /* Add borders to table cells */
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Style input cells on hover */
+  .hoverable-cell {
+    position: relative;
+  }
+  
+  .hoverable-cell:hover input {
+    display: block;
+  }
+  
+  .hoverable-cell input {
+    //display: n;
+    width: 100%;
+    padding: 5px;
+    border: none; /* Remove borders from input fields */
+    outline: none;
+  }
+  
+  /* Style icons */
+  .icon-container {
+    cursor: pointer;
+    padding: 5px;
+    display: inline-block;
+  }
+  
+  .icon-container .mdi {
+    font-size: 24px;
+  }
+  
+  .icon-red {
+    color: red;
+  }
+  
+  .icon-yellow {
+    color: yellow;
+  }
+  
+  
+  .custom-line {
+    height: 1px; /* Adjust the height as needed */
+    background-color: #535151; /* Line color */
+    margin: 20px 1px 8px; /* Margin for spacing */
+  }
+  
+
+  
+
+///Dropdown
+/// /* Add these styles to your CSS */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .form-select.custom-select {
+    border: 1px solid #ccc; /* Default border style */
+    padding: 5px;
+  }
+  
+  .form-select.custom-select:hover {
+    border: 1px solid #007bff; /* Change border color on hover */
+  }
+  
+  .form-select.custom-select option {
+    background-color: #fff; /* Background color of options */
+    color: #000; /* Text color of options */
+  }
+  
+  .form-select.custom-select option:hover {
+    background-color: #21263c; /* Background color of options on hover */
+    color: #fff; /* Text color of options on hover */
+  }
+
+
+
+.custom-row {
+    background-color: #f9f9fb;
+    display: flex;
+    align-items: center;
+    height: 100px; /* Adjust the height as needed */
+  }
+
+  .custom-content{
+    border-radius: 14px;
+    background-color: #023950;
+    
+  }
+  .custom-content1{
+    border-radius: 14px;
+    
+  }
+  .custom-content:hover {
+    border: 1px solid #408dfb; /* Define your border style here */
+    border-radius: 10px;
+  }
+  //
+  .css-13cymwt-control {
+    border-radius: 10px !important;
+  }
+  .mb-0.transactioin {
+    font-size: 10px;
+}
+  .css-t3ipsp-control {
+    border-radius: 10px !important;
+  }
+  .form-control {
+    border-radius: 10px !important;
+  }
+
+  
+//hr
+hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 4.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+.bdr-light {
+    border-top: none;
+    border-bottom: 1px solid #f3f3f3;
+    margin: 20px 0;
+    margin-right: 122px !important; 
+}.bdr-light {
+    border-top: none;
+    border-bottom: 1px solid #f3f3f3;
+    margin: 20px 0;
+}
+.Dragtable{
+  max-width: 93%;
+}
+
+
+// custom css
+
+td.hoverable-cell textarea:hover, td.hoverable-cell input:hover {
+  border: 1px solid #408dfb;
+}
+
+td.hoverable-cell {padding: 0 0px 10px 0px;}
+
+td.hoverable-cell textarea, td.hoverable-cell input {
+  border: 1px solid transparent;
+  border-radius: 6px !important;
+}
+
+
+.terms.row .pt-0.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px !important;
+}
+
+.terms.row .pt-0.card-body .mt-5.col-md-5 {
+  margin-top: 0 !important;
+}
+
+.terms.row .pt-0.card-body .mb-2.mt-5 {
+  margin-top: 0 !important;
+}
+
+.h-100.input-group .input-group-text {
+  display: none;
+}
+
+.terms.row .pt-0.card-body:after {
+  content: '';
+  background: #eee;
+  position: absolute;
+  height: 80%;
+  width: 1px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.pt-0.card-body {
+  background: #f9f9fb;
+}
+
+.mb-0.transactioin {
+  font-size: 10px;
+  position: absolute;
+  bottom: -15px;
+  left: 20px;
+}
+
+
+.mt-2.row {
+  align-items: center;
+}
+.Dragtable.row {
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+input.form-control:hover {
+  border: 1px solid #408dfb;
+}
+textarea#remarks:hover{
+  border: 1px solid #408dfb;
+}
+.advance-search-btn {
+  position: relative;
+  margin-left: -15px;
+  padding: 4px 10px;
+  border-radius: 0 10px 10px 0;
+  height: var(--zf-form-input-height);
+}
+// table > :not(caption) > * > * {
+//   padding: 0.75rem 0.75rem;
+//   background-color: #fff !important;
+//   border-bottom-width: 1px;
+//   box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+// }
+
+table#faqs, table#faqs tr, table#faqs td, table#faqs TH {background: WHITE;box-shadow: none !important;}
+
+
+table#faqs tr:hover td {
+    background: white;
+}
+
+td.hoverable-cell input {
+  background: white !important;
+}
+
+table#faqs th:first-child {
+  width: 30%;
+}
+
+table#faqs td:last-child {
+  // border: none; 
+  padding-right: 1%;
+  padding-top: 2%;
+}
+
+table#faqs {
+  border: none;
+}
+
+table#faqs th {
+  border-top: 1px solid #dddddd;
+}
+
+.modal-dialog {
+  min-width: 840px;
+}
+
+.modal-content form 
+.col-12.col-md-4 {
+  width: unset;
+}
+
+.col-12.col-md-8 {
+  width: 300px;
+}
+
+.modal-dialog {
+  min-width: 840px;
+}
+
+.modal-content form 
+.col-12.col-md-4 {
+  width: unset;
+}
+
+.modal-content form .col-12.col-md-8 {
+  width: 300px;
+}
+input#billDate {
+  margin-top: 6px !important;
+}
+// .input-group {
+//   position: relative;
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: stretch;
+//   width: max-content;
+// }
+.form-check-inline {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 0;
+  margin-right: 0.75rem;
+}
+input[type=radio]:checked {
+  background-color: var(--zf-inputselector-bg-color);
+  border-color: var(--zf-inputselector-bg-color);
+}
+.form-check-inline .form-check-input {
+  position: relative;
+}
+input[type=radio] {
+  border-radius: 50%;
+}
+.form-check-inline .form-check-input {
+  position: static;
+  margin-top: 0;
+  margin-right: 0.3125rem;
+  margin-left: 0;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  vertical-align: top;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid ;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+input#customerTypeBusiness:before {
+  content: '';
+
+}
+
+.form-check-input[type=radio]:checked:before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.form-check-input[type=radio]{
+background-color:white;
+border: 1px solid #80808080;
+margin-top: 2px;
+}
+.form-check-input[type=radio]:checked{
+  background-color:#408dfb;
+  border-color: #80808080;
+  }
+
+  .form-check-input[type=radio]:focus {
+    box-shadow: none;
+}
+
+.mt-2.row .col-12.col-md-8 .mb-3 {
+  display: flex;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+table#faqs11, table#faqs11 tr, table#faqs11 td, table#faqs11 TH {background: WHITE;box-shadow: none !important;}
+
+
+table#faqs11 tr:hover td {
+    background: white;
+}
+
+td.hoverable-cell input {
+  background: white !important;
+}
+
+
+
+
+
+table#faqs11 {
+  border: none;
+}
+
+table#faqs11 th {
+  border-top: 1px solid #dddddd;
+}
