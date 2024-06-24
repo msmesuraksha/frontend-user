@@ -113,7 +113,7 @@
   "scripts": {
     "start": "react-scripts start",
     "prebuild": "npx update-browserslist-db@latest",
-    "build": "node --max_old_space_size=8192 ./node_modules/react-scripts/bin/react-scripts.js build",
+    "build": "react-scripts build --max_old_space_size=8000 build",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "prettier --write \"**/*.{js,jsx,json,md,html,css,less,scss}\"",
