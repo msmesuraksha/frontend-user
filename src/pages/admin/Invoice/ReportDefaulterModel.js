@@ -124,7 +124,7 @@ const ReportedDefaulterModel = props => {
     };
 
 
-    axios.post('https://bafana-backend.azurewebsites.net/api/files/upload', formData, {
+    axios.post('https://msmesuraksha-backend.azurewebsites.net/api/files/upload', formData, {
       headers: headers
     })
       .then((response) => {

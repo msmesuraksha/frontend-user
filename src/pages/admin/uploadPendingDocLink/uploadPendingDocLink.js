@@ -27,7 +27,7 @@ import { useDropzone } from 'react-dropzone'
 
 import { useDispatch, useSelector } from "react-redux";
 import Header from '../../../components/VerticalLayout/Header'
-const API_URL = 'https://bafana-backend.azurewebsites.net';
+const API_URL = 'https://msmesuraksha-backend.azurewebsites.net';
 import logoLightSvg from "../../../assets/images/MSME Suraksha.png";
 
 const axiosApi = axios.create({ baseURL: API_URL });

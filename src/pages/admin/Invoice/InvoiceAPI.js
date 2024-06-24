@@ -2,7 +2,7 @@ import axios from "axios"
 import { func } from "prop-types"
 
 export function getInvoiceList(props){
-    const baseurl = 'https://bafana-backend.azurewebsites.net'
+    const baseurl = 'https://msmesuraksha-backend.azurewebsites.net'
     const header={
       hearders: {
         "content-type":"application/json",

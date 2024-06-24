@@ -264,7 +264,7 @@ const SendBillTransaction = (props) => {
     const headers = {
       'x-access-token': token != null ? token : '',
     };
-    // fetch('https://bafana-backend.azurewebsites.net/api/files/upload', {
+    // fetch('https://msmesuraksha-backend.azurewebsites.net/api/files/upload', {
     //   method: 'POST',
     //   body: formData,headers,
     // })
@@ -276,7 +276,7 @@ const SendBillTransaction = (props) => {
     //     // Do something with the successful response
     //   })
     // );
-    axios.post('https://bafana-backend.azurewebsites.net/api/files/upload', formData, {
+    axios.post('https://msmesuraksha-backend.azurewebsites.net/api/files/upload', formData, {
       headers: headers
     })
       .then((response) => {

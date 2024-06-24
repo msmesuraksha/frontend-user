@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const API_URL = 'https://bafana-backend.azurewebsites.net';
+const API_URL = 'https://msmesuraksha-backend.azurewebsites.net';
 
 const axiosApi = axios.create({
   baseURL: API_URL,
