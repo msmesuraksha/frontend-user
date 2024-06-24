@@ -115,79 +115,48 @@ import ChartsKnob from "../pages/Charts/charts-knob";
 import ReCharts from "../pages/Charts/ReCharts";
 
 // Maps
-import MapsGoogle from "../pages/Maps/MapsGoogle";
-import MapsVector from "../pages/Maps/MapsVector";
-import MapsLeaflet from "../pages/Maps/MapsLeaflet";
 
-//Icons
-import IconBoxicons from "../pages/Icons/IconBoxicons";
-import IconDripicons from "../pages/Icons/IconDripicons";
-import IconMaterialdesign from "../pages/Icons/IconMaterialdesign";
-import IconFontawesome from "../pages/Icons/IconFontawesome";
+
+
+
+
+
+
+
 
 //Tables
-import BasicTables from "../pages/Tables/BasicTables";
-import DatatableTables from "../pages/Tables/DatatableTables";
-import ResponsiveTables from "../pages/Tables/ResponsiveTables";
-import DragDropTables from "../pages/Tables/DragDropTables";
+
+
+
+
 
 //Blog
 import BlogList from "../pages/Blog/BlogList/index";
 import BlogGrid from "../pages/Blog/BlogGrid/index";
-import BlogDetails from "../pages/Blog/BlogDetails";
+
 
 //Job
-import JobGrid from "../pages/JobPages/JobGrid/index";
-import JobDetails from "../pages/JobPages/JobDetails";
+
+
 import JobCategories from "../pages/JobPages/JobCategories";
 import JobList from "../pages/JobPages/JobList";
 import ApplyJobs from "../pages/JobPages/ApplyJobs/index";
-import CandidateList from "../pages/JobPages/CandidateList";
-import CandidateOverview from "../pages/JobPages/CandidateOverview";
+
+
 
 // Forms
-import FormElements from "../pages/Forms/FormElements";
-import FormLayouts from "../pages/Forms/FormLayouts";
-import FormAdvanced from "../pages/Forms/FormAdvanced";
-import FormEditors from "../pages/Forms/FormEditors";
-import FormValidations from "../pages/Forms/FormValidations";
-import FormMask from "../pages/Forms/FormMask";
-import FormRepeater from "../pages/Forms/FormRepeater";
+
+
+
+
 import FormUpload from "../pages/Forms/FormUpload";
-import FormWizard from "../pages/Forms/FormWizard";
-
-//Ui
-import UiAlert from "../pages/Ui/UiAlert";
-import UiButtons from "../pages/Ui/UiButtons";
-import UiCards from "../pages/Ui/UiCards";
-import UiCarousel from "../pages/Ui/UiCarousel";
-import UiColors from "../pages/Ui/UiColors";
-import UiDropdown from "../pages/Ui/UiDropdown";
-import UiGeneral from "../pages/Ui/UiGeneral";
-import UiGrid from "../pages/Ui/UiGrid";
-import UiImages from "../pages/Ui/UiImages";
-import UiLightbox from "../pages/Ui/UiLightbox";
-import UiModal from "../pages/Ui/UiModal";
-import UiProgressbar from "../pages/Ui/UiProgressbar";
-import UiTabsAccordions from "../pages/Ui/UiTabsAccordions";
-import UiTypography from "../pages/Ui/UiTypography";
-import UiVideo from "../pages/Ui/UiVideo";
-import UiSessionTimeout from "../pages/Ui/UiSessionTimeout";
-import UiRating from "../pages/Ui/UiRating";
-import UiRangeSlider from "../pages/Ui/UiRangeSlider";
-import UiNotifications from "../pages/Ui/ui-notifications";
-import UiOffCanvas from "pages/Ui/UiOffCanvas";
-import UiUtilitie from "../pages/Ui/UiUtilitie";
-import UiPlaceholders from "../pages/Ui/UiPlaceholders";
-import UiToasts from "../pages/Ui/UiToast";
-
-//Pages
-import PagesStarter from "../pages/Utility/pages-starter";
 
 
-import PagesTimeline from "../pages/Utility/pages-timeline";
-import PagesFaqs from "../pages/Utility/pages-faqs";
-import PagesPricing from "../pages/Utility/pages-pricing";
+
+
+
+
+
 
 
 
