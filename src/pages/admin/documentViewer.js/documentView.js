@@ -76,7 +76,7 @@ export const DocumentViewModule = props => {
       <div className="modal-content">
         <ModalHeader toggle={toggle}>Document View</ModalHeader>
         <ModalBody>
-          <DocViewer documents={docs} pluginRenderers={DocViewerRenderers} prefetchMethod="GET" requestHeaders={headers} style={{ height: 800 }} />
+          <DocViewer documents={docs} pluginRenderers={DocViewerRenderers} prefetchMethod="GET" requestHeaders={headers} />
         </ModalBody>
       </div>
     </Modal>
