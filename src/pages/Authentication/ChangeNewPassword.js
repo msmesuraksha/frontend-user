@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import withRouter from "components/Common/withRouter";
 import { changeFirstPassword, changePasswordOneTime } from "../../store/actions";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,6 +21,12 @@ const changeNewPassword = props => {
   const [Cpassword, setCPassword] = useState('')
   const [error, setError] = useState('')
   const [passwordstr, setpasswordstr] = useState('')
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   //meta title
   document.title = "Forget Password | MSME Suraksha - User & Dashboard ";
@@ -146,21 +153,33 @@ const changeNewPassword = props => {
                     >
                       <div className="mb-3">
                         <Label className="form-label">New Password</Label>
-                        <Input
-                          name="email"
-                          className="form-control"
-                          placeholder="Enter New Password"
-                          type="password"
+                        <div className="input-group">
+                          <Input
+                            name="email"
+                            className="form-control"
+                            placeholder="Enter New Password"
+                            type={showPassword ? 'text' : 'password'}
 
 
-                          onChange={(e) => {
-                            setPassword(e.target.value)
-                            setError('')
-                            setpasswordstr('')
-                            setpasswordstr(r4.test(password) === true ? "Strong" : r2.test(password) === true ? "medium" : "week")
-                          }}
+                            onChange={(e) => {
+                              setPassword(e.target.value)
+                              setError('')
+                              setpasswordstr('')
+                              setpasswordstr(r4.test(password) === true ? "Strong" : r2.test(password) === true ? "medium" : "week")
+                            }}
 
-                        />
+                          />
+
+                          {password.length > 0 && <button
+                            className="btn btn-outline-secondary"
+                            type="button"
+                            onClick={togglePasswordVisibility}
+                            style={{ marginLeft: '-39px', zIndex: '100', borderRadius: '0px 11px 11px 0px' }}
+                          >
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                          </button>}
+                        </div>
+
                         <br />
                         <Row className="text-end" style={{ marginTop: '-10px', fontWeight: "600" }}>
                           {passwordstr == "Strong" ?

@@ -195,7 +195,7 @@ const Login = props => {
                                   className="btn btn-outline-secondary"
                                   type="button"
                                   onClick={togglePasswordVisibility}
-                                  style={{ marginLeft: '-40px', zIndex: '100' }}
+                                  style={{ marginLeft: '-39px', zIndex: '100', borderRadius: '0px 11px 11px 0px' }}
                                 >
                                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                                 </button>}
