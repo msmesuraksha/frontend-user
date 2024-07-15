@@ -1,5 +1,5 @@
 import axios from "axios";
-import { del, get, post, put, addEmployeeAPImethod, getAfter, forgetPasswordthroughToken, forgetPasswordAPI, getwithToken, getMethodResponse, getUser, addEmployeeAPImethodRating } from "./api_helper";
+import { del, get, post, put, addEmployeeAPImethod, getAfter, forgetPasswordthroughToken, forgetPasswordAPI, getwithToken, getMethodResponse, getUser, addEmployeeAPImethodRating, updateData } from "./api_helper";
 import * as url from "./url_helper";
 
 // Gets the logged in user data from local session
@@ -134,6 +134,8 @@ export const uploadPendingDocMethod = data => addEmployeeAPImethod("/api/user/up
 
 // find details on gst number api
 export const getGstDetailsData = data => addEmployeeAPImethod("/api/debtors/getDebtorDetails", data);
+
+export const EditProfileData = data => updateData("/api/user/userProfileUpdate", data);
 
 
 

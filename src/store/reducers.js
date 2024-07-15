@@ -78,6 +78,8 @@ import { FetchGstDetailsReducer } from "./fatchGstDetails/fatchGstDetails.reduce
 
 import { DeleteInvoiceReducer } from "./inviceDelete/inviceDelete.reducer";
 
+import { ProfileEditReducer } from "./profileEdit/profileEdit.reducer";
+
 
 
 const rootReducer = combineReducers({
@@ -123,7 +125,8 @@ const rootReducer = combineReducers({
   /*  ApproveReportDefaulterReducer, */
   ApprovedTransactionReopenReducer,
   FetchGstDetailsReducer,
-  DeleteInvoiceReducer
+  DeleteInvoiceReducer,
+  ProfileEditReducer
 });
 
 export default rootReducer;

@@ -172,6 +172,31 @@ export async function getUser(url, data, config = {}) {
     });
 }
 
+export async function updateData(url, data, config = {}) {
+
+  // console.log("UJUJU", JSON.parse(sessionStorage.getItem("authUser")).token)
+  const token = JSON.parse(sessionStorage.getItem("authUser")) != null ? JSON.parse(sessionStorage.getItem("authUser")).token : '';
+  // console.log("HAHAHA", token)
+
+  const headers = {
+    ...config.headers,
+    'x-access-token': token != null ? token : '',
+  };
+  return axiosPrivate
+    .patch(url, { ...data }, { ...config, headers })
+    .then((response) => response)
+    .catch((error) => {
+      // console.log("Server responded with an error:", error);
+
+      error => error
+      if (error.response) {
+        window.alert(error.response.data.message)
+      } else if (error.request) {
+        console.log("No response received from the server:", error.request);
+      }
+    });
+}
+
 
 
 export async function put(url, data, config = {}) {

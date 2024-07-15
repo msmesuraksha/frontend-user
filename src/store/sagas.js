@@ -46,6 +46,7 @@ import { ApproveTransactionReopenSaga } from "./ApprovedTransactionReopen/Approv
 import { FetchGstDetailsSaga } from "./fatchGstDetails/fatchGstDetails.saga";
 
 import { DeleteInvoiceSaga } from "./inviceDelete/inviceDelete.saga";
+import { ProfileEditSaga } from "./profileEdit/profileEdit.saga";
 // import invoiceSaga from "./invoices/saga";
 
 export default function* rootSaga() {
@@ -90,6 +91,7 @@ export default function* rootSaga() {
     /*    fork(ApproveReportDefaulterSaga), */
     fork(ApproveTransactionReopenSaga),
     fork(FetchGstDetailsSaga),
-    fork(DeleteInvoiceSaga)
+    fork(DeleteInvoiceSaga),
+    fork(ProfileEditSaga)
   ]);
 }
