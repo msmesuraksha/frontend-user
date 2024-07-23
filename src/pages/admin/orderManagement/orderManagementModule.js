@@ -21,6 +21,8 @@ import { ReportDebtor } from "pages/admin/Invoice/ReportaDebtor"
 import { SalesOrderModule } from "./salesOrderModule"
 import { PurchaseOrderModule } from "./purchesOrderModule"
 
+import './style.css'
+
 export const OrderManagementModule = props => {
     const [isClickedToOrder, setisClickedToOrder] = useState(false);
 
@@ -44,8 +46,8 @@ export const OrderManagementModule = props => {
                         <Row className="text-center" >
                             <Col md={12}>
                                 <div className="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" className="btn btn-info backtoHomeButton " style={{ background: isClickedToOrder == false ? " #1aa3ff" : "#707274", border: "none", width: "" }} onClick={() => setisClickedToOrder(false)} >Sales Order </button>
-                                    <button type="button" className="btn btn-info  backtoHomeButton" style={{ background: isClickedToOrder != false ? "#1aa3ff" : "	 #707274", border: "none", width: "" }} onClick={() => setisClickedToOrder(true)} >Purchase Order</button>
+                                    <Button className="btn btn-info  " style={{ background: isClickedToOrder == false ? " #1aa3ff" : "#707274", border: "none", width: "" }} onClick={() => setisClickedToOrder(false)} >Sales Order (Received order)</Button>
+                                    <Button className="btn btn-info  " style={{ background: isClickedToOrder != false ? "#1aa3ff" : "#707274", border: "none", width: "" }} onClick={() => setisClickedToOrder(true)} >Purchase Order (Sent orders)</Button>
                                 </div>
                             </Col>
                             <Col md={12} className="">

@@ -216,6 +216,7 @@ const ViewDetailsOrderManagementModal = props => {
                         }
                         {name == 'Seller' &&
                             <Row className="mt-3 d-flex align-items-end">
+                                <Label> <strong>Action</strong><span className="text-danger">*</span></Label>
                                 <Col xs="auto">
                                     <Button className="btn btn-info" /* onClick={() => CreatePayload()} */
                                     ><span className="h6">Approve</span></Button>

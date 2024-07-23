@@ -772,17 +772,16 @@ export const NewOrderModel = props => {
               </Row>
             }
           </Row>
-          {selectedOption != '' && <Row className="mt-3 align-items-center">
-            <Col md={6}></Col>
-            <Col md={3} className="text-end">
+          {selectedOption != '' && <Row className="mt-3 d-flex" style={{ justifyContent: 'flex-end' }}>
+            <Col xs="auto" className="text-end">
               <Button className="btn btn-info" onClick={() => CreatePayload()}
-              ><span className="h5">Save as Draft</span></Button>
+              ><span className="6">Save as Draft</span></Button>
 
 
             </Col>
-            <Col md={3} className="text-end">
+            <Col xs="auto" className="text-end">
               <Button className="btn btn-info" onClick={() => CreatePayload()}
-              ><span className="h5">Send for approval</span></Button>
+              ><span className="6">Send for approval</span></Button>
 
             </Col>
           </Row>}

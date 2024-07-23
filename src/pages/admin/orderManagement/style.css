@@ -115,3 +115,15 @@
 .iconsImage{
   height:40px;
 }
+
+@media only screen and (max-width: 600px) {
+  .backtoHomeButton {
+      width:  150px!important;
+  }
+  }
+  .backtoHomeButton{
+      width: 180px;
+  }
+  .backtoDashButton{
+      width: 120px;
+  }
