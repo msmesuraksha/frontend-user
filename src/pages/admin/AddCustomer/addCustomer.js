@@ -99,7 +99,7 @@ const AddCustomer = props => {
       //   },
       // },
       {
-        Header: "CUSTOMER NAME",
+        Header: "Members NAME",
         accessor: "customerName",
         disableFilters: true,
         filterable: false,
@@ -167,10 +167,10 @@ const AddCustomer = props => {
           <br />
           <Row>
             <Col md={10} className="pl-3" style={{ textTransform: "capitalize" }}>
-              <h5 className="m-1"> <b>Customer List</b></h5>
+              <h5 className="m-1"> <b>Members / Company</b></h5>
             </Col>
             <Col md={2}>
-              <Button className="btn btn-md btn-info" onClick={() => toggleAddCustomer()}>Add New Customer</Button>
+              <Button className="btn btn-md btn-info" onClick={() => toggleAddCustomer()}>Add New Member</Button>
             </Col>
           </Row>
           {/* {GetAllDebtorsMap != undefined ? <CompanySerchForm onFilter={handleFilterdata} SearchName={"Customer"} /> : ""} */}

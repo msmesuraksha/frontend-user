@@ -169,6 +169,7 @@ import AddCompany from "pages/admin/ApprovedTransaction/add-company";
 import ChangeNewPassword from "../pages/Authentication/ChangeNewPassword"
 import ForgetChangeNewPassword from "../pages/Authentication/forgetChangeNewPassword"
 import { UploadPendingLinkModule } from "pages/admin/uploadPendingDocLink/uploadPendingDocLink";
+import { OrderManagementModule } from "pages/admin/orderManagement/orderManagementModule";
 
 
 const authProtectedRoutes = [
@@ -196,6 +197,7 @@ const authProtectedRoutes = [
   { path: "/Report-me-defaulter", component: <ReportMedefulterComponent /> },
   { path: "/Customer-list", component: <AddCustomer /> },
   { path: "/upload-pending-documents", component: <UploadPendingListModule /> },
+  { path: "/order-management", component: <OrderManagementModule /> },
 
 
 
@@ -218,23 +220,23 @@ const publicRoutes = [
   { path: "/newChangePassword", component: <ChangeNewPassword /> },
   { path: "/upload-supporting-document-direct", component: <UploadPendingLinkModule /> },
 
- 
 
 
- 
+
+
 
   // // Authentication Inner  
 
 
 
- 
-
-
- 
 
 
 
- 
+
+
+
+
+
 
 
 

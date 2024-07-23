@@ -1,0 +1,117 @@
+.exampleModals{
+    height: auto !important;
+    /* width: 74vw !important; */
+}
+.modal-contents{
+    height: auto !important;
+    /* width: 74vw !important;   */
+}
+.tableRow{
+    /* width: 100%; */
+    padding: 0px 2%;
+    /* width: 80% !important;   */
+    
+}
+.custom-previous-day {
+  background-color: #f0f0f0; /* Custom background color for previous month's days */
+  color: #999; /* Custom text color for previous month's days */
+}
+
+.custom-next-day {
+  background-color: #eaeaea; /* Custom background color for next month's days */
+  color: #999; /* Custom text color for next month's days */
+}
+.tableRowtable{
+    
+
+}
+.selectionList{
+    padding: 20px 0px;
+
+}
+.selectionListss{
+  padding: 10px 0px;
+  font-size: 15px !important;
+
+}
+.checkForConfirm{
+  border-color: #007bff !important;
+}
+.selectionsBack{
+    /* background-color: rgb(99, 152, 199)!important; */
+    background-color: #023950;
+}
+.custom-content{
+    border-radius: 14px;
+    /* background-color: #023950; */
+    
+    
+  }
+  .AddiNVOICEcARD{
+    background: #f1f7ff;
+  }
+  .custom-content1{
+    border-radius: 14px;
+    
+  }
+  .custom-content:hover {
+    border: 1px solid #408dfb; /* Define your border style here */
+    border-radius: 10px;
+  }
+  .form-select.custom-select {
+    border: 1px solid #ccc; /* Default border style */
+    padding: 5px;
+  }
+  
+  .form-select.custom-select:hover {
+    border: 1px solid #007bff; /* Change border color on hover */
+  }
+  
+  .form-select.custom-select option {
+    background-color: #fff; /* Background color of options */
+    color: #000; /* Text color of options */
+  }
+  
+  .form-select.custom-select option:hover {
+    background-color: #21263c; /* Background color of options on hover */
+    color: #fff; /* Text color of options on hover */
+  }
+.totalText{
+    font-size: 15px;
+}
+.cardTextSubtotal{
+  font-weight: 600;
+  text-align: justify;
+}
+.fileSizing{
+  font-size: 30px;
+}
+.textsizing{
+  font-size: 18px;
+}
+@media only screen and (max-width: 1400px) {
+  .textsizing{
+    font-size: 16px !important;
+  }
+  .BTNSS{
+    padding: 2px;
+  }
+  .CAIConss {
+    font-size: 16px;
+    height: 21px !important;
+  }
+  }
+.reportDebAdd{
+  width:190px;
+  overflow: hidden;
+  /* display: -webkit-box; */
+  -webkit-line-clamp: 2; 
+           line-clamp: 2; 
+  -webkit-box-orient: vertical;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  /* padding-right: 10px !important; */
+}
+.iconsImage{
+  height:40px;
+}

@@ -228,7 +228,7 @@ const SidebarContent = props => {
                 <li >
                   <Link to="/Customer-list" style={{ color: currenstState == "/Customer-list" ? "#FAFAFA" : "" }}>
                     <i className="bx bxs-user"></i>
-                    {props.t("Customer")}
+                    {props.t("Members / Company")}
                   </Link>
                 </li>
                 {/*                 <li>
@@ -336,6 +336,12 @@ const SidebarContent = props => {
                   <Link to="/Recieved-Payment" style={{ color: currenstState == "/Recieved-Payment" ? "#FAFAFA" : "" }}>
                     <i className="bx bx-wallet"></i>
                     {props.t("Record Payment")}
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/order-management" style={{ color: currenstState == "/order-management" ? "#FAFAFA" : "" }}>
+                    <i className="bx bx-basket"></i>
+                    {props.t("Order Management")}
                   </Link>
                 </li>
               </>

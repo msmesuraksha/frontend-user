@@ -358,7 +358,7 @@ export const AddcustomerFomr = ({ isAddCustomercheck }) => {
   return (
     <Modal isOpen={isAddCustomerOpen}>
       <ModalHeader toggle={() => toggleAddCustomer()}>
-        Add New Customer{" "}
+        Add New Members{" "}
       </ModalHeader>
       <ModalBody>
         <form onSubmit={formikModal.handleSubmit}>
@@ -433,8 +433,8 @@ export const AddcustomerFomr = ({ isAddCustomercheck }) => {
           <Label for="address1">Personal Details</Label>
 
           <Row>
-            <Col xs={12} md={4} className="mt-2">
-              <Label for="customerType">Customer Name<span style={{ color: 'red' }}>*</span></Label>
+            <Col xs={12} md={2} className="mt-2">
+              <Label for="customerType">Member Name<span style={{ color: 'red' }}>*</span></Label>
             </Col>
             {/* <Col xs={6} md={2}>
               <div className="d-inline">
@@ -534,7 +534,7 @@ export const AddcustomerFomr = ({ isAddCustomercheck }) => {
           </Row>
           <Row>
             <Col xs={12} md={2} className="mt-2">
-              <Label for="customerEmail">Customer Email<span style={{ color: 'red' }}>*</span></Label>
+              <Label for="customerEmail">Email<span style={{ color: 'red' }}>*</span></Label>
             </Col>
             <Col xs={12} md={8}>
               <FormGroup>
