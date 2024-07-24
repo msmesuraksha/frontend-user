@@ -45,24 +45,24 @@ const ProfileMenu = props => {
     <React.Fragment>
 
 
-      <div style={{ width: '310px' }} className="">
-        <Row>
-          <Col md={7} className="">
-            <a href="mailto:customer@msmesuraksha.com " className="d-flex text-end">
-              <i className='bx bx-envelope text-dark' style={{ fontSize: "30px", marginTop: '27px' }} data-toggle="tooltip" data-placement="top"
-                title="Contact us via mail"
-              ></i>&nbsp;  <span style={{ marginTop: '32px' }} className="text-dark" >customer@msmesuraksha.com </span>
 
-            </a>
-          </Col>
-          <Col md={5}>
-            <a href="tel:+919326058760" className="d-flex">
-              <i className='bx bx-mobile-alt text-dark' style={{ fontSize: "30px", marginTop: '27px' }} data-toggle="tooltip" data-placement="top"
-                title="Contact us via Phone"
-              ></i>     &nbsp;   <span style={{ marginTop: '32px' }} className="text-dark">9326058760  </span> </a>      &nbsp;       &nbsp;       &nbsp;
-          </Col>
-        </Row>
-      </div>
+      <Row >
+        <Col xs="auto" className="">
+          <a href="mailto:customer@msmesuraksha.com " className="d-flex text-end">
+            <i className='bx bx-envelope text-dark' style={{ fontSize: "30px", marginTop: '27px' }} data-toggle="tooltip" data-placement="top"
+              title="Contact us via mail"
+            ></i>&nbsp;  <span style={{ marginTop: '32px' }} className="text-dark" >customer@msmesuraksha.com </span>
+
+          </a>
+        </Col>
+        <Col xs="auto">
+          <a href="tel:+919326058760" className="d-flex">
+            <i className='bx bx-mobile-alt text-dark' style={{ fontSize: "30px", marginTop: '27px' }} data-toggle="tooltip" data-placement="top"
+              title="Contact us via Phone"
+            ></i>     &nbsp;   <span style={{ marginTop: '32px' }} className="text-dark">9326058760  </span> </a>      &nbsp;       &nbsp;       &nbsp;
+        </Col>
+      </Row>
+
 
       <Dropdown
         isOpen={menu}
@@ -74,44 +74,13 @@ const ProfileMenu = props => {
           id="page-header-user-dropdown"
           tag="button"
         >
-
           <div className="d-flex">
             <i className='bx bxs-user-circle' style={{ fontSize: "35px", marginTop: '20px' }}></i>  &nbsp;
             <span style={{ marginTop: '25px' }} >{JSON.parse(sessionStorage.getItem("authUser")).name}</span>&nbsp;
             <i className="mdi mdi-chevron-down d-none d-xl-inline-block" style={{ fontSize: "15px", marginTop: '25px' }} />&nbsp;
           </div>
-
-
-
-          {/* <img
-            className="rounded-circle header-profile-user"
-            src={user1}
-            alt="Header Avatar"
-          /> */}
-
-
-          {/* <span className="d-none d-xl-inline-block ms-2 me-1">{username}</span> */}
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">
-          {/*           <DropdownItem tag="a" href="/profile">
-            {" "}
-            <i className="bx bx-user font-size-16 align-middle me-1" />
-            {props.t("Profile")}{" "}
-          </DropdownItem> */}
-          {/* <DropdownItem tag="a" href="/crypto-wallet">
-            <i className="bx bx-wallet font-size-16 align-middle me-1" />
-            {props.t("My Wallet")}
-          </DropdownItem>
-          <DropdownItem tag="a" href="#">
-            <span className="badge bg-success float-end">11</span>
-            <i className="bx bx-wrench font-size-16 align-middle me-1" />
-            {props.t("Settings")}
-          </DropdownItem>
-          <DropdownItem tag="a" href="auth-lock-screen">
-            <i className="bx bx-lock-open font-size-16 align-middle me-1" />
-            {props.t("Lock screen")}
-          </DropdownItem> */}
-          {/*           <div className="dropdown-divider" /> */}
           <Link to="/logout" className="dropdown-item">
             <i className="bx bx-power-off font-size-16 align-middle me-1 text-danger" />
             <span>{props.t("Logout")}</span>
@@ -119,6 +88,38 @@ const ProfileMenu = props => {
         </DropdownMenu>
       </Dropdown>
     </React.Fragment>
+    /*     <React.Fragment>
+          <Row xs="auto" className="d-flex justify-content-center">
+            <Col xs="auto" className="text-center text-md-end mb-3 mb-md-0">
+              <a href="mailto:customer@msmesuraksha.com" className="d-flex align-items-center justify-content-center justify-content-md-end text-dark">
+                <i className='bx bx-envelope' style={{ fontSize: "30px" }} data-toggle="tooltip" data-placement="top" title="Contact us via mail"></i>
+                <span className="ms-2">customer@msmesuraksha.com</span>
+              </a>
+            </Col>
+            <Col xs="auto" className="text-center text-md-start">
+              <a href="tel:+919326058760" className="d-flex align-items-center justify-content-center justify-content-md-start text-dark">
+                <i className='bx bx-mobile-alt' style={{ fontSize: "30px" }} data-toggle="tooltip" data-placement="top" title="Contact us via Phone"></i>
+                <span className="ms-2">9326058760</span>
+              </a>
+            </Col>
+          </Row>
+    
+          <Dropdown isOpen={menu} toggle={() => setMenu(!menu)} className="d-inline-block">
+            <DropdownToggle className="btn header-item" id="page-header-user-dropdown" tag="button">
+              <div className="d-flex align-items-center">
+                <i className='bx bxs-user-circle' style={{ fontSize: "35px" }}></i>
+                <span className="ms-2">{JSON.parse(sessionStorage.getItem("authUser")).name}</span>
+                <i className="mdi mdi-chevron-down d-none d-xl-inline-block ms-2" style={{ fontSize: "15px" }} />
+              </div>
+            </DropdownToggle>
+            <DropdownMenu className="dropdown-menu-end">
+              <Link to="/logout" className="dropdown-item">
+                <i className="bx bx-power-off font-size-16 align-middle me-1 text-danger" />
+                <span>Logout</span>
+              </Link>
+            </DropdownMenu>
+          </Dropdown>
+        </React.Fragment> */
   );
 };
 
