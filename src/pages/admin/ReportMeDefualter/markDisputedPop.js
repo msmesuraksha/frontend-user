@@ -32,7 +32,7 @@ export const MarkDisputedPopModule = props => {
     const [radioOption, setRadioOption] = useState("")
     const [nextBtn, setNextBtn] = useState(false)
     const [submitSuccess, setSubmitSuccess] = useState(false)
-console.log("PSOPSOPSOP",currentindex.invoices)
+    console.log("PSOPSOPSOP", currentindex.invoices)
     const OtherReasonOpen = () => {
         setOtherReason(!otherReason)
     }
@@ -85,7 +85,7 @@ console.log("PSOPSOPSOP",currentindex.invoices)
                             <Row className="selectionListss">
                                 <Col md={8}>
                                     <FormGroup tag="fieldset">
-                                        <FormGroup check className="mb-2">
+                                        {/*  <FormGroup check className="mb-2">
                                             <Input
                                                 name="radio1"
                                                 type="radio"
@@ -95,7 +95,7 @@ console.log("PSOPSOPSOP",currentindex.invoices)
                                             <Label check>
                                                 Disputed amount is less than that claimed by seller
                                             </Label>
-                                        </FormGroup>
+                                        </FormGroup> */}
                                         <FormGroup check className="mb-2">
                                             <Input
                                                 name="radio1"
@@ -104,7 +104,7 @@ console.log("PSOPSOPSOP",currentindex.invoices)
                                             />
                                             {' '}
                                             <Label check>
-                                                Seller has not given input credit for invoice raised
+                                                Seller has not given GST input credit for invoice raised
                                             </Label>
                                         </FormGroup>
                                         <FormGroup

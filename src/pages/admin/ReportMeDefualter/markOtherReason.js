@@ -279,6 +279,19 @@ export const MarkOtherReasonModel = props => {
                       Actual quantity received is lower than billed quantity
                     </Label>
                   </FormGroup>
+                  <FormGroup check className="mb-2">
+                    <Input
+                      // name="checkbox3"
+                      value="Rate dispute"
+
+                      type="checkbox"
+                      onChange={() => getCheckedValues()}
+                    />
+                    {' '}
+                    <Label check>
+                      Rate dispute
+                    </Label>
+                  </FormGroup>
                 </Form>
 
               </FormGroup>
