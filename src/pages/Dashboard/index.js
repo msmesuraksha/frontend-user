@@ -422,6 +422,28 @@ export const CapitalizeWords = (str) => {
   return words.join(" ");
 }
 
+export const OneFirstCapitalizeWords = (str) => {
+  // Split the string into an array of words
+  let words = str.split(" ");
+
+  // Iterate over each word in the array
+
+  // Capitalize the first letter of each word and make the rest of the letters lowercase
+  for (let i = 0; i < words.length; i++) {
+    // Capitalize the first letter of each word and make the rest of the letters lowercase
+    if (i == 0) {
+      words[i] = words[0].charAt(0).toUpperCase() + words[0].substring(1);
+    }
+    if (i > 0) {
+      words[i] = words[i].toLowerCase()
+    }
+
+  }
+
+  // Join the words back into a single string and return it
+  return words.join(" ");
+}
+
 
 Dashboard.propTypes = {
   t: PropTypes.any,

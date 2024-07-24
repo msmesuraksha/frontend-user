@@ -284,7 +284,7 @@ const ReportDefPreviewModals = props => {
                   {feedbackdataPaylod != undefined && feedbackdataPaylod.length > 0 ? (
                     feedbackdataPaylod.filter((item) => item.questionType !== "RATING").map((item, index) => {
                       return <tr key={item}>
-                        <td>{index + 1}. {item.questionDesc}</td>
+                        <td >{index + 1}. {item.questionDesc}</td>
                         <td>{item.response}</td>
                       </tr>
                     })
@@ -318,7 +318,7 @@ const ReportDefPreviewModals = props => {
                         <div className="mb-1">
                           <Row>
                             <Col md={8}>
-                              <span className="mb-2" style={{ fontSize: '14px' }}>
+                              <span className="mb-2 text-capitalize" style={{ fontSize: '14px' }}>
                                 {index + 1}.   {item.questionDesc}
                               </span>
                             </Col>

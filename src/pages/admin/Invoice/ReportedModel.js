@@ -23,6 +23,9 @@ import ReportDefPreviewModals from './ReportDefaulterapreviewModal'
 import { options } from "toastr"
 import { select } from "redux-saga/effects"
 
+import { OneFirstCapitalizeWords, CapitalizeWords } from "pages/Dashboard"
+
+
 const ReportedDebtorsModel = props => {
   const [timelystarRating, settimelyStarRating] = useState(0)
   const [responsivestarRating, setresponsivestarRating] = useState(0)
@@ -198,14 +201,17 @@ const ReportedDebtorsModel = props => {
           {getFeebBackQuestion.length > 0 ? getFeebBackQuestion.map((item, index) => {
 
             const opations = item.values != null && item.values.length > 0 ? item.values.map((x) => {
-              return { label: x, value: x }
+              return { label: CapitalizeWords(x), value: CapitalizeWords(x) }
             }) : ''
+
+            const quesTionText = OneFirstCapitalizeWords(item.questionDesc)
+
             return (item.questionType === "DROP-DOWN" ? (
               <div className="mb-1" key={index}>
                 <Row>
                   <Col md={9} className="pt-2">
                     <span className="">
-                      {index + 1}. {` ${item.questionDesc} `} </span>
+                      {index + 1}. {` ${quesTionText} `} </span>
                   </Col>
                   <Col md={3}>
                     <Select
@@ -213,14 +219,14 @@ const ReportedDebtorsModel = props => {
                       className="custom-content"
                       options={opations}
                       styles={colourStyles}
-                      placeholder={item.values.join("/")}
+                      placeholder={item.values.join(" /").toUpperCase()}
                       onChange={(selected) => (handlefinancialdifficult({
                         "debtorId": debtorId,
                         "questionId": item.id,
                         "response": selected.value,
                         "indexno": index + 1
                       }), handlefinancialdifficultTwo({
-                        "questionDesc": item.questionDesc,
+                        "questionDesc": quesTionText,
                         "questionType": item.questionType,
                         "response": selected.value,
                         "indexno": index + 1
@@ -234,7 +240,7 @@ const ReportedDebtorsModel = props => {
               <Row>
                 <Col md={9} className="pt-1">
                   {index + 1}. <span className="">
-                    {` ${item.questionDesc} `}</span>
+                    {` ${quesTionText} `}</span>
                 </Col>
                 <Col md={3}>
                   <span>
@@ -248,7 +254,7 @@ const ReportedDebtorsModel = props => {
                         "indexno": index + 1
 
                       }), handlefinancialdifficultTwo({
-                        "questionDesc": item.questionDesc,
+                        "questionDesc": quesTionText,
                         "questionType": item.questionType,
                         "response": e.target.value,
                         "indexno": index + 1
@@ -273,11 +279,13 @@ const ReportedDebtorsModel = props => {
 
 
           {getFeebBackQuestion.length > 0 ? getFeebBackQuestion.map((item, indx) => {
+            const quesTionText = OneFirstCapitalizeWords(item.questionDesc)
+
             return (item.questionType === "TEXT-AREA" ?
               (<div>  <Row className="pt-1">
                 <Row md={9}>
                   <span className="">
-                    {indx + 1}   {` ${item.questionDesc} `} </span>
+                    {indx + 1}   {` ${quesTionText} `} </span>
                 </Row>
                 <Row md={12}>
                   <span>
@@ -292,7 +300,7 @@ const ReportedDebtorsModel = props => {
                         "indexno": indx + 1
 
                       }), handlefinancialdifficultTwo({
-                        "questionDesc": item.questionDesc,
+                        "questionDesc": quesTionText,
                         "questionType": item.questionType,
                         "response": e.target.value,
                         "indexno": indx + 1
@@ -328,7 +336,7 @@ const RetingDiv = ({ item, indx, handlefinancialdifficult, handlefinancialdiffic
 
         <Row key={indx} className="pt-1">
           <Col md={9} >
-            <span className="">
+            <span className="text-capitalize">
               {indx + 1}.   {`${item.questionDesc} `}</span>
           </Col>
           <Col md={3} className="d-flex justify-content-center">
