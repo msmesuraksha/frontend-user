@@ -61,32 +61,36 @@ const ProfileMenu = props => {
               title="Contact us via Phone"
             ></i>     &nbsp;   <span style={{ marginTop: '32px' }} className="text-dark">9326058760  </span> </a>      &nbsp;       &nbsp;       &nbsp;
         </Col>
+        <Col xs="auto">
+          <Dropdown
+            isOpen={menu}
+            toggle={() => setMenu(!menu)}
+            className="d-inline-block"
+          >
+            <DropdownToggle
+              className="btn header-item "
+              id="page-header-user-dropdown"
+              tag="button"
+              style={{ padding: '0px' }}
+            >
+              <div className="d-flex">
+                <i className='bx bxs-user-circle' style={{ fontSize: "35px", marginTop: '20px' }}></i>  &nbsp;
+                <span style={{ marginTop: '25px' }} >{JSON.parse(sessionStorage.getItem("authUser")).name}</span>&nbsp;
+                <i className="mdi mdi-chevron-down d-none d-xl-inline-block" style={{ fontSize: "15px", marginTop: '25px' }} />&nbsp;
+              </div>
+            </DropdownToggle>
+            <DropdownMenu className="dropdown-menu-end">
+              <Link to="/logout" className="dropdown-item">
+                <i className="bx bx-power-off font-size-16 align-middle me-1 text-danger" />
+                <span>{props.t("Logout")}</span>
+              </Link>
+            </DropdownMenu>
+          </Dropdown>
+        </Col>
       </Row>
 
 
-      <Dropdown
-        isOpen={menu}
-        toggle={() => setMenu(!menu)}
-        className="d-inline-block"
-      >
-        <DropdownToggle
-          className="btn header-item "
-          id="page-header-user-dropdown"
-          tag="button"
-        >
-          <div className="d-flex">
-            <i className='bx bxs-user-circle' style={{ fontSize: "35px", marginTop: '20px' }}></i>  &nbsp;
-            <span style={{ marginTop: '25px' }} >{JSON.parse(sessionStorage.getItem("authUser")).name}</span>&nbsp;
-            <i className="mdi mdi-chevron-down d-none d-xl-inline-block" style={{ fontSize: "15px", marginTop: '25px' }} />&nbsp;
-          </div>
-        </DropdownToggle>
-        <DropdownMenu className="dropdown-menu-end">
-          <Link to="/logout" className="dropdown-item">
-            <i className="bx bx-power-off font-size-16 align-middle me-1 text-danger" />
-            <span>{props.t("Logout")}</span>
-          </Link>
-        </DropdownMenu>
-      </Dropdown>
+
     </React.Fragment>
     /*     <React.Fragment>
           <Row xs="auto" className="d-flex justify-content-center">
