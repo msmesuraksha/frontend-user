@@ -24,7 +24,7 @@ const ProfileMenu = props => {
 
   const [username, setusername] = useState("Admin");
   const handleClick = () => {
-    window.location.href = `mailto:gitlatnip91@gmail.com`;
+    window.location.href = `mailto:customer@msmesuraksha.com`;
   };
   useEffect(() => {
     if (sessionStorage.getItem("authUser")) {
@@ -48,10 +48,10 @@ const ProfileMenu = props => {
       <div style={{ width: '310px' }} className="">
         <Row>
           <Col md={7} className="">
-            <a href="mailto:gitlatnip91@gmail.com " className="d-flex text-end">
+            <a href="mailto:customer@msmesuraksha.com " className="d-flex text-end">
               <i className='bx bx-envelope text-dark' style={{ fontSize: "30px", marginTop: '27px' }} data-toggle="tooltip" data-placement="top"
                 title="Contact us via mail"
-              ></i>&nbsp;  <span style={{ marginTop: '32px' }} className="text-dark" >gitlatnip91@gmail.com </span>
+              ></i>&nbsp;  <span style={{ marginTop: '32px' }} className="text-dark" >customer@msmesuraksha.com </span>
 
             </a>
           </Col>
