@@ -316,8 +316,13 @@ const MarkDisputedMadal = props => {
 
   const [submitCheck, setSubmitCheck] = useState([])
 
+  const [checkCheckBox, setCheckCheckBox] = useState(false)
+
   useEffect(() => {
     const checkSubmit = dataa.map(value => {
+      if (value.isCheckedForSupportingDocs == true) {
+        setCheckCheckBox(true)
+      }
       return value.documents
     })
 
@@ -741,7 +746,7 @@ const MarkDisputedMadal = props => {
           </Row> */}
         </ModalBody>
         <ModalFooter>
-          <Button disabled={submitCheck.length > 0 ? false : true} type="button" color="primary" onClick={() => handleSubmit(true)}>
+          <Button disabled={submitCheck.length > 0 && checkCheckBox == true && diffrenceAmount.length > 0 ? false : true} type="button" color="primary" onClick={() => handleSubmit(true)}>
             Submit
           </Button>
           <Button type="button" color="secondary" onClick={toggle}>
