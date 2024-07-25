@@ -30,7 +30,7 @@ const ReportedDebtorsModel = props => {
   const [timelystarRating, settimelyStarRating] = useState(0)
   const [responsivestarRating, setresponsivestarRating] = useState(0)
   const [Integrity, setIntegrity] = useState(0)
-  const { isOpen, toggle, filteredCustomerDetail, allInvoiceList, dataForPreview, debtorId, moduleName, defaulterId } = props
+  const { isOpen, toggle, filteredCustomerDetail, allInvoiceList, dataForPreview, debtorId, moduleName, defaulterId, invoiceIsOpen, feedBackIsOpen, requestEditIsOpen } = props
   const colourStyles = {
     menuList: styles => ({
       ...styles,
@@ -187,7 +187,7 @@ const ReportedDebtorsModel = props => {
       <div className="modal-content">
         <ModalHeader toggle={toggle}><b>Feedback on Defaulting Customer</b> </ModalHeader>
         {/* <ConfirmReportModal isOpen={isConfirmModalOpen} toggle={toggleViewModal} filteredCustomerDetail={filteredCustomerDetail} /> */}
-        {isPreviewModalShow && <ReportDefPreviewModals isOpen={isPreviewModalShow} toggle={togglePreviwModal} filteredCustomerDetail={filteredCustomerDetail} feedbackdataPaylod={feedbackdataPaylodTwo} allInvoiceList={allInvoiceList} dataForPreview={dataForPreview} feedbackQuestion={feedbackdataPaylod} moduleName={moduleName} defaulterId={defaulterId} />}
+        {isPreviewModalShow && <ReportDefPreviewModals isOpen={isPreviewModalShow} toggle={togglePreviwModal} filteredCustomerDetail={filteredCustomerDetail} feedbackdataPaylod={feedbackdataPaylodTwo} allInvoiceList={allInvoiceList} dataForPreview={dataForPreview} feedbackQuestion={feedbackdataPaylod} moduleName={moduleName} defaulterId={defaulterId} invoiceIsOpen={invoiceIsOpen} feedBackIsOpen={feedBackIsOpen} previewIsOpen={togglePreviwModal} requestEditIsOpen={requestEditIsOpen} />}
         <ModalBody>
           <div className="mb-3">
             <Row>

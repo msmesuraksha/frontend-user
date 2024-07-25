@@ -43,7 +43,8 @@ import {
   MARK_AS_DISPUED_MODAL_OPEN,
   GET_REQ_EDIT,
   GET_REQ_EDIT_FAIL,
-  GET_REQ_EDIT_SUCCESS
+  GET_REQ_EDIT_SUCCESS,
+  CLEAR_CURRENT_INVOICE
 
 } from "./debtors.actiontype"
 
@@ -159,6 +160,8 @@ export const DebtorsReducer = (state = INIT_STATE, action) => {
     case ADD_INVOICE_REPORT_DEFAULTER_ASYNC:
       return { ...state, addInvoiceReportDefaulter: payload, }
     case ADD_INVOICE_REPORT_DEFAULTER_ASYNC_SUCCESS:
+      return { ...state, createInvoiceSuccess: payload, }
+    case CLEAR_CURRENT_INVOICE:
       return { ...state, createInvoiceSuccess: payload, }
     case ADD_INVOICE_REPORT_DEFAULTER_ASYNC_FAIL:
       return { ...state, error: payload, }

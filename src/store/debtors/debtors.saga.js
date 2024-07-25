@@ -116,7 +116,7 @@ function* addRatingToDebtor(payload) {
   try {
     const response = yield call(addRatingofdebtor, payload.payload)
     yield put(addRatingToDebtorSuccess(response))
-    window.location.reload()
+    //  window.location.reload()
   } catch (error) {
     yield put(addRatingToDebtorFail(error))
   }

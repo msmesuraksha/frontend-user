@@ -47,7 +47,7 @@ import { numberFormat } from "../uploadPendingDoucument/uploadPendingDoc";
 // import '../../../pages/Dashboard/users/send-bill-transaction/sendbilltransaction.scss'
 const ReportedDefaulterModel = props => {
   const [selectedOption, setSelectedOption] = useState("")
-  const { isOpen, toggle, GetAllInvoice, requestedData } = props
+  const { isOpen, toggle, GetAllInvoice, requestedData, invoiceIsOpen } = props
   const [filteredInvoiceList, setfilteredInvoiceList] = useState([])
   const [debtorIdArrayForPreview, setdebtorIdArrayForPreview] = useState([])
   const isCustomerFeedbackModalOpen = useSelector(selectFeedbackModalOpen)
@@ -467,7 +467,7 @@ const ReportedDefaulterModel = props => {
     >
       <div className="modal-contents">
         <ModalHeader toggle={toggle} className="font-weight-bold" ><b style={{ fontSize: '18px' }}>{requestedData == undefined ? " Report A Defaulter" : "Request Edit"}</b></ModalHeader>
-        {isCustomerFeedbackModalOpen && <ReportedDebtorsModel isOpen={isCustomerFeedbackModalOpen} toggle={toggleViewModal1} filteredCustomerDetail={filteredCustomerDetail} allInvoiceList={newPayload} dataForPreview={data} debtorId={selectedOption.value} moduleName={'invoice'} defaulterId={''} />}
+        {isCustomerFeedbackModalOpen && <ReportedDebtorsModel isOpen={isCustomerFeedbackModalOpen} toggle={toggleViewModal1} filteredCustomerDetail={filteredCustomerDetail} allInvoiceList={newPayload} dataForPreview={data} debtorId={selectedOption.value} moduleName={'invoice'} defaulterId={''} invoiceIsOpen={invoiceIsOpen} feedBackIsOpen={toggleViewModal1} />}
 
         <ModalBody className="" >
           {/* <ConfirmReportModal isOpen={showConfirmModal} toggle={handleConfirmClose} /> */}

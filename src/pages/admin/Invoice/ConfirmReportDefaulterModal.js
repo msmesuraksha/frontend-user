@@ -31,9 +31,15 @@ import { getRequestEdit } from "../../../store/debtors/debtors.actions";
 
 import { selectCreateInvoice } from "store/debtors/debtors.selecter";
 
+import { getAllInvoice } from "../../../store/debtors/debtors.actions";
+
+import { currentInvoiceClear } from "../../../store/debtors/debtors.actions";
+
 const confirmReportModal = props => {
 
-  const { isOpen, toggle, allInvoiceLists, handleCheckboxChange, isChecked, feedbackQuestion, moduleName, defaulterId } = props
+  const { isOpen, toggle, allInvoiceLists, handleCheckboxChange, isChecked, feedbackQuestion, moduleName, defaulterId, invoiceIsOpen, feedBackIsOpen, previewIsOpen, confirmReportIsOpen, requestEditIsOpen } = props
+
+  console.log(confirmReportIsOpen);
   const handleSubmit = () => {
     handleSubmitInvoice()
     // toast.success("Reported Defaulter successfully")
@@ -56,7 +62,7 @@ const confirmReportModal = props => {
   const createdInvoiceList = useSelector(selectCreateInvoice)
   const dispatch = useDispatch()
 
-  console.log('createdInvoiceList', createdInvoiceList);
+
 
   const changedarray = () => {
     for (let i = 0; i < feedbackQuestion.length; i++) {
@@ -65,7 +71,7 @@ const confirmReportModal = props => {
     }
     return feedbackQuestion
   }
-  console.log("feedbackQuestionfeedbackQuestionfeedbackQuestionfeedbackQuestionfeedbackQuestionfeedbackQuestion", feedbackQuestion)
+
   useEffect(() => {
     changedarray()
     if (createdInvoiceList != undefined && Object.keys(createdInvoiceList).length > 0) {
@@ -75,7 +81,30 @@ const confirmReportModal = props => {
         "ratingsArray": feedbackQuestion,
       }
 
-      dispatch(addRatingToDebtor(feedbackPaylod))
+      if (feedbackQuestion.length > 0) {
+        dispatch(addRatingToDebtor(feedbackPaylod))
+      }
+
+      if (moduleName == 'invoice') {
+        invoiceIsOpen()
+
+      }
+
+      if (moduleName == 'editInvoice') {
+        requestEditIsOpen()
+      }
+
+
+
+
+      feedBackIsOpen()
+      previewIsOpen()
+      confirmReportIsOpen()
+
+      setTimeout(() => {
+        dispatch(getAllInvoice())
+        dispatch(currentInvoiceClear())
+      }, 1000);
 
     }
   }, [createdInvoiceList])
@@ -111,14 +140,37 @@ const confirmReportModal = props => {
         "ratingsArray": feedbackQuestion,
       }
 
+      if (feedbackQuestion.length > 0) {
+        dispatch(addRatingToDebtor(feedbackPaylod))
+      }
+
       dispatch(addRatingToDebtor(feedbackPaylod))
+
+      if (moduleName == 'invoice') {
+        invoiceIsOpen()
+
+      }
+
+      if (moduleName == 'editInvoice') {
+        requestEditIsOpen()
+      }
+
+      feedBackIsOpen()
+      previewIsOpen()
+      confirmReportIsOpen()
+
+      setTimeout(() => {
+        dispatch(getAllInvoice())
+        dispatch(currentInvoiceClear())
+      }, 1000);
+
+
+
+
     }
 
 
 
-
-
-    // toggle()
     // window.location.reload()
 
   }
@@ -149,14 +201,29 @@ const confirmReportModal = props => {
     // dispatch(addRatingToDebtor(feedbackQuestion))
     toast.success("Invoice save as Draft")
 
-    window.location.reload()
+    if (moduleName == 'invoice') {
+      invoiceIsOpen()
+
+    }
+
+    if (moduleName == 'editInvoice') {
+      requestEditIsOpen()
+    }
+    feedBackIsOpen()
+    previewIsOpen()
+    confirmReportIsOpen()
+
+    setTimeout(() => {
+      dispatch(getAllInvoice())
+      dispatch(currentInvoiceClear())
+    }, 1000);
+
+    // window.location.reload()
 
 
   }
 
-  useEffect(() => {
 
-  }, [])
   return (
     <Modal
       isOpen={isOpen}

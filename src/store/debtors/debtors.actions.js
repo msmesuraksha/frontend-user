@@ -43,7 +43,8 @@ import {
   MARK_AS_DISPUED_MODAL_OPEN,
   GET_REQ_EDIT_FAIL,
   GET_REQ_EDIT_SUCCESS,
-  GET_REQ_EDIT
+  GET_REQ_EDIT,
+  CLEAR_CURRENT_INVOICE
 } from "./debtors.actiontype"
 
 import { createAction } from "store/utils/reducer/reducer.utils";
@@ -122,3 +123,6 @@ export const getRequestEdit = (data) => createAction(GET_REQ_EDIT, data)
 export const getRequestEditSuccess = (data) => createAction(GET_REQ_EDIT_SUCCESS, data)
 
 export const getRequestEditFail = (error) => createAction(GET_REQ_EDIT_FAIL, error)
+
+//
+export const currentInvoiceClear = () => createAction(CLEAR_CURRENT_INVOICE, [])

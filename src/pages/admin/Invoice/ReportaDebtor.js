@@ -531,10 +531,10 @@ export const ReportDebtor = props => {
       {modal1 && <ReportedDebtorsModel isOpen={modal1} toggle={toggleViewModal} additionalValue={additionalValue} selected={selected} />}
       {modal2 && <ReportedDefaulterModel isOpen={modal2} toggle={toggleViewModal1} selected={selected} customerName={invoiceIdsForCAcertificate} requestor={'CREDITOR'} name={'Buyer'} />}
       {selectCACertificate && <UploadCACertificateModel isOpen={selectCACertificate} toggle={toggleViewModal2} invoiceId={invoiceIdsForCAcertificate} customerType={customerType} />}
-      {isReportDefOpen && <ReportIncoiceModel isOpen={isReportDefOpen} toggle={toggleViewModal3} GetAllInvoice={GetAllInvoice} />}
+      {isReportDefOpen && <ReportIncoiceModel isOpen={isReportDefOpen} toggle={toggleViewModal3} GetAllInvoice={GetAllInvoice} invoiceIsOpen={toggleViewModal3} />}
       {uploadFilesModalShow && <UploadPendingFiles isOpen={uploadFilesModalShow} toggle={toggleUploiadFiles} uploadFilesModelDataForUpload={uploadFilesModelDataForUpload} />}
       {isViewDetailModal && <ViewDetailsReportDefaultModal isOpen={isViewDetailModal} toggle={toggleDetailView} viewModalData={viewModalData} name={'Buyer'} />}
-      {isRequestEditModalOpen && <EditReportedDefaulterModel isOpen={isRequestEditModalOpen} toggle={toggleReqEdit} requestedData={requestedData} GetAllInvoice={GetAllInvoice} />}
+      {isRequestEditModalOpen && <EditReportedDefaulterModel isOpen={isRequestEditModalOpen} toggle={toggleReqEdit} requestedData={requestedData} GetAllInvoice={GetAllInvoice} requestEditIsOpen={toggleReqEdit} />}
 
       <Card style={{ padding: props.isClickedToReported != undefined && props.isClickedToReported ? "0px" : '' }}>
         <CardBody style={{ padding: props.isClickedToReported != undefined && props.isClickedToReported ? "0px" : '20px' }}>

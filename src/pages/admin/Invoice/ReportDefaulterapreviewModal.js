@@ -39,7 +39,8 @@ import { ImageIcons } from "./uploadFilesModal";
 
 
 const ReportDefPreviewModals = props => {
-  const { isOpen, toggle, selected, filteredCustomerDetail, feedbackdataPaylod, allInvoiceList, dataForPreview, feedbackQuestion, moduleName, defaulterId } = props
+
+  const { isOpen, toggle, selected, filteredCustomerDetail, feedbackdataPaylod, allInvoiceList, dataForPreview, feedbackQuestion, moduleName, defaulterId, invoiceIsOpen, feedBackIsOpen, previewIsOpen, requestEditIsOpen } = props
   const allInvoiceListForPreview = allInvoiceList[0] != undefined ? allInvoiceList[0].allInvoiceListForPreview : []
   const Integrity = 1
   const dispatch = useDispatch()
@@ -104,7 +105,7 @@ const ReportDefPreviewModals = props => {
       >
         <div className="modal-content">
           <ModalHeader toggle={toggle}><b style={{ fontSize: '18px' }}>Report Defaulter Preview</b></ModalHeader>
-          {isConfirmModalOpen && <ConfirmReportModal isOpen={isConfirmModalOpen} toggle={toggleViewModal} filteredCustomerDetail={filteredCustomerDetail} feedbackdataPaylod={feedbackdataPaylod} allInvoiceLists={allInvoiceList} setIsChecked={setIsChecked} isChecked={isChecked} handleCheckboxChange={handleCheckboxChange} feedbackQuestion={feedbackQuestion} moduleName={moduleName} defaulterId={defaulterId} />}
+          {isConfirmModalOpen && <ConfirmReportModal isOpen={isConfirmModalOpen} toggle={handleFeedbackModal} filteredCustomerDetail={filteredCustomerDetail} feedbackdataPaylod={feedbackdataPaylod} allInvoiceLists={allInvoiceList} setIsChecked={setIsChecked} isChecked={isChecked} handleCheckboxChange={handleCheckboxChange} feedbackQuestion={feedbackQuestion} moduleName={moduleName} defaulterId={defaulterId} invoiceIsOpen={invoiceIsOpen} feedBackIsOpen={feedBackIsOpen} previewIsOpen={previewIsOpen} confirmReportIsOpen={handleFeedbackModal} requestEditIsOpen={requestEditIsOpen} />}
 
           <ModalBody className="bg-light">
             <Row className="px-3">
