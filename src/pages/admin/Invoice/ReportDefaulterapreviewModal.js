@@ -161,7 +161,7 @@ const ReportDefPreviewModals = props => {
                   let currentImg2 = ''
 
                   for (const key in ImageIcons) {
-                    const currentUrlArr = item.challanDocument?.fileUrl?.split('.');
+                    const currentUrlArr = item.DispatchDocument?.fileUrl?.split('.');
                     if (currentUrlArr == undefined) break
                     if (key === currentUrlArr[currentUrlArr?.length - 1]) {
                       currentImg2 = ImageIcons[key];
@@ -172,7 +172,7 @@ const ReportDefPreviewModals = props => {
                   let currentImg3 = ''
 
                   for (const key in ImageIcons) {
-                    const currentUrlArr = item.transportationDocument?.fileUrl?.split('.');
+                    const currentUrlArr = item.DeliveryDocument?.fileUrl?.split('.');
                     if (currentUrlArr == undefined) break
                     if (key === currentUrlArr[currentUrlArr?.length - 1]) {
                       currentImg3 = ImageIcons[key];
