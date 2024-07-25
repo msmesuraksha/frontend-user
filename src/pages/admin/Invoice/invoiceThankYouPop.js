@@ -64,7 +64,7 @@ export const InvoiceThankYouPop = ({ isOpen, toggle, closeAllTable, handleThankY
                         <Col md={10} className="text-center mt-2">
                         </Col>
                         <Col md={2} className="text-end">
-                            <Button className="btn btn-primary" onClick={() => closePop()}>Cancel</Button>
+                            <Button className="btn btn-info" onClick={() => closePop()}>Cancel</Button>
                         </Col>
                     </Row>
                 </ModalBody>
