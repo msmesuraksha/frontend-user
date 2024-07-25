@@ -35,11 +35,19 @@ import { getAllInvoice } from "../../../store/debtors/debtors.actions";
 
 import { currentInvoiceClear } from "../../../store/debtors/debtors.actions";
 
+import { InvoiceThankYouPop } from "./invoiceThankYouPop";
+
 const confirmReportModal = props => {
 
   const { isOpen, toggle, allInvoiceLists, handleCheckboxChange, isChecked, feedbackQuestion, moduleName, defaulterId, invoiceIsOpen, feedBackIsOpen, previewIsOpen, confirmReportIsOpen, requestEditIsOpen } = props
 
-  console.log(confirmReportIsOpen);
+
+  const [IsThankYouPop, setIsThankYouPop] = useState(false)
+
+  const handleThankYouPop = () => {
+    setIsThankYouPop(!IsThankYouPop)
+  }
+
   const handleSubmit = () => {
     handleSubmitInvoice()
     // toast.success("Reported Defaulter successfully")
@@ -85,29 +93,26 @@ const confirmReportModal = props => {
         dispatch(addRatingToDebtor(feedbackPaylod))
       }
 
-      if (moduleName == 'invoice') {
-        invoiceIsOpen()
-
-      }
-
-      if (moduleName == 'editInvoice') {
-        requestEditIsOpen()
-      }
-
-
-
-
-      feedBackIsOpen()
-      previewIsOpen()
-      confirmReportIsOpen()
-
-      setTimeout(() => {
-        dispatch(getAllInvoice())
-        dispatch(currentInvoiceClear())
-      }, 1000);
-
     }
   }, [createdInvoiceList])
+
+  const closeAllTable = () => {
+    if (moduleName == 'invoice') {
+      invoiceIsOpen()
+    }
+    if (moduleName == 'editInvoice') {
+      requestEditIsOpen()
+    }
+
+    feedBackIsOpen()
+    previewIsOpen()
+    confirmReportIsOpen()
+
+    setTimeout(() => {
+      dispatch(getAllInvoice())
+      dispatch(currentInvoiceClear())
+    }, 1000);
+  }
 
 
 
@@ -146,29 +151,9 @@ const confirmReportModal = props => {
 
       dispatch(addRatingToDebtor(feedbackPaylod))
 
-      if (moduleName == 'invoice') {
-        invoiceIsOpen()
-
-      }
-
-      if (moduleName == 'editInvoice') {
-        requestEditIsOpen()
-      }
-
-      feedBackIsOpen()
-      previewIsOpen()
-      confirmReportIsOpen()
-
-      setTimeout(() => {
-        dispatch(getAllInvoice())
-        dispatch(currentInvoiceClear())
-      }, 1000);
-
-
-
-
     }
 
+    handleThankYouPop()
 
 
     // window.location.reload()
@@ -237,6 +222,7 @@ const confirmReportModal = props => {
     >
       <div className="modal-content">
         <ModalHeader toggle={toggle}><b>Confirm Report On Defaulter</b></ModalHeader>
+        {IsThankYouPop && <InvoiceThankYouPop isOpen={IsThankYouPop} toggle={handleThankYouPop} handleThankYouPop={handleThankYouPop} closeAllTable={closeAllTable} />}
 
         <ModalBody className="bg-light">
 
@@ -271,7 +257,6 @@ const confirmReportModal = props => {
         </ModalFooter>
       </div>
       <ToastContainer />
-
     </Modal>
   )
 }
