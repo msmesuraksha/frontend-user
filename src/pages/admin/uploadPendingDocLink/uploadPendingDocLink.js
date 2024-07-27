@@ -204,6 +204,7 @@ export const UploadPendingLinkModule = props => {
                 if (creditorcacertificateNeed) {
                     const uploadCA = Object.keys(uploadCAId).length;
                     if (uploadCA == 0) {
+                        setChecked(!checked);
                         setWarongText(true)
                         return
                     } else {
@@ -228,6 +229,31 @@ export const UploadPendingLinkModule = props => {
               setWarongText(true)
               return
             } */
+        submitCheck(true)
+        sumbitDataSuccessFull(payload)
+
+        setSuccessPop(true)
+
+    }
+
+    const notSubmitAllDoc = (item) => {
+
+        const payload = {
+            "token": newtoken,
+            "type": selectType, // DEBTOR/CREDITOR
+            // Below documents are required for type DEBTOR
+            "debtorcacertificate": selectType == 'DEBTOR' ? uploadCAId.documentId : '',
+            "debtoradditionaldocuments": selectType == 'DEBTOR' ? uploadAdditionId : '',
+            // Below documents are required for type CREDITOR
+            "creditorcacertificate": selectType == 'CREDITOR' ? uploadCAId.documentId : '',
+            "creditoradditionaldocuments": selectType == 'CREDITOR' ? uploadAdditionId : '',
+            "attachment": selectType == 'DEBTOR' ? '' : docData
+        }
+
+
+
+
+
         submitCheck(true)
         sumbitDataSuccessFull(payload)
 
@@ -295,7 +321,7 @@ export const UploadPendingLinkModule = props => {
 
     return (
         <React.Fragment>
-            {checked && <UploadDocCheckBoxPopModule isOpen={checked} toggle={handleCheckboxChange} setPopChecked={setPopChecked} popchecked={popchecked} handleSubmit={handleSubmit} />}
+            {checked && <UploadDocCheckBoxPopModule isOpen={checked} toggle={handleCheckboxChange} setPopChecked={setPopChecked} popchecked={popchecked} notSubmitAllDoc={notSubmitAllDoc} />}
             {successPop && <UploadDocSuccessModule isOpen={successPop} />}
             <Card>
                 <CardBody className="p-2 bg-dark">

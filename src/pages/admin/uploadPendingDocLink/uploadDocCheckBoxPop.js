@@ -27,7 +27,7 @@ import {
 import fileImg2 from '../../../assets/images/newImg/pdf.png'
 import fileImg1 from '../../../assets/images/newImg/png-file-.png'
 
-export const UploadDocCheckBoxPopModule = ({ isOpen, toggle, setPopChecked, popchecked, handleSubmit }) => {
+export const UploadDocCheckBoxPopModule = ({ isOpen, toggle, setPopChecked, popchecked, notSubmitAllDoc }) => {
     const [isSubmt, setIsSubmt] = useState(false)
 
     const handleCheckboxChangePop = () => {
@@ -52,11 +52,11 @@ export const UploadDocCheckBoxPopModule = ({ isOpen, toggle, setPopChecked, popc
                 <ModalBody>
                     <Row className="mt-3">
                         <div >
-                            <Input
+                            {/*  <Input
                                 type="checkbox"
                                 checked={popchecked}
                                 onChange={handleCheckboxChangePop}
-                            />
+                            /> */}
                             <Label style={{ marginLeft: '0.5em ' }}>
                                 You have not uploaded all documents are you sure you want to continue.
                             </Label>
@@ -67,7 +67,7 @@ export const UploadDocCheckBoxPopModule = ({ isOpen, toggle, setPopChecked, popc
                         <Col md={10} className="text-center mt-2">
                         </Col>
                         <Col md={2} className="text-end">
-                            <Button className="btn btn-success" disabled={!isSubmt} onClick={() => handleSubmit()}>Submit</Button>
+                            <Button className="btn btn-success" /* disabled={!isSubmt} */ onClick={() => notSubmitAllDoc()}>Submit</Button>
                         </Col>
                     </Row>
                 </ModalBody>
