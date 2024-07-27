@@ -1,0 +1,5 @@
+.custom-page .react-pdf__Page__textContent,
+.custom-page .react-pdf__Page__annotations {
+  display: none;
+}
+
