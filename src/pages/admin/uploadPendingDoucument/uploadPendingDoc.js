@@ -149,6 +149,7 @@ const UploadPendingDocModel = props => {
         if (creditorcacertificateNeed) {
           const uploadCA = Object.keys(uploadCAId).length;
           if (uploadCA == 0) {
+            setChecked(!checked);
             setWarongText(true)
             return
           } else {
@@ -164,6 +165,30 @@ const UploadPendingDocModel = props => {
     dispatch(uploadUploadPednigDocID(payload))
 
     setSuccessPop(!successPop)
+
+  }
+
+  const notSubmitAllDoc = () => {
+
+
+    const payload = {
+      "paymentId": uploadFilesModelDataForUpload._id,
+      "type": selectType, // DEBTOR/CREDITOR
+      // Below documents are required for type DEBTOR
+      "debtorcacertificate": selectType == 'DEBTOR' ? uploadCAId.documentId : '',
+      "debtoradditionaldocuments": selectType == 'DEBTOR' ? uploadAdditionId : '',
+      // Below documents are required for type CREDITOR
+      "creditorcacertificate": selectType == 'CREDITOR' ? uploadCAId.documentId : '',
+      "creditoradditionaldocuments": selectType == 'CREDITOR' ? uploadAdditionId : '',
+      "attachment": selectType == 'DEBTOR' ? '' : docData
+    }
+
+    submitCheck(true)
+    dispatch(uploadUploadPednigDocID(payload))
+
+    setSuccessPop(!successPop)
+
+
 
   }
 
@@ -252,7 +277,7 @@ const UploadPendingDocModel = props => {
       tabIndex="-1"
       toggle={toggle}
     >
-      {checked && <UploadDocCheckBoxPopModule isOpen={checked} toggle={handleCheckboxChange} setPopChecked={setPopChecked} popchecked={popchecked} handleSubmit={handleSubmit} />}
+      {checked && <UploadDocCheckBoxPopModule isOpen={checked} toggle={handleCheckboxChange} setPopChecked={setPopChecked} popchecked={popchecked} notSubmitAllDoc={notSubmitAllDoc} />}
       {successPop && <UploadDocSuccessModule isOpen={successPop} submitType={'submitMenu'} toggle={successPopToggle} />}
       <div className="modal-content">
         <ModalHeader toggle={toggle}>Upload Pending Files</ModalHeader>
