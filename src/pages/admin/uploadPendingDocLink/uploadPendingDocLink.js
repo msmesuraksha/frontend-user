@@ -330,7 +330,7 @@ export const UploadPendingLinkModule = props => {
                 </CardBody>
             </Card>
             <Card>
-                <CardBody>
+                {uploadFilesModelDataForUpload.length == 0 ? <CardBody><Col md={12} style={{ textAlign: 'center' }}><h3>Link Expired</h3></Col></CardBody> : <CardBody>
                     <div className="mb-4 h4 card-title"></div>
                     <br />
 
@@ -637,7 +637,8 @@ export const UploadPendingLinkModule = props => {
                         </Col>
                         <Col md={1}></Col>
                     </Row>
-                </CardBody>
+                </CardBody>}
+
 
             </Card >
             <ToastContainer />
