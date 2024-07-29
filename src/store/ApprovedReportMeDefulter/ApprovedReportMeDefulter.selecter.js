@@ -29,7 +29,9 @@ export const selectCompaintsForMe = createSelector(
         const pHArray = item.pHArray
         const creditor = item.defaulterEntry?.creditor
         const address2 = item.defaulterEntry.creditor.address2 != undefined ? item.defaulterEntry.creditor.address2 + ', ' : ''
-        const Address = item.defaulterEntry != null ? item.defaulterEntry.creditor.address1 + ", " + address2 + item.defaulterEntry.creditor.city + ", " + item.defaulterEntry.creditor.state : ""
+        const address1 = item.defaulterEntry.creditor.address1 != undefined ? item.defaulterEntry.creditor.address1 + ', ' : ''
+
+        const Address = item.defaulterEntry != null ? address1 + address2 + item.defaulterEntry.creditor.city + ", " + item.defaulterEntry.creditor.state : ""
 
         const complaintNumber = item.defaulterEntry.complaintNumber != undefined ? item.defaulterEntry.complaintNumber : ''
 
@@ -76,7 +78,8 @@ export const selectCompaintsByMes = createSelector(
         const defaulterEntry = item.defaulterEntry
         const pHArray = item.pHArray
         const address2 = item.defaulterEntry.debtor.address2 == undefined ? '' : item.defaulterEntry.debtor.address2 + ', '
-        const Address = item.defaulterEntry.debtor.address1 + ", " + address2 + item.defaulterEntry.debtor.city + ", " + item.defaulterEntry.debtor.state
+        const address1 = item.defaulterEntry.debtor.address1 == undefined ? '' : item.defaulterEntry.debtor.address1 + ', '
+        const Address = address1 + address2 + item.defaulterEntry.debtor.city + ", " + item.defaulterEntry.debtor.state
 
         const complaintNumber = item.defaulterEntry.complaintNumber != undefined ? item.defaulterEntry.complaintNumber : ''
 
