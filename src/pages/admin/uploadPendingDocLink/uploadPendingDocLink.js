@@ -324,7 +324,7 @@ export const UploadPendingLinkModule = props => {
             {checked && <UploadDocCheckBoxPopModule isOpen={checked} toggle={handleCheckboxChange} setPopChecked={setPopChecked} popchecked={popchecked} notSubmitAllDoc={notSubmitAllDoc} />}
             {successPop && <UploadDocSuccessModule isOpen={successPop} />}
             <Card>
-                <CardBody className="p-2 bg-dark">
+                <CardBody className="p-2 ">
                     <img src={logoLightSvg} alt="" height="90" />
 
                 </CardBody>
