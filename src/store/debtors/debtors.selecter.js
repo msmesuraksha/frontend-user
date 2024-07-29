@@ -19,7 +19,8 @@ export const selectDebtorsListMap = createSelector(
             let customerName = item.firstname + ''
             const address2 = item.address2 == undefined ? '' : item.address2 + ', '
             const address = item.address1 + ", " + address2 + item.city + ", " + item.state
-            return { SrNo, companyName, gstin, customerEmail, customerMobile, customerName, address, address2 }
+            const createdAt = item?.createdAt
+            return { SrNo, companyName, gstin, customerEmail, customerMobile, createdAt, customerName, address, address2 }
         })
         return debtorMap
     }
@@ -54,7 +55,9 @@ export const selectInvoiceListMap = createSelector(
             const id = item.id
             const complaintNumber = item.complaintNumber != undefined ? item.complaintNumber : ''
 
-            return { SrNo, customerName, id, invoices, status, dueFrom, Address, totalAmount, creditor, invoiceList, debtor, complaintNumber }
+            const createdAt = item?.createdAt
+
+            return { SrNo, customerName, id, invoices, status, dueFrom, Address, totalAmount, creditor, invoiceList, createdAt, debtor, complaintNumber }
         })
         return mapinvoicelist
     }

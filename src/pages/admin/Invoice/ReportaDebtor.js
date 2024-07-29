@@ -310,6 +310,19 @@ export const ReportDebtor = props => {
         },
       },
       {
+        Header: "complaint date",
+        accessor: "",
+        disableFilters: true,
+        filterable: false,
+        Cell: cellProps => {
+          return <div>
+            {moment(cellProps.cell?.row?.original?.createdAt).format('DD-MM-YYYY')}
+          </div>
+
+
+        },
+      },
+      {
         Header: "complaint no.",
         accessor: "complaintNumber",
         disableFilters: true,

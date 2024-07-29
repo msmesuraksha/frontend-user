@@ -34,9 +34,10 @@ export const selectCompaintsForMe = createSelector(
         const complaintNumber = item.defaulterEntry.complaintNumber != undefined ? item.defaulterEntry.complaintNumber : ''
 
         // const Address = creditor.address1 != undefined ? creditor.address1 + ", " : '' +creditor.address2 != undefined ?creditor.address2 + ", " : "" + creditor.city != undefined ?creditor.city + ", " : ''  + creditor.state != undefined ? creditor.state : ''
+        const createdAt = item.defaulterEntry.createdAt
 
 
-        return { SrNo, customerName, Address, status, dueFrom, totalAmount, defaulterEntry, complaintNumber, invoiceList, pHArray }
+        return { SrNo, customerName, Address, status, dueFrom, totalAmount, defaulterEntry, createdAt, complaintNumber, invoiceList, pHArray }
       })
       return mapinvoicelist
 
@@ -79,8 +80,10 @@ export const selectCompaintsByMes = createSelector(
 
         const complaintNumber = item.defaulterEntry.complaintNumber != undefined ? item.defaulterEntry.complaintNumber : ''
 
+        const createdAt = item.defaulterEntry.createdAt
 
-        return { SrNo, customerName, Address, status, dueFrom, totalAmount, defaulterEntry, complaintNumber, invoiceList, pHArray }
+
+        return { SrNo, customerName, Address, status, dueFrom, totalAmount, defaulterEntry, createdAt, complaintNumber, invoiceList, pHArray }
       })
       return mapinvoicelist
 

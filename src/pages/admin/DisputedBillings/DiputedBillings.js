@@ -247,6 +247,74 @@ const DiputedBillings = props => {
   };
 
 
+  const DueSinceApprove = (cell) => {
+
+
+    const valueFordate = cell.row.original?.dueFrom
+    /*  const [startDate, setStartDate] = useState(new Date('1965-04-05')); */
+    //const startDate = new Date('2019-10-07'); // October 7, 2019
+    const today = new Date(); // Current date
+    // const currentDate = moment(today).format('YYYY-MM-DD')
+    const daysSince = daysSinceRefe(valueFordate, today);
+
+
+    /*     const formattedDate = new Date(cell.value).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        }); */
+
+    const newDate = valueFordate != undefined ? valueFordate.split("-").reverse().join("-") : "";
+    const currentDate = new Date(newDate);
+    let e = ""
+
+    const calculateDateDifference = () => {
+      const differenceInMilliseconds = today - currentDate;
+      const differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
+      e = differenceInDays
+      return differenceInDays;
+
+    };
+    const divStyle = {
+      padding: '3px' // Adjust the padding value as needed
+    };
+
+    return (
+      <div className="" style={{ padding: "2px 2px", fontSize: "12px", width: "90px", margin: "0px" }}>
+        <div className=" text-center  p-1 rounded " style={{
+          background: calculateDateDifference() < 30 ? "#FDFDFD" : calculateDateDifference() >= 30 && calculateDateDifference() < 90 ? "#ffff80" : calculateDateDifference() > 90 && calculateDateDifference() < 180 ? " #ff944d" : " #ff4d4d",
+          color: calculateDateDifference() < 30 ? "#000" : calculateDateDifference() >= 30 && calculateDateDifference() < 90 ? "#000" : calculateDateDifference() > 90 && calculateDateDifference() < 180 ? " #FAFAFA" : " #FAFAFA"
+        }}>
+          <div className="text-capitalize">
+            {calculateDateDifference()}  &nbsp;
+            <span className="ml-1">Days</span> </div>
+          <div className="text-capitalize" >{cell.cell.row.original.dueFrom}</div>
+        </div>
+      </div>
+    );
+  };
+
+  const daysSinceRefe = (cellValue, referenceDate) => {
+
+    if (cellValue != undefined) {
+      // Split the date string into day, month, and year components
+      const [dayStr, monthStr, yearStr] = cellValue.split('-');
+
+      // Convert the string components into integers
+      const day = parseInt(dayStr, 10);
+      const month = parseInt(monthStr, 10) - 1; // Months are zero-based (0 = January, 1 = February, ...)
+      const year = parseInt(yearStr, 10);
+
+      // Create a new Date object using the parsed components
+      const currentDate = new Date(year, month, day);
+      const timeDifference = referenceDate - currentDate;
+      const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      return daysDifference;
+    }
+    return '';
+  };
+
+
   const columns = useMemo(
     () => [
       {
@@ -256,6 +324,20 @@ const DiputedBillings = props => {
         disableFilters: true,
         Cell: cellProps => {
           return <SrNo {...cellProps} />;
+        },
+      },
+      {
+        Header: "complaint DATE",
+        accessor: "",
+        disableFilters: true,
+        filterable: false,
+        Cell: cellProps => {
+          return <div>
+            {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+            {moment(cellProps.cell?.row?.original?.createdAt).format('DD-MM-YYYY')}
+          </div>
+
+
         },
       },
       {
@@ -325,10 +407,10 @@ const DiputedBillings = props => {
         Header: "DUE FROM *",
         accessor: "dueFrom",
         disableFilters: true,
-        headerStyle: { textAlign: "right" },
         filterable: false,
+
         Cell: cellProps => {
-          return <DueSincedate {...cellProps} />;
+          return <div style={{ width: "20px" }}> <DueSinceApprove {...cellProps} /></div>
         },
       },
 
@@ -347,14 +429,14 @@ const DiputedBillings = props => {
                   }>
                   <i className='bx bx-wallet-alt textsizing' ></i>
                 </button>
-                &nbsp;
+                {/*           &nbsp; */}
                 {/*                 <button type="button" className="btn btn-info" data-toggle="tooltip" data-placement="top"
                   title="Request Edit" href={cellProps.cell.row.original.url} rel='noreferrer'
                   target='_blank' onClick={() => requestEdit(cellProps.cell.row.original)
                   }>
                   <i className='bx bx-edit textsizing' ></i>
                 </button> */}
-                &nbsp;
+                {/*                 &nbsp;
                 <button type="button" className="btn btn-info" data-toggle="tooltip" data-placement="top"
                   title="Upload CA Certificate" href={cellProps.cell.row.original.url} rel='noreferrer'
                   target='_blank' onClick={() => {
@@ -364,7 +446,7 @@ const DiputedBillings = props => {
                   }>
                   <img src={CaImg} className="" style={{ height: "22.5px" }} />
                 </button>
-                &nbsp;
+                &nbsp; */}
 
 
               </div>

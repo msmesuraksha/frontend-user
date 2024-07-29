@@ -229,6 +229,20 @@ const ApprovedTransaction = props => {
         },
       },
       {
+        Header: "complaint DATE",
+        accessor: "",
+        disableFilters: true,
+        filterable: false,
+        Cell: cellProps => {
+          return <div>
+            {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+            {moment(cellProps.cell?.row?.original?.createdAt).format('DD-MM-YYYY')}
+          </div>
+
+
+        },
+      },
+      {
         Header: "complaint no.",
         accessor: "complaintNumber",
         disableFilters: true,

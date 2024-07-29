@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import withRouter from "components/Common/withRouter"
 import Select, { components } from "react-select"
+import moment from "moment"
 import "../../Dashboard/users/send-bill-transaction/sendbillTransaction"
 import ReportedDebtorsModel from "../Invoice/ReportedModel"
 import ReportedDefaulterModel from "../Invoice/ReportDefaulterModel"
@@ -101,6 +102,30 @@ const UploadPendingListModule = props => {
                 disableFilters: true,
                 Cell: cellProps => {
                     return <SrNo {...cellProps} />;
+                },
+            },
+            {
+                Header: "complaint DATE",
+                accessor: "",
+                disableFilters: true,
+                filterable: false,
+                Cell: cellProps => {
+                    return <div>
+                        {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+                        {moment(cellProps.cell?.row?.original?.defaulterEntry.createdAt).format('DD-MM-YYYY')}
+                    </div>
+                },
+            },
+            {
+                Header: "complaint no.",
+                accessor: "",
+                disableFilters: true,
+                filterable: false,
+                Cell: cellProps => {
+                    return <div>
+                        {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+                        {cellProps.cell?.row?.original?.defaulterEntry.complaintNumber}
+                    </div>
                 },
             },
             {
@@ -208,6 +233,30 @@ const UploadPendingListModule = props => {
                 disableFilters: true,
                 Cell: cellProps => {
                     return <SrNo {...cellProps} />;
+                },
+            },
+            {
+                Header: "complaint DATE",
+                accessor: "",
+                disableFilters: true,
+                filterable: false,
+                Cell: cellProps => {
+                    return <div>
+                        {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+                        {moment(cellProps.cell?.row?.original?.defaulterEntry.createdAt).format('DD-MM-YYYY')}
+                    </div>
+                },
+            },
+            {
+                Header: "complaint no.",
+                accessor: "",
+                disableFilters: true,
+                filterable: false,
+                Cell: cellProps => {
+                    return <div>
+                        {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+                        {cellProps.cell?.row?.original?.defaulterEntry.complaintNumber}
+                    </div>
                 },
             },
             {
