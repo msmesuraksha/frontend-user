@@ -367,13 +367,13 @@ const Dashboard = props => {
 
             {isClickedToReported != true ?
 
-              <Row style={{}} className="p-0">
+              <Row style={{ display: 'contents' }} className="p-0">
                 {isLodingCompany ? <Spinner /> : <ReportMedefulterComponent isClickedToReported={isClickedToReported} />}
 
 
               </Row>
               : <>
-                {GetAllInvoice != undefined ? <Row className="p-1 ml-5">
+                {GetAllInvoice != undefined ? <Row className="p-1 ml-5" style={{ display: 'contents' }}>
                   <ReportDebtor isClickedToReported={isClickedToReported} />
 
 

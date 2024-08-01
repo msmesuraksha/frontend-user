@@ -371,7 +371,7 @@ const ReportMedefulterComponent = props => {
         accessor: "view",
         Cell: cellProps => {
           return (
-            <div className="d-flex" style={{ width: "290px" }}>
+            <div className="d-flex" style={{ width: "230px" }}>
               <Row className="text-center" style={{ gap: '1rem' }}>
                 <Col className="p-1" md={2}>
                   <button type="button" className="btn btn-info" data-toggle="tooltip" data-placement="top"
