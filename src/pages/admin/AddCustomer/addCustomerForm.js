@@ -293,17 +293,17 @@ export const AddcustomerFomr = ({ isAddCustomercheck }) => {
     setMobileNumberValid(true)
     setemailidValid(true)
 
-    formikModal.values.firstname = userData?.firstname
-    formikModal.values.lastname = userData?.lastname
-    formikModal.values.address1 = userData?.address1
-    formikModal.values.address2 = userData?.address2
-    formikModal.values.gstNumber = userData?.gstin
-    formikModal.values.panCard = userData?.companyPan
-    formikModal.values.companyName = userData?.companyName
-    formikModal.values.customerEmail = userData?.customerEmail
-    formikModal.values.customerPhone = userData?.customerMobile
-    formikModal.values.secondCustomerNo = userData?.secCustomerMobile
-    formikModal.values.zipcode = userData?.zipcode
+    formikModal.values.firstname = userData?.firstname != undefined ? userData?.firstname : formikModal.values.firstname
+    formikModal.values.lastname = userData?.lastname != undefined ? userData?.lastname : formikModal.values.lastname
+    formikModal.values.address1 = userData?.address1 != undefined ? userData?.address1 : formikModal.values.address1
+    formikModal.values.address2 = userData?.address2 != undefined ? userData?.address2 : formikModal.values.address2
+    formikModal.values.gstNumber = userData?.gstin != undefined ? userData?.gstin : formikModal.values.gstNumber
+    formikModal.values.panCard = userData?.companyPan != undefined ? userData?.companyPan : formikModal.values.panCard
+    formikModal.values.companyName = userData?.companyName != undefined ? userData?.companyName : formikModal.values.companyName
+    formikModal.values.customerEmail = userData?.customerEmail != undefined ? userData?.customerEmail : formikModal.values.customerEmail
+    formikModal.values.customerPhone = userData?.customerMobile != undefined ? userData?.customerMobile : formikModal.values.customerPhone
+    formikModal.values.secondCustomerNo = userData?.secCustomerMobile != undefined ? userData?.secCustomerMobile : formikModal.values.secondCustomerNo
+    formikModal.values.zipcode = userData?.zipcode != undefined ? userData?.zipcode : formikModal.values.zipcode
   }, [userData])
 
   useEffect(() => {
