@@ -116,6 +116,7 @@ const CompnayViewDetails = props => {
         BuyerMayBeaDefaulter: <td style={{ color: 'red' }}><b>Buyer May Be a Defaulter</b></td>,
         fraudulentComplaintSeller: <td style={{ color: 'red' }}><b>Fraudulent complaint lodged by seller</b></td>,
         documentUnderVerification: <td style={{ color: 'blue' }}><b>Documents Under Verification</b></td>,
+        AWAITING_REVIEW: <td style={{ color: 'blue' }}><b>Documents Under Verification</b></td>,
         Complaintsfiledwithoutevidence: <td style={{ color: '#ffc61a' }}><b>Complaints Filed Without Sufficient Evidence</b></td>,
         PENDING_INVESTIGATION: <td style={{ color: 'blue' }}><b>Pending Investigation</b></td>,
         AWAITING_ADDITIONAL_DOCUMENTS: <td style={{ color: 'blue' }}><b>Awaiting Additional Documentation</b></td>,
@@ -297,6 +298,9 @@ const CompnayViewDetails = props => {
                     </Row>
                     <Card className="mb-3 mt-4">
                         {currenViewList != undefined ? currenViewList.map((item, i) => {
+
+                            if (item.latestStatus == undefined) return
+                            if (item.latestStatus == "COMPLAINT_DELETED") return
 
 
                             let ratingValue = ''
