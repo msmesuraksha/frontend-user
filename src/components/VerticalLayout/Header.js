@@ -87,167 +87,35 @@ const Header = props => {
     <React.Fragment>
       <header id="page-topbar">
         <div className="navbar-header">
-          <div className="d-flex">
-
-
-
-
+          <div className="d-flex align-items-center">
             <button
               type="button"
-              onClick={() => {
-                tToggle();
-              }}
-              className="btn btn-sm px-3 font-size-16 header-item  toggleeButton"
+              onClick={tToggle}
+              className="btn btn-sm px-3 font-size-16 header-item toggleeButton"
               id="vertical-menu-btn"
             >
               <i className="fa fa-fw fa-bars" />
             </button>
 
-            <Link to="/companies" className="logo logo-light p-3" onClick={() => dispatch(setSelectCopenOpen(false))}>
-
-              <span className="logo-lg p-1">
-                <img src={logoLightSvg} alt="" height="60" />
-              </span>
-
-            </Link>
-            <div style={{ marginTop: '40px' }}>  <h4 className='text-capitalize  '> &nbsp;   &nbsp; &nbsp;  &nbsp;  &nbsp;   &nbsp; &nbsp;<b>{sessionStorage.getItem("COMPANY") != undefined ? sessionStorage.getItem("COMPANY") : ''}</b></h4>
-            </div>
-
-
-          </div>
-          <div className="d-flex">
-            {/* <div className="dropdown d-inline-block d-lg-none ms-2">
-              <button
-                onClick={() => {
-                  setsearch(!search);
-                }}
-                type="button"
-                className="btn header-item noti-icon "
-                id="page-header-search-dropdown"
-              >
-                <i className="mdi mdi-magnify" />
-              </button>
-              <div
-                className={
-                  search
-                    ? "dropdown-menu dropdown-menu-lg dropdown-menu-end p-0 show"
-                    : "dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                }
-                aria-labelledby="page-header-search-dropdown"
-              >
-                <form className="p-3">
-                  <div className="form-group m-0">
-                    <div className="input-group">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search ..."
-                        aria-label="Recipient's username"
-                      />
-                      <div className="input-group-append">
-                        <button className="btn btn-primary" type="submit">
-                          <i className="mdi mdi-magnify" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div> */}
-
-            {/* <LanguageDropdown /> */}
-
-            {/* <Dropdown
-              className="d-none d-lg-inline-block ms-1"
-              isOpen={socialDrp}
-              toggle={() => {
-                setsocialDrp(!socialDrp);
-              }}
+            <Link
+              to="/companies"
+              className="logo logo-light d-flex align-items-center p-2"
+              onClick={() => dispatch(setSelectCopenOpen(false))}
             >
-              <DropdownToggle
-                className="btn header-item noti-icon "
-                tag="button"
-              >
-                <i className="bx bx-customize" />
-              </DropdownToggle>
-              <DropdownMenu className="dropdown-menu-lg dropdown-menu-end">
-                <div className="px-lg-2">
-                  <Row className="no-gutters">
-                    <Col>
-                      <Link className="dropdown-icon-item" to="#">
-                        <img src={github} alt="Github" />
-                        <span>GitHub</span>
-                      </Link>
-                    </Col>
-                    <Col>
-                      <Link className="dropdown-icon-item" to="#">
-                        <img src={bitbucket} alt="bitbucket" />
-                        <span>Bitbucket</span>
-                      </Link>
-                    </Col>
-                    <Col>
-                      <Link className="dropdown-icon-item" to="#">
-                        <img src={dribbble} alt="dribbble" />
-                        <span>Dribbble</span>
-                      </Link>
-                    </Col>
-                  </Row>
+              <img src={logoLightSvg} alt="Company Logo" height="60" className="p-1" />
+            </Link>
 
-                  <Row className="no-gutters">
-                    <Col>
-                      <Link className="dropdown-icon-item" to="#">
-                        <img src={dropbox} alt="dropbox" />
-                        <span>Dropbox</span>
-                      </Link>
-                    </Col>
-                    <Col>
-                      <Link className="dropdown-icon-item" to="#">
-                        <img src={mail_chimp} alt="mail_chimp" />
-                        <span>Mail Chimp</span>
-                      </Link>
-                    </Col>
-                    <Col>
-                      <Link className="dropdown-icon-item" to="#">
-                        <img src={slack} alt="slack" />
-                        <span>Slack</span>
-                      </Link>
-                    </Col>
-                  </Row>
-                </div>
-              </DropdownMenu>
-            </Dropdown> */}
+            <h4 className="text-capitalize ml-3">
+              <b>{sessionStorage.getItem("COMPANY") || ''}</b>
+            </h4>
+          </div>
 
-            {/* <div className="dropdown d-none d-lg-inline-block ms-1">
-              <button
-                type="button"
-                onClick={() => {
-                  toggleFullscreen();
-                }}
-                className="btn header-item noti-icon "
-                data-toggle="fullscreen"
-              >
-                <i className="bx bx-fullscreen" />
-              </button>
-            </div> */}
-
+          <div className="d-flex align-items-center">
             <NotificationDropdown />
             <ProfileMenu />
-
-            {/* <div
-               onClick={() => {
-                props.showRightSidebarAction(!props.showRightSidebar);
-              }}
-              className="dropdown d-inline-block"
-            >
-              <button
-                type="button"
-                className="btn header-item noti-icon right-bar-toggle "
-              >
-                <i className="bx bx-cog bx-spin" />
-              </button>
-            </div> */}
           </div>
         </div>
+
       </header>
     </React.Fragment>
   );
@@ -278,3 +146,7 @@ export default connect(mapStatetoProps, {
   toggleLeftmenu,
   changeSidebarType,
 })(withTranslation()(Header));
+
+
+
+

@@ -307,3 +307,18 @@ body[data-layout="horizontal"] {
 .css-sourceMap-modules-importLoaders-1-localIdentName-animate__fadeOutRight___hdB_e {
   animation-name: css-sourceMap-modules-importLoaders-1-localIdentName-animate__fadeOutLeft___2jmiI;
 }
+
+
+.navbar-header {
+  padding: 0; /* Adjust if needed */
+}
+
+.navbar-header .logo-light img {
+  max-height: 60px; /* Ensures the logo stays within bounds */
+  margin-right: 10px; /* Adjust spacing as needed */
+}
+
+.navbar-header h4 {
+  margin-top: 0; /* Removes manual margin-top, use flexbox alignment instead */
+  margin-left: 10px; /* Adds spacing between logo and text */
+}

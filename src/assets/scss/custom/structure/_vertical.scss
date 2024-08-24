@@ -1069,3 +1069,66 @@ body[data-sidebar-image="img4"] {
 .gradient-strong-great-whale {
   background-image: linear-gradient(to right, darken($primary, 10%), #50a5f1);
 }
+
+
+.vertical-menu {
+  width: 60px; /* Width when collapsed */
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.vertical-menu:hover {
+  width: 250px; /* Width when expanded */
+}
+
+.main-content {
+  margin-left: 60px; /* Initial margin, same as the collapsed sidebar width */
+  transition: margin-left 0.3s ease;
+}
+
+.vertical-menu:hover ~ .main-content {
+  margin-left: 250px; /* Expanded margin */
+}
+
+.sidebar-background {
+  /* You can customize the background here */
+}
+
+.logo {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  max-width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-content {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vertical-menu:hover .sidebar-content {
+  opacity: 1;
+}
+
+.vertical-menu:hover .logo img {
+  opacity: 0;
+}
+
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.fade-in-text {
+  animation: fadeIn 2s ease-in-out forwards;
+}

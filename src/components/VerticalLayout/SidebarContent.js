@@ -214,7 +214,7 @@ const SidebarContent = props => {
                   <Link to="/companies" onClick={() => { dispatch(setSelectCopenOpen(false)) }} >
 
                     <i className="bx bxs-home "></i>
-                    {props.t("Change Company")}
+                    {props.isHovered && props.t("Change Company")}
 
                   </Link>
                 </li>
@@ -222,13 +222,13 @@ const SidebarContent = props => {
                 <li >
                   <Link to="/company-dashboard" style={{ color: currenstState == "/company-dashboard" ? "#FAFAFA" : "" }}>
                     <i className="bx bxs-dashboard"></i>
-                    {props.t("Dashboard")}
+                    {props.isHovered && props.t("Dashboard")}
                   </Link>
                 </li>
                 <li >
                   <Link to="/Customer-list" style={{ color: currenstState == "/Customer-list" ? "#FAFAFA" : "" }}>
                     <i className="bx bxs-user"></i>
-                    {props.t("Members / Company")}
+                    {props.isHovered && props.t("Members / Company")}
                   </Link>
                 </li>
                 {/*                 <li>
@@ -247,19 +247,19 @@ const SidebarContent = props => {
                 <li>
                   <Link to="/company-search" style={{ color: currenstState == "/company-search" ? "#FAFAFA" : "" }}>
                     <i className="bx bx-search"></i>
-                    {props.t("Company Search")}
+                    {props.isHovered && props.t("Company Search")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/upload-pending-documents" style={{ color: currenstState == "/upload-pending-documents" ? "#FAFAFA" : "" }}>
                     <i className="bx bx-cloud-upload"></i>
-                    {props.t("Upload Pending File")}
+                    {props.isHovered && props.t("Upload Pending File")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/ApprovedReportedTranction" style={{ color: currenstState == "/ApprovedReportedTranction" ? "#FAFAFA" : "" }}>
                     <i className="bx bxs-badge-check"></i>
-                    {props.t("Approved Complaints")}
+                    {props.isHovered && props.t("Approved Complaints")}
                   </Link>
                 </li>
 
@@ -270,25 +270,25 @@ const SidebarContent = props => {
                     <li>
                       <Link to="/bad-debts">
                         <i className="bx bx-rupee" style={{ paddingLeft: '15px' }}></i>
-                        {props.t("Bad debts")}
+                        {props.isHovered && props.t("Bad debts")}
                       </Link>
                     </li>
                     <li>
                       <Link to="/debtors">
                         <i className="bx bx-user" style={{ paddingLeft: '15px' }}></i>
-                        {props.t("Debtors(buyers)")}
+                        {props.isHovered && props.t("Debtors(buyers)")}
                       </Link>
                     </li>
                     <li>
                       <Link to="/creditors">
                         <i className="bx bx-user" style={{ paddingLeft: '15px' }}></i>
-                        {props.t("Creditors(Seller)")}
+                        {props.isHovered && props.t("Creditors(Seller)")}
                       </Link>
                     </li>
                     <li>
                       <Link to="/Invoice">
                         <i className="bx bx-search" style={{ paddingLeft: '15px' }}></i>
-                        {props.t("Invoices")}
+                        {props.isHovered && props.t("Invoices")}
                       </Link>
                     </li>
 
@@ -319,12 +319,12 @@ const SidebarContent = props => {
                     <Link to="/employee">
                       <i className="bx bxs-notification" style={{ marginLeft: '15px' }}></i>
 
-                      {props.t("Employee Registration")}
+                      {props.isHovered && props.t("Employee Registration")}
                     </Link>
 
                     <Link to="/EmployeeList">
                       <i className="bx bx-list-ul" style={{ marginLeft: '15px' }}></i>
-                      {props.t("Employee List")}
+                      {props.isHovered && props.t("Employee List")}
                     </Link>
                   </li>
                 ) : (
@@ -335,13 +335,13 @@ const SidebarContent = props => {
                 <li>
                   <Link to="/Recieved-Payment" style={{ color: currenstState == "/Recieved-Payment" ? "#FAFAFA" : "" }}>
                     <i className="bx bx-wallet"></i>
-                    {props.t("Record Payment")}
+                    {props.isHovered && props.t("Record Payment")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/order-management" style={{ color: currenstState == "/order-management" ? "#FAFAFA" : "" }}>
                     <i className="bx bx-basket"></i>
-                    {props.t("Order Management")}
+                    {props.isHovered && props.t("Order Management")}
                   </Link>
                 </li>
               </>
@@ -350,21 +350,21 @@ const SidebarContent = props => {
                 <li>
                   <Link to="/companies" style={{ color: currenstState == "/companies" ? "#FAFAFA" : "" }}>
                     <i className="bx bx-group"></i>
-                    {props.t("Companies")}
+                    {props.isHovered && props.t("Companies")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/documents" style={{ color: currenstState == "/documents" ? "#FAFAFA" : "" }}>
                     <i className="bx bxs-file-plus"></i>
 
-                    {props.t("Documents")}
+                    {props.isHovered && props.t("Documents")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/profile" style={{ color: currenstState == "/profile" ? "#FAFAFA" : "" }}>
                     <i className="bx bx-user-circle"></i>
 
-                    {props.t("Profile")}
+                    {props.isHovered && props.t("Profile")}
                   </Link>
                 </li>
 
