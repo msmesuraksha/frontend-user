@@ -247,7 +247,7 @@ const SidebarContent = props => {
                 <li>
                   <Link to="/company-search" style={{ color: currenstState == "/company-search" ? "#FAFAFA" : "" }}>
                     <i className="bx bx-search"></i>
-                    {props.isHovered && props.t("Company Search")}
+                    {props.isHovered && props.t("Defaulter Search")}
                   </Link>
                 </li>
                 <li>

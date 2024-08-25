@@ -141,7 +141,7 @@ const CompnayViewDetails = props => {
         >
             <div className="modal-content">
                 <ModalHeader toggle={toggle}>
-                    <div className="modal-header-title me-auto "><b>Transaction Details</b></div>
+                    <div className="modal-header-title me-auto "><b>Complaints Details</b></div>
                 </ModalHeader>
                 <ModalBody>
                     <Row >
@@ -165,13 +165,13 @@ const CompnayViewDetails = props => {
 
                             <Card className="mb-3">
                                 <CardBody className="buyer-card-body">
-                                    <h4>Buyer Information</h4>
+                                    <h4>Complaints Against :-</h4>
                                     {/*                                 <p className="mb-2">
                                         Billing Name: <span className="text-primary">{selected != "" ? selected.CompanyName : ''}</span>
                                     </p> */}
                                     {console.log('selected', selected)}
                                     <p className="mb-2">
-                                        <b>Customer Name :</b>   <span className="text-primary">{selected != "" ? selected.FullName : ''}</span>
+                                        <b>Buyer Name :</b>   <span className="text-primary">{selected != "" ? selected.FullName : ''}</span>
                                     </p>
                                     <p className="mb-2">
                                         <b>Company Name :</b>   <span className="text-primary">{selected != "" ? selected.CompanyName : ''}</span>
@@ -343,13 +343,13 @@ const CompnayViewDetails = props => {
                             }
 
                             return <CardBody className="invoice-items-card-body" key={i}>
-                                <h4>Seller Information</h4>
+                                {/* <h4>Seller Information</h4> */}
                                 <div className="table-responsive">
                                     <Table className="table align-middle table-nowrap">
                                         <thead>
                                             <tr>
-                                                <th scope="col">Customer Name</th>
-                                                <th scope="col">Company Name</th>
+                                                <th scope="col">Buyer</th>
+                                                <th scope="col">Seller</th>
                                                 <th scope="col">Due Amount</th>
                                                 <th scope="col">Due fROM</th>
                                                 <th scope="col">Member Rating</th>
@@ -358,7 +358,7 @@ const CompnayViewDetails = props => {
                                         </thead>
                                         <tbody>
                                             <tr >
-                                                <td>{item.companyOwner.name}</td>
+                                                <td>{selected?.CompanyName}</td>
                                                 <td>{item.companyName}</td>
                                                 <td>{item.totalAmount != undefined ? totalAmount : ""}</td>
                                                 <td>{item.dueFrom != undefined ? item.dueFrom : ""}</td>

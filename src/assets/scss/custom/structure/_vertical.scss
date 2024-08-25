@@ -1086,8 +1086,17 @@ body[data-sidebar-image="img4"] {
   transition: margin-left 0.3s ease;
 }
 
+.footer {
+  left: 60px; /* Initial margin, same as the collapsed sidebar width */
+  transition: left 0.3s ease;
+}
+
 .vertical-menu:hover ~ .main-content {
   margin-left: 250px; /* Expanded margin */
+}
+
+.vertical-menu:hover ~ .footer {
+  left: 250px; /* Expanded margin */
 }
 
 .sidebar-background {

@@ -231,7 +231,7 @@ const CompanySearch = props => {
           <CardBody className=" mt-5">
             <Row>
               <Col md={10} className="pl-3" style={{ textTransform: "capitalize" }}>
-                <h5 className="m-1"><b>Company search</b></h5>
+                <h5 className="m-1"><b>Defaulter search</b></h5>
               </Col>
             </Row>
             <TableContainer
