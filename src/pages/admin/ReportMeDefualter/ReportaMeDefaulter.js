@@ -409,7 +409,9 @@ const ReportMedefulterComponent = props => {
                     title="View Details" rel='noreferrer'
                     target='_blank'
                     onClick={() => handleViewDetail(cellProps.cell.row.original)}>
-                    <i className='fa fa-eye textsizing' style={{ fontSize: "19px" }}></i>
+
+
+                    <i className='fa fa-eye textsizing'></i>
                   </Button>
                 </Col>
               </Row>
@@ -440,7 +442,7 @@ const ReportMedefulterComponent = props => {
       {markAsDisputed && <MarkDisputedMadal isOpen={markAsDisputed} toggle={toggleMarkAsDisputed} selected={selectDisput} setIsOpenmark={setIsOpenmark} submitCheckRqust1={submitCheckRqust1} />}
       {isOpenmark && <MarkDisputedPopModule isOpen={isOpenmark} toggle={markOpenModule} currentindex={currentindex} markedDisputed={markedDisputed} setIsOpenmark={setIsOpenmark} />}
 
-      <Card style={{ padding: props.isClickedToReported == undefined && props.isClickedToReported != false ? "" : "0px" }}>
+      <Card style={{ padding: props.isClickedToReported == undefined && props.isClickedToReported != false ? "" : "" }}>
         <CardBody style={{ padding: props.isClickedToReported == undefined && props.isClickedToReported != false ? "25px" : "0px" }}>
           <div className="mb-4 h4 card-title"></div>
           {props.isClickedToReported == undefined && props.isClickedToReported != false ?

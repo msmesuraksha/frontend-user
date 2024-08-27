@@ -444,12 +444,8 @@ export const ReportDebtor = props => {
                     target='_blank' onClick={() => requestEdit(cellProps.cell.row.original)
                     }
                     disabled={cellProps.cell.row.original?.status == "DRAFT" ? false : true}
-
-
                   >
                     <i className='bx bx-edit textsizing' ></i>
-                    {/* <img src={ReqEdit} className="iconsImage"/> */}
-
                   </button>
                 </Col>
                 <Col className="p-1" md={2}>
@@ -468,37 +464,23 @@ export const ReportDebtor = props => {
                       setinvoiceIdsForCAcertificate(cellProps.cell.row.original?.invoices[0].invoiceNumber)
                       setCustomerType("DEBTOR")
                     }
-
                     }>
-                    {/* <i className='bx bx-file textsizing' ></i> */}
                     <img src={CaImg} className="" style={{ height: "22.5px", width: '18px' }} />
                   </button>
                 </Col>
-
                 <Col className="p-1" md={2}>
                   <Button type="button" className="btn btn-info" data-toggle="tooltip" data-placement="top"
                     title="View Details" href={cellProps.cell.row.original?.url} rel='noreferrer'
                     target='_blank'
-
                     onClick={() => handleViewDetail(cellProps.cell.row.original)}>
-                    <i className='fa fa-eye textsizing' style={{ fontSize: "19px" }}></i>
-
-                    {/* <img src={profileimg} className="iconsImage"/> */}
-
-
+                    <i className='fa fa-eye textsizing'></i>
                   </Button>
-
                 </Col>
                 <Col className="p-1" md={2}>
-                  <Button type="button" style={{ color: '#FAFAFA', fontSize: "14.5px" }} className="btn btn-info" data-toggle="tooltip" data-placement="top"
+                  <Button type="button" style={{ color: '#FAFAFA', }} className="btn btn-info" data-toggle="tooltip" data-placement="top"
                     title="Delete Invoice"
-
                     onClick={() => openDeletePop(cellProps.cell.row.original)}>
-                    <i className="fa fa-trash " aria-hidden="true" style={{ fontSize: "18px" }}></i>
-
-                    {/* <img src={profileimg} className="iconsImage"/> */}
-
-
+                    <i className="fa fa-trash textsizing" ></i>
                   </Button>
 
                 </Col>
@@ -549,7 +531,7 @@ export const ReportDebtor = props => {
       {isViewDetailModal && <ViewDetailsReportDefaultModal isOpen={isViewDetailModal} toggle={toggleDetailView} viewModalData={viewModalData} name={'Buyer'} />}
       {isRequestEditModalOpen && <EditReportedDefaulterModel isOpen={isRequestEditModalOpen} toggle={toggleReqEdit} requestedData={requestedData} GetAllInvoice={GetAllInvoice} requestEditIsOpen={toggleReqEdit} />}
 
-      <Card style={{ padding: props.isClickedToReported != undefined && props.isClickedToReported ? "0px" : '' }}>
+      <Card style={{ padding: props.isClickedToReported != undefined && props.isClickedToReported ? "" : '' }}>
         <CardBody style={{ padding: props.isClickedToReported != undefined && props.isClickedToReported ? "0px" : '20px' }}>
           {props.isClickedToReported == undefined && !props.isClickedToReported ? <>   <div className="mb-4 h4 card-title"></div>
             <br />

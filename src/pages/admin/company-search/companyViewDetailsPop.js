@@ -99,6 +99,7 @@ const CompnayViewDetails = props => {
             The complaint is currently under investigation. Relevant parties are reviewing the evidence and assessing the situation.</span>,
         AWAITING_ADDITIONAL_DOCUMENTS: <span style={{ fontSize: '13px' }}> <b className="" style={{ color: 'blue' }}>Awaiting Additional Documentation : </b>The complaint requires further documentation or evidence from either party. Once submitted, the process will continue.</span>,
         DOCUMENTS_NEEDED: <span style={{ fontSize: '13px' }}> <b className="" style={{ color: 'blue' }}>Awaiting Additional Documentation : </b>The complaint requires further documentation or evidence from either party. Once submitted, the process will continue.</span>,
+        DOCUMENTS_NOT_UPLOADED: <span style={{ fontSize: '13px' }}> <b className="" style={{ color: 'blue' }}>Awaiting Additional Documentation : </b>The complaint requires further documentation or evidence from either party. Once submitted, the process will continue.</span>,
         ESCLATED_COMPLAIN: <span style={{ fontSize: '13px' }}> <b className="" style={{ color: 'blue' }}>Complaint Escalated : </b>
             The complaint has escalated to a higher level due to complexity, urgency, or unresolved issues.</span>,
         FULLY_RESOLVED_PAYMENT_RECIEVED: <span style={{ fontSize: '13px' }}> <b className="" style={{ color: 'blue' }}>Complaint Resolved : </b>
@@ -120,6 +121,7 @@ const CompnayViewDetails = props => {
         Complaintsfiledwithoutevidence: <td style={{ color: '#ffc61a' }}><b>Complaints Filed Without Sufficient Evidence</b></td>,
         PENDING_INVESTIGATION: <td style={{ color: 'blue' }}><b>Pending Investigation</b></td>,
         AWAITING_ADDITIONAL_DOCUMENTS: <td style={{ color: 'blue' }}><b>Awaiting Additional Documentation</b></td>,
+        DOCUMENTS_NOT_UPLOADED: <td style={{ color: 'blue' }}><b>Awaiting Additional Documentation</b></td>,
         DOCUMENTS_NEEDED: <td style={{ color: 'blue' }}><b>Awaiting Additional Documentation</b></td>,
         ESCLATED_COMPLAIN: <td style={{ color: 'blue' }}><b>Complaint Escalated</b></td>,
         FULLY_RESOLVED_PAYMENT_RECIEVED: <td style={{ color: 'green' }}><b>Complaint Resolved </b></td>,
