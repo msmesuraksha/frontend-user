@@ -109,6 +109,7 @@ const UploadPendingDocModel = props => {
 
     const payload = {
       "paymentId": uploadFilesModelDataForUpload._id,
+      "defaulterEntryId": uploadFilesModelDataForUpload._id,
       "type": selectType, // DEBTOR/CREDITOR
       // Below documents are required for type DEBTOR
       "debtorcacertificate": selectType == 'DEBTOR' ? uploadCAId.documentId : '',
@@ -173,6 +174,7 @@ const UploadPendingDocModel = props => {
 
     const payload = {
       "paymentId": uploadFilesModelDataForUpload._id,
+      "defaulterEntryId": uploadFilesModelDataForUpload._id,
       "type": selectType, // DEBTOR/CREDITOR
       // Below documents are required for type DEBTOR
       "debtorcacertificate": selectType == 'DEBTOR' ? uploadCAId.documentId : '',
@@ -193,7 +195,7 @@ const UploadPendingDocModel = props => {
   }
 
   const createinvoiceObj = () => {
-    const newDataArray = uploadFilesModelDataForUpload.defaulterEntry.invoices.map((item, currentIndex) => {
+    const newDataArray = uploadFilesModelDataForUpload.invoices.map((item, currentIndex) => {
       const docObj = {};
       uploadFilesModelDataForUpload.documentsRequiredFromCreditor.forEach((value) => {
         if (value !== "cacertificate" && value !== "additionaldocuments" && value !== "PaymentSeller") {
@@ -208,7 +210,7 @@ const UploadPendingDocModel = props => {
   };
 
   useEffect(() => {
-    if (uploadFilesModelDataForUpload != '' && uploadFilesModelDataForUpload.defaulterEntry.invoices != undefined) {
+    if (uploadFilesModelDataForUpload != '' && uploadFilesModelDataForUpload.invoices != undefined) {
       createinvoiceObj()
     }
 
@@ -296,7 +298,7 @@ const UploadPendingDocModel = props => {
               </Col>
             </Row>}
 
-          {uploadFilesModelDataForUpload != '' && uploadFilesModelDataForUpload.defaulterEntry.invoices != undefined ? uploadFilesModelDataForUpload.defaulterEntry.invoices.map((item, currenIndex) => {
+          {uploadFilesModelDataForUpload != '' && uploadFilesModelDataForUpload.invoices != undefined ? uploadFilesModelDataForUpload.invoices.map((item, currenIndex) => {
 
             return <Row className="bg-light p-3 mt-2" key={item}>
               <Row>

@@ -74,7 +74,7 @@ export const UploadPendingLinkModule = props => {
 
 
     const createinvoiceObj = () => {
-        const newDataArray = uploadFilesModelDataForUpload.defaulterEntry.invoices?.map((item, currentIndex) => {
+        const newDataArray = uploadFilesModelDataForUpload.invoices?.map((item, currentIndex) => {
             const docObj = {};
             uploadFilesModelDataForUpload.documentsRequiredFromCreditor.forEach((value) => {
                 if (value !== "cacertificate" && value !== "additionaldocuments" && value !== "PaymentSeller") {
@@ -92,7 +92,7 @@ export const UploadPendingLinkModule = props => {
 
 
     useEffect(() => {
-        if (uploadFilesModelDataForUpload && uploadFilesModelDataForUpload.defaulterEntry && uploadFilesModelDataForUpload.defaulterEntry.invoices) {
+        if (uploadFilesModelDataForUpload && uploadFilesModelDataForUpload.invoices) {
             createinvoiceObj();
         }
     }, [uploadFilesModelDataForUpload])
@@ -164,6 +164,7 @@ export const UploadPendingLinkModule = props => {
 
         const payload = {
             "token": newtoken,
+            "defaulterEntryId": uploadFilesModelDataForUpload._id,
             "type": selectType, // DEBTOR/CREDITOR
             // Below documents are required for type DEBTOR
             "debtorcacertificate": selectType == 'DEBTOR' ? uploadCAId.documentId : '',
@@ -240,6 +241,7 @@ export const UploadPendingLinkModule = props => {
 
         const payload = {
             "token": newtoken,
+            "defaulterEntryId": uploadFilesModelDataForUpload._id,
             "type": selectType, // DEBTOR/CREDITOR
             // Below documents are required for type DEBTOR
             "debtorcacertificate": selectType == 'DEBTOR' ? uploadCAId.documentId : '',
@@ -359,7 +361,7 @@ export const UploadPendingLinkModule = props => {
                                     </Col>
                                 </Row>}
 
-                            {uploadFilesModelDataForUpload != '' && uploadFilesModelDataForUpload.defaulterEntry.invoices != undefined ? uploadFilesModelDataForUpload.defaulterEntry.invoices?.map((item, currenIndex) => {
+                            {uploadFilesModelDataForUpload != '' ? uploadFilesModelDataForUpload.invoices?.map((item, currenIndex) => {
 
                                 return <Row className="bg-light p-3 mt-2" key={item}>
                                     <Row>

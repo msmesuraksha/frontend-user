@@ -112,7 +112,7 @@ const UploadPendingListModule = props => {
                 Cell: cellProps => {
                     return <div>
                         {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
-                        {moment(cellProps.cell?.row?.original?.defaulterEntry.createdAt).format('DD-MM-YYYY')}
+                        {moment(cellProps.cell?.row?.original?.createdAt).format('DD-MM-YYYY')}
                     </div>
                 },
             },
@@ -124,7 +124,7 @@ const UploadPendingListModule = props => {
                 Cell: cellProps => {
                     return <div>
                         {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
-                        {cellProps.cell?.row?.original?.defaulterEntry.complaintNumber}
+                        {cellProps.cell?.row?.original?.complaintNumber}
                     </div>
                 },
             },
@@ -135,7 +135,7 @@ const UploadPendingListModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div>
-                        {CapitalizeWords(cellProps.cell.row.original.defaulterEntry.creditor.companyName)}
+                        {CapitalizeWords(cellProps.cell.row.original.creditor.companyName)}
                     </div>
 
                 },
@@ -147,7 +147,7 @@ const UploadPendingListModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div>
-                        {cellProps.cell.row.original.defaulterEntry.invoices.map((x, i) => {
+                        {cellProps.cell.row.original.invoices.map((x, i) => {
                             return <span key={x}>{i > 0 ? ', ' : ''}{x.invoiceNumber}</span>
                         })}
                     </div>
@@ -160,9 +160,9 @@ const UploadPendingListModule = props => {
                 disableFilters: true,
                 filterable: false,
                 Cell: cellProps => {
-                    return <div className="d-flex text-capitalize">{cellProps.cell.row.original.defaulterEntry.creditor.companyName}
+                    return <div className="d-flex text-capitalize">{cellProps.cell.row.original.creditor.companyName}
                         <br />
-                        {cellProps.cell.row.original.defaulterEntry.creditor.address1} {cellProps.cell.row.original.defaulterEntry.creditor.address2}, {cellProps.cell.row.original.defaulterEntry.creditor.city}
+                        {cellProps.cell.row.original.creditor.address1} {cellProps.cell.row.original.creditor.address2}, {cellProps.cell.row.original.creditor.city}
                     </div>
                 },
             },
@@ -173,7 +173,7 @@ const UploadPendingListModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div className="text-end">
-                        {numberFormat(cellProps.cell.row.original.defaulterEntry.totalAmount)}
+                        {numberFormat(cellProps.cell.row.original.totalAmount)}
                     </div>;
                 },
             },
@@ -243,7 +243,7 @@ const UploadPendingListModule = props => {
                 Cell: cellProps => {
                     return <div>
                         {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
-                        {moment(cellProps.cell?.row?.original?.defaulterEntry.createdAt).format('DD-MM-YYYY')}
+                        {moment(cellProps.cell?.row?.original?.createdAt).format('DD-MM-YYYY')}
                     </div>
                 },
             },
@@ -255,7 +255,7 @@ const UploadPendingListModule = props => {
                 Cell: cellProps => {
                     return <div>
                         {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
-                        {cellProps.cell?.row?.original?.defaulterEntry.complaintNumber}
+                        {cellProps.cell?.row?.original?.complaintNumber}
                     </div>
                 },
             },
@@ -266,7 +266,7 @@ const UploadPendingListModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div>
-                        {CapitalizeWords(cellProps.cell.row.original.defaulterEntry.debtor.companyName)}
+                        {CapitalizeWords(cellProps.cell.row.original.debtor.companyName)}
                     </div>
 
                 },
@@ -278,7 +278,7 @@ const UploadPendingListModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div>
-                        {cellProps.cell.row.original.defaulterEntry.invoices.map((x, i) => {
+                        {cellProps.cell.row.original.invoices.map((x, i) => {
                             return <span key={x}>{i > 0 ? ', ' : ''}{x.invoiceNumber}</span>
                         })}
                     </div>
@@ -292,9 +292,9 @@ const UploadPendingListModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div className=" d-flex text-capitalize">
-                        {cellProps.cell.row.original.defaulterEntry.debtor.companyName}
+                        {cellProps.cell.row.original.debtor.companyName}
                         <br />
-                        {cellProps.cell.row.original.defaulterEntry.debtor.address1} {cellProps.cell.row.original.defaulterEntry.debtor.address2 == undefined ? '' : cellProps.cell.row.original.defaulterEntry.debtor.address2 + ', '} {cellProps.cell.row.original.defaulterEntry.debtor.city}, {cellProps.cell.row.original.defaulterEntry.debtor.state}
+                        {cellProps.cell.row.original.debtor.address1} {cellProps.cell.row.original.debtor.address2 == undefined ? '' : cellProps.cell.row.original.debtor.address2 + ', '} {cellProps.cell.row.original.debtor.city}, {cellProps.cell.row.original.debtor.state}
                     </div>
                 },
             },
@@ -305,7 +305,7 @@ const UploadPendingListModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div className="text-end">
-                        {numberFormat(cellProps.cell.row.original.defaulterEntry.totalAmount)}
+                        {numberFormat(cellProps.cell.row.original.totalAmount)}
                     </div>;
                 },
             },
