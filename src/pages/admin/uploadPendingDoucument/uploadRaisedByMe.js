@@ -35,18 +35,18 @@ export const ReportRaisedByMeTable = ({ GetUploadPendingList, handleUploadFiles,
                     return <tr key={index}>
 
                         <th scope="row" className="pt-4">{index + 1}</th>
-                        <td className="pt-4 text-capitalize">{item.defaulterEntry.creditor.companyName}</td>
-                        <td className="pt-4">{item.defaulterEntry.invoices.map((x) => {
+                        <td className="pt-4 text-capitalize">{item.creditor.companyName}</td>
+                        <td className="pt-4">{item.invoices.map((x) => {
                             return <span key={x}>{x.invoiceNumber}, &nbsp;</span>
                         })}</td>
 
-                        <td className="pt-4 d-flex text-capitalize">{item.defaulterEntry.creditor.companyName}
+                        <td className="pt-4 d-flex text-capitalize">{item.creditor.companyName}
                             <br />
-                            {item.defaulterEntry.creditor.address1} {item.defaulterEntry.creditor.address2}, {item.defaulterEntry.creditor.city}</td>
+                            {item.creditor.address1} {item.creditor.address2}, {item.creditor.city}</td>
 
                         <td className="pt-4">
-                            {numberFormat(item.defaulterEntry.totalAmount)}
-                            {/* <CurrencyFormat value={item.defaulterEntry.totalAmount} thousandSpacing={2} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value}{0}</div>} /> */}
+                            {numberFormat(item.totalAmount)}
+                            {/* <CurrencyFormat value={item.totalAmount} thousandSpacing={2} displayType={'text'} thousandSeparator={true} renderText={value => <div>{value}{0}</div>} /> */}
 
                         </td>
 
