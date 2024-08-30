@@ -294,7 +294,7 @@ const ReportMedefulterComponent = props => {
         disableFilters: true,
         filterable: false,
         Cell: cellProps => {
-          return <div className="text-capitalize">
+          return <div className="text-capitalize" style={{ width: "110px" }}>
             {cellProps.cell.row.original.customerName}
           </div>
 
