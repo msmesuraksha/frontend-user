@@ -372,26 +372,26 @@ const ReportMedefulterComponent = props => {
         Cell: cellProps => {
           return (
             <div className="d-flex" style={{ width: "230px" }}>
-              <Row className="text-center" style={{ gap: '1rem' }}>
-                <Col className="p-1" md={2}>
-                  <button type="button" className="btn btn-info" data-toggle="tooltip" data-placement="top"
-                    title="Record Payment" rel='noreferrer'
-                    target='_blank' onClick={() => viewModel(cellProps.cell.row.original)
-                    }>
-                    <i className='bx bx-wallet-alt textsizing' ></i>
-                  </button>
-                </Col>
-                <Col className="p-1" md={2}>
-                  <Button className="btn btn-info" data-toggle="tooltip" data-placement="top"
-                    title="Disputed Transaction" rel='noreferrer'
-                    target='_blank' onClick={() => markOpenModule(cellProps.cell.row.original)
+              <Col /* className="text-center" */ className="d-flex" style={{ gap: '0.6rem', flexWrap: 'nowrap' }}>
 
-                    }>
-                    {/* <i className='bx bx-window-close textsizing'></i> */}
-                    <i className='bx bx-x-circle textsizing'></i>
-                  </Button>
-                </Col>
-                <Col className="p-1" md={2}>
+                <button type="button" className="btn btn-info" data-toggle="tooltip" data-placement="top"
+                  title="Record Payment" rel='noreferrer'
+                  target='_blank' onClick={() => viewModel(cellProps.cell.row.original)
+                  }>
+                  <i className='bx bx-wallet-alt textsizing' ></i>
+                </button>
+
+
+                <Button className="btn btn-info" data-toggle="tooltip" data-placement="top"
+                  title="Disputed Transaction" rel='noreferrer'
+                  target='_blank' onClick={() => markOpenModule(cellProps.cell.row.original)
+
+                  }>
+                  {/* <i className='bx bx-window-close textsizing'></i> */}
+                  <i className='bx bx-x-circle textsizing'></i>
+                </Button>
+
+                {/* <Col className="p-1" md={2}>
                   <button type="button" className="btn btn-info" data-toggle="tooltip" data-placement="top"
                     title="Upload CA Certificate" rel='noreferrer'
                     target='_blank' onClick={() => {
@@ -403,18 +403,18 @@ const ReportMedefulterComponent = props => {
                     }>
                     <img src={CaImg} className="" style={{ height: "22.5px", width: '18px' }} />
                   </button>
-                </Col>
-                <Col className="p-1" md={2}>
-                  <Button type="button" className="btn btn-info" data-toggle="tooltip" data-placement="top"
-                    title="View Details" rel='noreferrer'
-                    target='_blank'
-                    onClick={() => handleViewDetail(cellProps.cell.row.original)}>
+                </Col> */}
+
+                <Button type="button" className="btn btn-info" data-toggle="tooltip" data-placement="top"
+                  title="View Details" rel='noreferrer'
+                  target='_blank'
+                  onClick={() => handleViewDetail(cellProps.cell.row.original)}>
 
 
-                    <i className='fa fa-eye textsizing'></i>
-                  </Button>
-                </Col>
-              </Row>
+                  <i className='fa fa-eye textsizing'></i>
+                </Button>
+
+              </Col>
 
             </div>
           );

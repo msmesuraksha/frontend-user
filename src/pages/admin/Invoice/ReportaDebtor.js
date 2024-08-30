@@ -428,35 +428,35 @@ export const ReportDebtor = props => {
         Cell: cellProps => {
           return (
             <div className="d-flex" style={{ width: "320px" }}>
-              <Row className="text-center" style={{ gap: '0.1rem', flexWrap: 'nowrap' }}>
-                <Col className="p-1" md={2}>
-                  <button type="button" className="btn btn-info " data-toggle="tooltip" data-placement="top"
-                    title="Record Payment" href={cellProps.cell.row.original?.url} rel='noreferrer'
-                    target='_blank' onClick={() => viewModel(cellProps.cell.row.original)
+              <Col /* className="text-center" */ className="d-flex" style={{ gap: '0.6rem', flexWrap: 'nowrap' }}>
 
-                    }>
-                    <i className='bx bx-wallet-alt textsizing' ></i>
-                  </button>
-                </Col>
-                <Col className="p-1" md={2}>
-                  <button type="button" className="btn btn-info " data-toggle="tooltip" data-placement="top"
-                    title="Invoice Edit" rel='noreferrer'
-                    target='_blank' onClick={() => requestEdit(cellProps.cell.row.original)
-                    }
-                    disabled={cellProps.cell.row.original?.status == "DRAFT" ? false : true}
-                  >
-                    <i className='bx bx-edit textsizing' ></i>
-                  </button>
-                </Col>
-                <Col className="p-1" md={2}>
-                  <button type="button" className="btn btn-info " data-toggle="tooltip" data-placement="top"
-                    title="Upload Pending Files" href={cellProps.cell.row.original?.url} rel='noreferrer'
-                    target='_blank' onClick={() => handleUploadFiles(cellProps.cell.row.original)
-                    }>
-                    <i className='bx bx-cloud-upload textsizing' ></i>
-                  </button>
-                </Col>
-                <Col className="p-1" md={2}>
+                <button type="button" className="btn btn-info " data-toggle="tooltip" data-placement="top"
+                  title="Record Payment" href={cellProps.cell.row.original?.url} rel='noreferrer'
+                  target='_blank' onClick={() => viewModel(cellProps.cell.row.original)
+
+                  }>
+                  <i className='bx bx-wallet-alt textsizing' ></i>
+                </button>
+
+
+                <button type="button" className="btn btn-info " data-toggle="tooltip" data-placement="top"
+                  title="Invoice Edit" rel='noreferrer'
+                  target='_blank' onClick={() => requestEdit(cellProps.cell.row.original)
+                  }
+                  disabled={cellProps.cell.row.original?.status == "DRAFT" ? false : true}
+                >
+                  <i className='bx bx-edit textsizing' ></i>
+                </button>
+
+
+                <button type="button" className="btn btn-info " data-toggle="tooltip" data-placement="top"
+                  title="Upload Pending Files" href={cellProps.cell.row.original?.url} rel='noreferrer'
+                  target='_blank' onClick={() => handleUploadFiles(cellProps.cell.row.original)
+                  }>
+                  <i className='bx bx-cloud-upload textsizing' ></i>
+                </button>
+
+                {/* <Col className="p-1" md={2}>
                   <button type="button" className="btn btn-info " data-toggle="tooltip" data-placement="top"
                     title="Upload CA Certificate" href={cellProps.cell.row.original?.url} rel='noreferrer'
                     target='_blank' onClick={() => {
@@ -467,25 +467,25 @@ export const ReportDebtor = props => {
                     }>
                     <img src={CaImg} className="" style={{ height: "22.5px", width: '18px' }} />
                   </button>
-                </Col>
-                <Col className="p-1" md={2}>
-                  <Button type="button" className="btn btn-info" data-toggle="tooltip" data-placement="top"
-                    title="View Details" href={cellProps.cell.row.original?.url} rel='noreferrer'
-                    target='_blank'
-                    onClick={() => handleViewDetail(cellProps.cell.row.original)}>
-                    <i className='fa fa-eye textsizing'></i>
-                  </Button>
-                </Col>
-                <Col className="p-1" md={2}>
-                  <Button type="button" style={{ color: '#FAFAFA', }} className="btn btn-info" data-toggle="tooltip" data-placement="top"
-                    title="Delete Invoice"
-                    onClick={() => openDeletePop(cellProps.cell.row.original)}>
-                    <i className="fa fa-trash textsizing" ></i>
-                  </Button>
+                </Col> */}
 
-                </Col>
-              </Row>
-            </div>
+                <Button type="button" className="btn btn-info" data-toggle="tooltip" data-placement="top"
+                  title="View Details" href={cellProps.cell.row.original?.url} rel='noreferrer'
+                  target='_blank'
+                  onClick={() => handleViewDetail(cellProps.cell.row.original)}>
+                  <i className='fa fa-eye textsizing'></i>
+                </Button>
+
+
+                <Button type="button" style={{ color: '#FAFAFA', }} className="btn btn-info" data-toggle="tooltip" data-placement="top"
+                  title="Delete Invoice"
+                  onClick={() => openDeletePop(cellProps.cell.row.original)}>
+                  <i className="fa fa-trash textsizing" ></i>
+                </Button>
+
+
+              </Col>
+            </div >
           );
         },
       },
