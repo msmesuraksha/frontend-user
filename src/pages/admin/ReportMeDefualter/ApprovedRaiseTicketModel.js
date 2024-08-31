@@ -35,7 +35,7 @@ import index from "pages/Dashboard-Blog";
 
 const ApprovedRaiseTicketModel = props => {
 
-  const { isOpen, toggle, currentIndexData } = props
+  const { isOpen, toggle, currentIndexData, requestType } = props
   const dispatch = useDispatch()
   const [reasons, setreasons] = useState('')
   const [isSubmited, setisSubmited] = useState(false)
@@ -51,14 +51,13 @@ const ApprovedRaiseTicketModel = props => {
     dispatch(fetchApproveReportMeDefaulterStart())
   }
 
-  const getPaymentId = currentIndexData != undefined ? currentIndexData?.pHArray?.map((value, index) => {
-    return { paymentId: value.id }
-  }) : ''
+  const defaulterId = currentIndexData != undefined ? currentIndexData.defaulterEntryId : ''
 
 
   const handleSubmit = () => {
     dispatch(approveTransactionReopenStart({
-      "payments": getPaymentId,
+      "defaulterEntryId": defaulterId,
+      "requester": requestType,
       "status": "RE_OPENED",
       "reopenReason": reasons
     }))

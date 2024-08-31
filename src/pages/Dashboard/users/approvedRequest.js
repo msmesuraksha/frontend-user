@@ -358,7 +358,7 @@ const ApprovedTransaction = props => {
   );
   return (
     <React.Fragment>
-      {markAsDisputed && <ApprovedRaiseTicketModel isOpen={markAsDisputed} toggle={toggleMarkAsDisputed} currentIndexData={currentIndexData} />}
+      {markAsDisputed && <ApprovedRaiseTicketModel isOpen={markAsDisputed} toggle={toggleMarkAsDisputed} currentIndexData={currentIndexData} requestType={"DEBTOR"} />}
       <Card>
         {isLodingCompany ? <Spinner /> : (<CardBody>
           <div className="mb-4 h4 card-title"></div>

@@ -17,9 +17,10 @@ export const selectCompaintsForMe = createSelector(
       const mapinvoicelist = ApproveReportMeDefaulter?.approveReportMeDefaulterList?.compaintsForMe.map((item, index) => {
         const SrNo = index = 1
         const customerName = item.defaulterEntry.creditor.companyName
-        const status = item.pHArray[0].status
+        const status = item.defaulterEntry.latestStatus
+        const defaulterEntryId = item.defaulterEntry.id
         const dueFrom = item.dueFrom
-        const totalAmount = item.totalAmountPaid
+        const totalAmount = item.defaulterEntry.totalAmount
         // const Address = item.debtor.address1+", "+ item.debtor.address2 +", "+ item.debtor.city+", "+ item.debtor.state
         const invoiceList = item.defaulterEntry.invoices.map((data, i) => {
           return item.defaulterEntry.invoices.length > i + 1 ? data.invoiceNumber + ", " : data.invoiceNumber
@@ -39,7 +40,7 @@ export const selectCompaintsForMe = createSelector(
         const createdAt = item.defaulterEntry.createdAt
 
 
-        return { SrNo, customerName, Address, status, dueFrom, totalAmount, defaulterEntry, createdAt, complaintNumber, invoiceList, pHArray }
+        return { SrNo, customerName, Address, status, dueFrom, totalAmount, defaulterEntry, createdAt, complaintNumber, invoiceList, pHArray, defaulterEntryId }
       })
       return mapinvoicelist
 
@@ -66,9 +67,10 @@ export const selectCompaintsByMes = createSelector(
         // console.log("ITEMMMMMM", item)
         const SrNo = index = 1
         const customerName = item.defaulterEntry.debtor.companyName
-        const status = item.pHArray[0].status
+        const status = item.defaulterEntry.latestStatus
         const dueFrom = item.dueFrom
-        const totalAmount = item.totalAmountPaid
+        const defaulterEntryId = item.defaulterEntry.id
+        const totalAmount = item.defaulterEntry.totalAmount
         // const Address = item.debtor.address1+", "+ item.debtor.address2 +", "+ item.debtor.city+", "+ item.debtor.state
         const invoiceList = item.defaulterEntry.invoices.map((data, i) => {
           return item.defaulterEntry.invoices.length > i + 1 ? data.invoiceNumber + "," : data.invoiceNumber
@@ -86,7 +88,7 @@ export const selectCompaintsByMes = createSelector(
         const createdAt = item.defaulterEntry.createdAt
 
 
-        return { SrNo, customerName, Address, status, dueFrom, totalAmount, defaulterEntry, createdAt, complaintNumber, invoiceList, pHArray }
+        return { SrNo, customerName, Address, status, dueFrom, totalAmount, defaulterEntry, createdAt, complaintNumber, invoiceList, pHArray, defaulterEntryId }
       })
       return mapinvoicelist
 

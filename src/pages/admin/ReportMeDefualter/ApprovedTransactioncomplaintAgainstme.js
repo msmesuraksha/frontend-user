@@ -397,7 +397,7 @@ const ApprovedReportMeDefaulterComponent = props => {
 
   return (
     <React.Fragment>
-      {markAsDisputed && <ApprovedRaiseTicketModel isOpen={markAsDisputed} toggle={toggleMarkAsDisputed} currentIndexData={currentIndexData} />}
+      {markAsDisputed && <ApprovedRaiseTicketModel isOpen={markAsDisputed} toggle={toggleMarkAsDisputed} currentIndexData={currentIndexData} requestType={"CREDITOR"} />}
       <Card style={{ padding: props.isClickedToReported == undefined && props.isClickedToReported != false ? '' : "0px" }}>
         <CardBody style={{ padding: props.isClickedToReported == undefined && props.isClickedToReported != false ? '' : "0px" }}>
           <div className="mb-4 h4 card-title"></div>
