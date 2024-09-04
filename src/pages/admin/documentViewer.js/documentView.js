@@ -4,6 +4,7 @@ import moment from 'moment';
 import CurrencyFormat from 'react-currency-format';
 import axios from "axios";
 import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
+import { getData } from "store/utils/reducer/sessionStorage";
 
 import {
   Button,
@@ -52,7 +53,8 @@ export const DocumentViewModule = props => {
 
   let token = '';
   try {
-    token = JSON.parse(sessionStorage.getItem("authUser"))?.token || '';
+    const authUser = getData("authUser")
+    token = authUser.token || '';
   } catch (error) {
     console.error("Failed to parse authUser from sessionStorage", error);
   }

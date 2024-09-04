@@ -4,6 +4,8 @@ import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
 import { LOGIN_USER, LOGOUT_USER, SOCIAL_LOGIN } from "./login/Login.actionTypes";
 import { apiError, loginSuccess, logoutUserSuccess, tokenUpdate } from "./login/Login.actions";
 
+import { setData } from "store/utils/reducer/sessionStorage";
+
 /* import useAuth from "helpers/jwt-token-access/useAuth";; */
 
 //Include Both Helper File with needed methods
@@ -25,7 +27,9 @@ function* loginUser({ payload: { user, history } }) {
       });
       if (response != undefined && response != null) {
         if (response.data.success) {
-          sessionStorage.setItem("authUser", JSON.stringify(response.data.response));
+
+          //  sessionStorage.setItem("authUser", JSON.stringify(response.data.response));
+          setData("authUser", response.data.response)
           sessionStorage.setItem("tokenemployeeRegister", response.data.response.token)
           sessionStorage.setItem("refreshToken", response.data.response.refreshToken)
           sessionStorage.setItem('register', 1)

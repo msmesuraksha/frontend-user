@@ -49,7 +49,8 @@ const ChantBox = (props) => {
 
 
   const onSendMessage = () => {
-    const obj = JSON.parse(sessionStorage.getItem("authUser"));
+    const authUser = getData("authUser")
+    const obj = authUser;
     const name = obj && obj.username ? obj.username : "Admin";
 
     var modifiedMessages = [...messages];

@@ -64,9 +64,11 @@ import {
 } from "./companyssearchColl";
 
 import { ReportDebtor } from "pages/admin/Invoice/ReportaDebtor"
+import { getData } from "store/utils/reducer/sessionStorage"
 
 const Dashboard = props => {
-  const companyid = sessionStorage.getItem("COMPANY-ID")
+  const companyIdSession = getData("COMPANY-ID")
+  const companyid = companyIdSession
   const [subscribemodal, setSubscribemodal] = useState(false)
   const [isreload, setisreload] = useState(false)
   const [filteredData, setFilteredData] = useState([]);

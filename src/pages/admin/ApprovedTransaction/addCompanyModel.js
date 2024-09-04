@@ -26,6 +26,8 @@ import {
 } from "reactstrap"
 import Select from "react-select"
 
+import { getData } from "store/utils/reducer/sessionStorage";
+
 // state and city select
 import { City, Country, State } from "country-state-city";
 
@@ -38,7 +40,8 @@ const ReportedDebtorsModel = props => {
   const [mobile, setMobile] = useState('');
   const [name, setName] = useState('');
   const [companyName, setcompanyName] = useState('');
-  const logindata = (sessionStorage.getItem("authUser")) != undefined ? JSON.parse(sessionStorage.getItem("authUser")) : ''
+  const authUser = getData("authUser")
+  const logindata = (sessionStorage.getItem("authUser")) != undefined ? authUser : ''
   const [gstValidation, setGSTValidation] = useState({
     touched: false,
     error: ''

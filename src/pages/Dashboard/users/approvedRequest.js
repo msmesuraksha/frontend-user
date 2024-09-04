@@ -58,9 +58,11 @@ import {
 import { selectCompaintsByMes } from "store/ApprovedReportMeDefulter/ApprovedReportMeDefulter.selecter"
 
 import { fetchApproveReportMeDefaulterStart } from "store/ApprovedReportMeDefulter/ApprovedReportMeDefulter.action"
+import { getData } from "store/utils/reducer/sessionStorage"
 
 const ApprovedTransaction = props => {
-  const companyid = sessionStorage.getItem("COMPANY-ID")
+  const companyIdSession = getData("COMPANY-ID")
+  const companyid = companyIdSession
   const [subscribemodal, setSubscribemodal] = useState(false)
   const [isreload, setisreload] = useState(false)
   const [filteredData, setFilteredData] = useState([]);
@@ -218,7 +220,7 @@ const ApprovedTransaction = props => {
   const columns = useMemo(
     () => [
       {
-        Header: "Sr No.",
+        Header: "Sr No.....",
         accessor: "SrNo",
         filterable: false,
         disableFilters: true,

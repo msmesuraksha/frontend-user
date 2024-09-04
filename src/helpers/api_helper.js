@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getData } from 'store/utils/reducer/sessionStorage';
 
 
 const API_URL = 'https://msmesuraksha-backend.azurewebsites.net';
@@ -69,7 +70,9 @@ export async function get(url, config = {}) {
 
 export async function getwithToken(url, config = {}) {
 
-  const token = JSON.parse(sessionStorage.getItem("authUser")).token
+  const authUser = getData("authUser")
+
+  const token = authUser.token
   const headers = {
     ...config.headers,
     'x-access-token': token != null ? token : '',
@@ -134,7 +137,9 @@ export async function getMethodResponse(url, data, config = {}) {
 export async function post(url, data, config = {}) {
 
   // console.log("UJUJU", JSON.parse(sessionStorage.getItem("authUser")).token)
-  const token = JSON.parse(sessionStorage.getItem("authUser")) != null ? JSON.parse(sessionStorage.getItem("authUser")).token : '';
+  const authUser = getData("authUser")
+
+  const token = authUser != null ? authUser.token : '';
   // console.log("HAHAHA", token)
 
   const headers = {
@@ -175,7 +180,9 @@ export async function getUser(url, data, config = {}) {
 export async function updateData(url, data, config = {}) {
 
   // console.log("UJUJU", JSON.parse(sessionStorage.getItem("authUser")).token)
-  const token = JSON.parse(sessionStorage.getItem("authUser")) != null ? JSON.parse(sessionStorage.getItem("authUser")).token : '';
+  const authUser = getData("authUser")
+
+  const token = authUser != null ? authUser.token : '';
   // console.log("HAHAHA", token)
 
   const headers = {

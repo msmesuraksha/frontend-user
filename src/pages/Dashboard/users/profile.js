@@ -41,7 +41,8 @@ const ContactsProfile = (props) => {
     { title: "Pending Projects", iconClass: "bx-hourglass", text: "12" },
     { title: "Total Revenue", iconClass: "bx-package", text: "$36,524" },
   ];
-  const userData = JSON.parse(sessionStorage.getItem("authUser"))
+  const authUser = getData("authUser")
+  const userData = authUser
   const userProfile = userData
 
   // const userProfile = {

@@ -47,8 +47,8 @@ const UserProfile = () => {
 
   useEffect(() => {
     if (sessionStorage.getItem("authUser")) {
-
-      const obj = JSON.parse(sessionStorage.getItem("authUser"));
+      const authUser = getData("authUser")
+      const obj = authUser;
       if (
         process.env.REACT_APP_DEFAULTAUTH === "jwt"
       ) {

@@ -31,6 +31,8 @@ import { setSelectCopenOpen } from "store/selectCompany/selectCompany.actiontype
 
 import { selectUpdatedToken } from "store/auth/login/Login.selecter";
 
+import { setData } from "store/utils/reducer/sessionStorage";
+
 const ApprovedTranction = props => {
   const dispatch = useDispatch();
   const [modal1, setModal1] = useState(false);
@@ -40,8 +42,10 @@ const ApprovedTranction = props => {
   const checkUpdateToken = useSelector(selectUpdatedToken)
 
   const handleEyeIconClick = (item) => {
-    sessionStorage.setItem("COMPANY-ID", item.id)
-    sessionStorage.setItem("COMPANY", item.companyName)
+    setData("COMPANY-ID", item.id)
+    setData("COMPANY", item.companyName)
+    // sessionStorage.setItem("COMPANY-ID", item.id)
+    // sessionStorage.setItem("COMPANY", item.companyName)
     const newPageUrl = '/company-dashboard';
     window.location.href = newPageUrl;
     dispatch(setSelectCopenOpen(!SelectCompnayOpen))

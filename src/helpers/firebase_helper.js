@@ -4,6 +4,8 @@ import firebase from 'firebase/compat/app';
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
+import { getData } from 'store/utils/reducer/sessionStorage';
+
 class FirebaseAuthBackend {
   constructor(firebaseConfig) {
     if (firebaseConfig) {
@@ -162,8 +164,9 @@ class FirebaseAuthBackend {
    * Returns the authenticated user
    */
   getAuthenticatedUser = () => {
+    const authUser = getData("authUser")
     if (!sessionStorage.getItem("authUser")) return null;
-    return JSON.parse(sessionStorage.getItem("authUser"));
+    return authUser;
   };
 
   /**

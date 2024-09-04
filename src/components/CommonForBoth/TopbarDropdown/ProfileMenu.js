@@ -8,6 +8,8 @@ import {
   Row, Col
 } from "reactstrap";
 
+import { getData } from "store/utils/reducer/sessionStorage";
+
 //i18n
 import { withTranslation } from "react-i18next";
 // Redux
@@ -29,17 +31,19 @@ const ProfileMenu = props => {
   useEffect(() => {
     if (sessionStorage.getItem("authUser")) {
       if (process.env.REACT_APP_DEFAULTAUTH === "firebase") {
-        const obj = JSON.parse(sessionStorage.getItem("authUser"));
+        const obj = getData("authUser");
         setusername(obj.displayName);
       } else if (
         process.env.REACT_APP_DEFAULTAUTH === "fake" ||
         process.env.REACT_APP_DEFAULTAUTH === "jwt"
       ) {
-        const obj = JSON.parse(sessionStorage.getItem("authUser"));
+        const obj = getData("authUser");
         setusername(obj.username);
       }
     }
   }, [props.success]);
+
+  const authUser = getData("authUser")
 
   return (
     <React.Fragment>
@@ -75,7 +79,7 @@ const ProfileMenu = props => {
             >
               <div className="d-flex">
                 <i className='bx bxs-user-circle' style={{ fontSize: "35px", marginTop: '20px' }}></i>  &nbsp;
-                <span style={{ marginTop: '25px' }} >{JSON.parse(sessionStorage.getItem("authUser")).name}</span>&nbsp;
+                <span style={{ marginTop: '25px' }} >{authUser.name}</span>&nbsp;
                 <i className="mdi mdi-chevron-down d-none d-xl-inline-block" style={{ fontSize: "15px", marginTop: '25px' }} />&nbsp;
               </div>
             </DropdownToggle>

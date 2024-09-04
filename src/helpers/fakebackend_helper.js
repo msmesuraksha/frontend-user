@@ -4,7 +4,8 @@ import * as url from "./url_helper";
 
 // Gets the logged in user data from local session
 const getLoggedInUser = () => {
-  const user = sessionStorage.getItem("authUser");
+  const authUser = getData("authUser")
+  const user = authUser;
   if (user) return JSON.parse(user);
   return null;
 };

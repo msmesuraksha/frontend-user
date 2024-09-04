@@ -18,8 +18,8 @@ const WelcomeComp = props => {
     if (sessionStorage.getItem("authUser")) {
       if (process.env.REACT_APP_DEFAULTAUTH === "jwt"
       ) {
-
-        const obj = JSON.parse(sessionStorage.getItem("authUser"));
+        const authUser = getData("authUser")
+        const obj = authUser;
         setusername(capitalizeWords(obj.name));
         setrole(capitalizeWords('User'));
         setemailId(obj.emailId);

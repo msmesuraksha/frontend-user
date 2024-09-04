@@ -31,6 +31,8 @@ import { withTranslation } from "react-i18next";
 
 import { setSelectCopenOpen } from 'store/selectCompany/selectCompany.actiontype';
 
+import { getData } from 'store/utils/reducer/sessionStorage';
+
 // Redux Store
 import {
   showRightSidebarAction,
@@ -83,6 +85,8 @@ const Header = props => {
 
   }
 
+  const companyName = getData("COMPANY")
+
   return (
     <React.Fragment>
       <header id="page-topbar">
@@ -106,7 +110,7 @@ const Header = props => {
             </Link>
 
             <h4 className="text-capitalize ml-3">
-              <b>{sessionStorage.getItem("COMPANY") || ''}</b>
+              <b>{companyName || ''}</b>
             </h4>
           </div>
 
