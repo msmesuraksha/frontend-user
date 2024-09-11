@@ -111,12 +111,14 @@ const CompnayViewDetails = props => {
 
     const StatusOpinionInTable = {
         APPROVED: <td style={{ color: "red" }}> <b>{/* <FcCheckmark /> */}Complaint Approved </b></td>,
+        RE_OPENED: <td style={{ color: "red" }}> <b>{/* <FcCheckmark /> */}Complaint Approved </b></td>,
         COMPLAINT_APPROVED: <td style={{ color: "red" }}> <b>{/* <FcCheckmark /> */}Complaint Approved </b></td>,
         PENDING: <td style={{ color: "#ff794d" }}> <b>{/* <FcClock /> */} Awaiting Buyer Response</b></td>,
         DISPUTED: <td style={{ color: "red", filter: "2px" }}><b>{/* <FcCancel /> */} Inconclusive</b></td>,
         BuyerMayBeaDefaulter: <td style={{ color: 'red' }}><b>Buyer May Be a Defaulter</b></td>,
         fraudulentComplaintSeller: <td style={{ color: 'red' }}><b>Fraudulent complaint lodged by seller</b></td>,
         documentUnderVerification: <td style={{ color: 'blue' }}><b>Documents Under Verification</b></td>,
+        REJECTED: <td style={{ color: 'blue' }}><b>Inconclusive</b></td>,
         AWAITING_REVIEW: <td style={{ color: 'blue' }}><b>Documents Under Verification</b></td>,
         Complaintsfiledwithoutevidence: <td style={{ color: '#ffc61a' }}><b>Complaints Filed Without Sufficient Evidence</b></td>,
         PENDING_INVESTIGATION: <td style={{ color: 'blue' }}><b>Pending Investigation</b></td>,
