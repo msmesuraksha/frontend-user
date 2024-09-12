@@ -47,7 +47,6 @@ import {
 
 import { getCompanyList as ongetCompanyList } from "../../../../src/store/actions";
 import TableContainer from "../../../components/Common/TableContainer";
-import InlineFilterForm from '../ApprovedTransaction/InlineFilterForm';
 import { get } from "helpers/api_helper";
 import { fetchCompanySearchStart, getAllCompanyListAction } from "store/CompanySearch/CompanySearch.action";
 import { selectCompanySearchList, selectdashboardAdminDataMap, getAllCompanyListSelector, selectCompanySearchLoder } from "store/CompanySearch/CompanySearch.selecter";
@@ -226,7 +225,7 @@ const CompanySearch = props => {
     <React.Fragment className=" mt-5">
       {CompanySearchLoder == false ? <Spinner /> : (<>
         {modal1 && <CompnayViewDetails isOpen={modal1} toggle={toggleViewModal} selected={selected} currenViewList={currentUserViewDetails} selectCompanySearchListMap={selectCompanySearchLists} />}
-        {/* <InlineFilterForm onFilter={handleFilter} handleFilter={handleFilter} /> */}
+
         <Card className=" mt-5" >
           <CardBody className=" mt-5">
             <Row>

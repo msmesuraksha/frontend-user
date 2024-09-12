@@ -20,7 +20,7 @@ import {
   GST,
 } from "./ApprovedTransactionCol";
 
-import { getCompanyList } from "../../../../src/store/actions";
+import { getCompanyList } from "../../../store/actions";
 
 import TableContainer from "../../../components/Common/TableContainer";
 
@@ -33,7 +33,7 @@ import { selectUpdatedToken } from "store/auth/login/Login.selecter";
 
 import { setData } from "store/utils/reducer/sessionStorage";
 
-const ApprovedTranction = props => {
+const AddedCompanyList = props => {
   const dispatch = useDispatch();
   const [modal1, setModal1] = useState(false);
   const toggleViewModal = () => setModal1(!modal1);
@@ -171,9 +171,9 @@ const ApprovedTranction = props => {
   );
 };
 
-ApprovedTranction.propTypes = {
+AddedCompanyList.propTypes = {
   orders: PropTypes.array,
   onGetOrders: PropTypes.func,
 };
 
-export default withRouter(ApprovedTranction);
+export default withRouter(AddedCompanyList);

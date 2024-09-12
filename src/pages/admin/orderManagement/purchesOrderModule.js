@@ -49,7 +49,6 @@ import { success } from "toastr"
 import { getAllInvoice, setIsReportDefOpen, setUploadFilesOpen, setCACertificateOpen, requestInvoiceDefEdit, setIsViewDetailModalOpen, setRequestEditModalOpen } from "../../../store/debtors/debtors.actions"
 import { selectReportDefOpen, selectInvoiceList, uploadFilesModalOpen, selectCACertificateOpen, requestEditSelector, isViewDetailMOdalOpenSelector, requestModelSelector, selectInvoiceListMap } from "store/debtors/debtors.selecter"
 import UploadPendingFiles from "../Invoice/uploadFilesModal"
-import { CompanySerchForm } from "../ApprovedTransaction/companySearchComponet"
 import moment from 'moment'
 import { ToastContainer, toast } from 'react-toastify';
 import ViewDetailsReportDefaultModal from "../Invoice/viewDetailsReportDefaultModal"
@@ -865,7 +864,7 @@ export const PurchaseOrderModule = props => {
 <ReactTooltip id="toolTip1" /> */}
                         </Col>
                     </Row>
-                    {/* {GetAllInvoice != undefined ? <CompanySerchForm onFilter={handleFilterdata} SearchName={"Buyer"} /> : ""} */}
+
                     <Row className="">
 
                         {GetAllInvoice != undefined && (<TableContainer

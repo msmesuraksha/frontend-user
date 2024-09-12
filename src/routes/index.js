@@ -5,7 +5,7 @@ import SendBillTransaction from "../pages/Dashboard/users/send-bill-transaction/
 import MembersList from "../pages/admin/Members/memberlist/MembersList";
 import RegisteredCompanyList from "../pages/admin/Members/RegisteredCompany/RegisteredCompanyList";
 import DiputedBillings from "../pages/admin/DisputedBillings/DiputedBillings";
-import ApprovedTranction from "../pages/admin/ApprovedTransaction/ApprovedTranction";
+import AddedCompanyList from "../pages/admin/ApprovedTransaction/addedCompanyList";
 import Subscription from "../pages/admin/Subscription/subscription";
 
 import CompanySearch from "../pages/admin/company-search/companysearch";
@@ -165,7 +165,6 @@ import ContactsGrid from "../pages/Contacts/contacts-grid";
 import ContactsList from "../pages/Contacts/ContactList/contacts-list";
 //import ContactsProfile from "../pages/Contacts/ContactsProfile/contacts-profile";
 import Register2 from "pages/Authentication/register2";
-import AddCompany from "pages/admin/ApprovedTransaction/add-company";
 import ChangeNewPassword from "../pages/Authentication/ChangeNewPassword"
 import ForgetChangeNewPassword from "../pages/Authentication/forgetChangeNewPassword"
 import { UploadPendingLinkModule } from "pages/admin/uploadPendingDocLink/uploadPendingDocLink";
@@ -174,12 +173,12 @@ import { OrderManagementModule } from "pages/admin/orderManagement/orderManageme
 
 const authProtectedRoutes = [
   //User Panel Step 1
-  { path: "/companies", component: <ApprovedTranction /> },
+  { path: "/companies", component: <AddedCompanyList /> },
   { path: "/Subscription", component: <Subscription /> },
   { path: "/documents", component: <Document /> },
   { path: "/FormUpload", component: <FormUpload /> },
   { path: "/profile", component: <ContactsProfile /> },
-  { path: "/notification", component: <ApprovedTranction /> },
+  { path: "/notification", component: <AddedCompanyList /> },
   //USer Panel Step 2
   { path: "/company-dashboard", component: <CompanyDashboard /> },
   { path: "/ApprovedReportedTranction", component: <ApprovedReportedTranction /> },
@@ -203,7 +202,7 @@ const authProtectedRoutes = [
 
   { path: "/login-register", component: <Register2 /> },
 
-  { path: "/add-company", component: <AddCompany /> },
+
   {
     path: "/",
     exact: true,

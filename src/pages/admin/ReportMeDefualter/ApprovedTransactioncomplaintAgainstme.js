@@ -13,14 +13,12 @@ import {
   CardBody,
 } from "reactstrap"
 import TableContainer from "../../../components/Common/TableContainer";
-import InlineFilterForm from '../ApprovedTransaction/InlineFilterForm';
 import { useDispatch, useSelector } from "react-redux";
 import { setUploadFilesOpen, setCACertificateOpen, requestInvoiceDefEdit, setIsViewDetailModalOpen, markAsDisputedModalOpenAction } from "../../../store/debtors/debtors.actions"
 import { uploadFilesModalOpen, selectCACertificateOpen, isViewDetailMOdalOpenSelector, markAsDisputedModalOpenSelector } from "store/debtors/debtors.selecter"
 import { selectReportMeDefData } from "store/ReportMeDefulter/ReportMeDefulter.selecter"
 import { fetchReportMeDefulterStart } from "store/ReportMeDefulter/ReportMeDefulter.action"
 import UploadPendingFiles from "../Invoice/uploadFilesModal"
-import { CompanySerchForm } from "../ApprovedTransaction/companySearchComponet"
 import CurrencyFormat from "react-currency-format"
 import moment from 'moment'
 import { ToastContainer, toast } from 'react-toastify';
@@ -414,7 +412,7 @@ const ApprovedReportMeDefaulterComponent = props => {
           <Row className="">
             <Col md={12}></Col>
 
-            {/* {selectCompaintsForMefList != undefined ? <CompanySerchForm onFilter={handleFilterdata} SearchName={"Seller"} /> : ""} */}
+
           </Row>
           <Row className="  ">
             {selectCompaintsForMefList != undefined && selectCompaintsForMefList != null ?

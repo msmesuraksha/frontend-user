@@ -20,7 +20,6 @@ import { getAllDebtors } from "../../../store/debtors/debtors.actions"
 import { selectDebtorsList, selectDebtorsListMap } from "store/debtors/debtors.selecter"
 import { SelectAddCustomer } from "store/addCustomer/addCustomer.selecter"
 import { setAddCustomerOpen } from "store/addCustomer/addCustomer.actiontype"
-import { CompanySerchForm } from "../ApprovedTransaction/companySearchComponet"
 import { SelectAddCustomerList } from "store/actions"
 
 import { CapitalizeWords } from "pages/Dashboard"
@@ -173,7 +172,6 @@ const AddCustomer = props => {
               <Button className="btn btn-md btn-info" onClick={() => toggleAddCustomer()}>Add New Member</Button>
             </Col>
           </Row>
-          {/* {GetAllDebtorsMap != undefined ? <CompanySerchForm onFilter={handleFilterdata} SearchName={"Customer"} /> : ""} */}
           <Row className="p-4  ml-5">
             <TableContainer
               columns={columns}

@@ -21,7 +21,6 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Disputeddata } from "../../../common/data/disputedData";
 import { ToastContainer, toast } from 'react-toastify';
-import { CompanySerchForm } from "../ApprovedTransaction/companySearchComponet";
 import {
 
   Col,
@@ -483,7 +482,7 @@ const DiputedBillings = props => {
               <h5 className="m-1"><b>Record Payment</b></h5>
             </Col>
           </Row>
-          {/* {GetAllInvoice != undefined ? <CompanySerchForm onFilter={handleFilterdata} SearchName={"Company"} /> : ""} */}
+
           <Row className="p-4  ml-5">
             {/* <br/> */}
 

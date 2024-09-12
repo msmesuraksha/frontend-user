@@ -30,28 +30,28 @@ function GlobalFilter({
   return (
 
     <div className="search-box me-2">
-    <div className="position-relative">
-      <label htmlFor="search-bar-0" className="search-label">
-        <span id="search-bar-0-label" className="sr-only">
-          Search this table
-        </span>
-        <input
-          onChange={e => {
-            setValue(e.target.value);
-            onChange(e.target.value);
-          }}
-          id="search-bar-0"
-          type="text"
-          className="form-control "
-style={{ width:'370px'}}
-          placeholder={ isCompany ? "Search from company Name/GST no /PAN no":`Search Here...`}
-          value={value || ""}
-        />
-      </label>
-      <i className="bx bx-search-alt search-icon"></i>
+      <div className="position-relative">
+        <label htmlFor="search-bar-0" className="search-label">
+          <span id="search-bar-0-label" className="sr-only">
+            Search this table
+          </span>
+          <input
+            onChange={e => {
+              setValue(e.target.value);
+              onChange(e.target.value);
+            }}
+            id="search-bar-0"
+            type="text"
+            className="form-control "
+            style={{ width: '370px' }}
+            placeholder={isCompany ? "Search from company Name/GST no /PAN no" : `Search Here...`}
+            value={value || ""}
+          />
+        </label>
+        <i className="bx bx-search-alt search-icon"></i>
+      </div>
     </div>
-  </div>
-  
+
   );
 }
 
@@ -140,19 +140,19 @@ const TableContainer = ({
             ))}
           </select>
         </Col>
-        
+
         <Col md={6} className="d-flex align-items-center">
-        {isGlobalFilter && (
-        <GlobalFilter
-        preGlobalFilteredRows={preGlobalFilteredRows}
-        globalFilter={state.globalFilter}
-        setGlobalFilter={setGlobalFilter}
-        isJobListGlobalFilter={isJobListGlobalFilter}
-        isCompany={isCompany}
-        />
-        )}
-         <style>
-  </style>
+          {isGlobalFilter && (
+            <GlobalFilter
+              preGlobalFilteredRows={preGlobalFilteredRows}
+              globalFilter={state.globalFilter}
+              setGlobalFilter={setGlobalFilter}
+              isJobListGlobalFilter={isJobListGlobalFilter}
+              isCompany={isCompany}
+            />
+          )}
+          <style>
+          </style>
         </Col>
         {/* {isAddOptions && (
           <Col sm="7">
@@ -262,7 +262,7 @@ const TableContainer = ({
         <Col className="col-md-auto d-none d-md-block">
           Page{" "}
           <strong>
-            {pageIndex + 1} of {pageOptions.length ==0 ? 1:pageOptions.length}
+            {pageIndex + 1} of {pageOptions.length == 0 ? 1 : pageOptions.length}
           </strong>
         </Col>
         <Col className="col-md-auto">

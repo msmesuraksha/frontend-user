@@ -14,6 +14,8 @@ import {
   CardHeader,
 } from "reactstrap";
 
+import { getData } from "store/utils/reducer/sessionStorage";
+
 import Breadcrumbs from "components/Common/Breadcrumb";
 // import MiniCards from "./mini-card";
 import profile1 from "assets/images/profile-img.png";

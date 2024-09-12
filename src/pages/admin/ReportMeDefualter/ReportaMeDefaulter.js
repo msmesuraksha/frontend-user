@@ -13,14 +13,12 @@ import {
   CardBody,
 } from "reactstrap"
 import TableContainer from "../../../components/Common/TableContainer";
-import InlineFilterForm from '../ApprovedTransaction/InlineFilterForm';
 import { useDispatch, useSelector } from "react-redux";
 import { setUploadFilesOpen, setCACertificateOpen, requestInvoiceDefEdit, setIsViewDetailModalOpen, markAsDisputedModalOpenAction } from "../../../store/debtors/debtors.actions"
 import { uploadFilesModalOpen, selectCACertificateOpen, isViewDetailMOdalOpenSelector, markAsDisputedModalOpenSelector } from "store/debtors/debtors.selecter"
 import { selectReportMeDefData } from "store/ReportMeDefulter/ReportMeDefulter.selecter"
 import { fetchReportMeDefulterStart } from "store/ReportMeDefulter/ReportMeDefulter.action"
 import UploadPendingFiles from "../Invoice/uploadFilesModal"
-import { CompanySerchForm } from "../ApprovedTransaction/companySearchComponet"
 import CurrencyFormat from "react-currency-format"
 import moment from 'moment'
 import { ToastContainer, toast } from 'react-toastify';
@@ -459,7 +457,7 @@ const ReportMedefulterComponent = props => {
             <Col md={3} className="pl-3 pt-4" style={{ textTransform: "capitalize" }}>
               <h5 className="mt-2"><b>Complaints Against Me</b></h5>
             </Col>
-            {/* <Col md={10} className="text-start">  {selectReportMeDeflist != undefined ? <CompanySerchForm onFilter={handleFilterdata} SearchName={"Seller"} /> : ""}  </Col> */}
+
           </Row> : ""}
           <Row className="  ">
             {selectReportMeDeflist != undefined && selectReportMeDeflist != null ?

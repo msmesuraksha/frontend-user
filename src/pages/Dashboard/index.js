@@ -33,7 +33,7 @@ import {
   sampleRepetedDebtors,
 } from "components/graph-components/debtors.componet"
 import { searchCompany as onsearchCompany } from "../../../src/store/actions";
-import { CompanySerchForm } from "pages/admin/ApprovedTransaction/companySearchComponet"
+
 
 //i18n
 import { withTranslation } from "react-i18next"

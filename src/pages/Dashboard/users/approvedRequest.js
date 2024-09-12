@@ -25,7 +25,7 @@ import { selectInvoiceList } from "store/debtors/debtors.selecter"
 import moment from 'moment'
 
 import { searchCompany as onsearchCompany } from "../../../store/actions";
-import { CompanySerchForm } from "pages/admin/ApprovedTransaction/companySearchComponet"
+
 
 //i18n
 import { withTranslation } from "react-i18next"
@@ -417,7 +417,7 @@ const ApprovedTransaction = props => {
               </Row>
               : <>
 
-                {/* {selectCompaintsByMeList != undefined ? <CompanySerchForm onFilter={handleFilterdata} SearchName={"Buyer"} /> : ""} */}
+
                 <Row className="p-0 ml-5">
                   <TableContainer
                     columns={columns}

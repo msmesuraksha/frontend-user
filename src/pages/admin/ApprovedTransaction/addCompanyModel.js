@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-
-// Formik Validation
-import * as Yup from "yup";
 import { useFormik } from "formik";
-import { selectDebtorsList } from './../../../store/company/CompanySelector'
 // action
 import { addNewCompany } from "../../../store/actions";
 import { ToastContainer, toast } from 'react-toastify';
@@ -32,16 +28,29 @@ import { getData } from "store/utils/reducer/sessionStorage";
 import { City, Country, State } from "country-state-city";
 
 const ReportedDebtorsModel = props => {
-  document.title = "Company-list | MSME Suraksha - User & Dashboard";
-  const [panNumber, setPanNumber] = useState('');
   const [termsModal, setTermsModal] = useState(false);
-  const [gstNumber, setGSTNumber] = useState('');
-  const [zipcode, setZipcode] = useState('');
-  const [mobile, setMobile] = useState('');
-  const [name, setName] = useState('');
-  const [companyName, setcompanyName] = useState('');
+
+  const [gstNumberValid, setGstNumberValid] = useState(true)
+  const [panNumberValid, setPanNumberValid] = useState(true)
+  const [zipcodeValid, setZipcodeValid] = useState(true)
+  const [mobileNumberValid, setMobileNumberValid] = useState(true)
+
+  const [stateData, setStateData] = useState();
+  const [cityData, setCityData] = useState();
+
+  let countryData = Country.getAllCountries();
+  const [country, setCountry] = useState(countryData[100]);
+
+  const [selectedState, setSelectedState] = useState("")
+  const [selectedCity, setSelectedCity] = useState("")
+
+
+  const [salutationState, setsalutationState] = useState([])
+  const [salutationCity, setSalutationCity] = useState([])
+
   const authUser = getData("authUser")
   const logindata = (sessionStorage.getItem("authUser")) != undefined ? authUser : ''
+
   const [gstValidation, setGSTValidation] = useState({
     touched: false,
     error: ''
@@ -52,38 +61,7 @@ const ReportedDebtorsModel = props => {
     error: ''
   });
 
-
   const dispatch = useDispatch();
-  useEffect(() => {
-    setName(logindata.name)
-
-  }, [logindata])
-  /*  const { addCompanyStatus } = useSelector(state =>
-     ({
-       addCompanyStatus: state.companyList.addCompanyMessage != undefined ?state.companyList.addCompanyMessage : "",
-     })
-     ); */
-  // console.log("addcompanystatue",addCompanyStatus.data.message)
-  //   const { error } = useSelector(state =>
-  //     ({
-  //       error: state.companyList.error != undefined ? state.companyList.error : "",
-  //     })
-  //     );
-
-  //city and State
-
-  let countryData = Country.getAllCountries();
-  const [stateData, setStateData] = useState();
-  const [cityData, setCityData] = useState();
-
-  const [country, setCountry] = useState(countryData[100]);
-
-  const [selectedState, setSelectedState] = useState("")
-  const [selectedCity, setSelectedCity] = useState("")
-
-
-  const [salutationState, setsalutationState] = useState([])
-  const [salutationCity, setSalutationCity] = useState([])
 
   const colourStyles = {
     menuList: styles => ({
@@ -123,13 +101,6 @@ const ReportedDebtorsModel = props => {
       setSalutationCity(stateDatalist)
     }
   }, [cityData]);
-
-  //
-
-  const [gstNumberValid, setGstNumberValid] = useState(true)
-  const [panNumberValid, setPanNumberValid] = useState(true)
-  const [zipcodeValid, setZipcodeValid] = useState(true)
-  const [mobileNumberValid, setMobileNumberValid] = useState(true)
 
   const formikModal = useFormik({
     enableReinitialize: true,
@@ -171,16 +142,6 @@ const ReportedDebtorsModel = props => {
       } else {
 
       }
-
-
-
-      /*       if (!/^(\+?\d{1,4}[\s-])?(?!0+\s+,?$)\d{10}\s*,?$/.test(values.secondMobileNo)) {
-              errors.secondMobileNo = "Invalid phone number"
-            }
-      
-            if (values.secondMobileNo.length < 0) {
-              errors.secondMobileNo = ""
-            } */
 
       if (!values.gstNumber) {
         errors.gstNumber = "GST Number is required"
@@ -258,19 +219,7 @@ const ReportedDebtorsModel = props => {
         return
       }
       dispatch(addNewCompany(payload));
-      //     // console.log("addCompanyStatusaddCompanyStatus",addCompanyStatus,error)
 
-      /*   if(addCompanyStatus.status == 200 ){
-          toast.success("Registration successfully")
-          window.location.reload()
-   
-   
-   
-        }
-        else{
-          // toast.error(addCompanyStatus.data.message)
-   
-        } */
     } else {
       toast.error('Please fill all fields ')
       return
