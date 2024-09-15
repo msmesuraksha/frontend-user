@@ -2,6 +2,7 @@ import {
   FETCH_REPORT_ME_DEFULTER_START,
   FETCH_REPORT_ME_DEFULTER_SUCCESS,
   FETCH_REPORT_ME_DEFULTER_FAILED,
+  REPORT_ME_DEFULTER_DATA_BLANK
 } from "./ReportMeDefulter.type"
 
 export const REPORT_ME_DEFULTER_INITIAL_STATE = {
@@ -19,6 +20,8 @@ export const ReportMeDefulterReducer = (
     case FETCH_REPORT_ME_DEFULTER_START:
       return { ...state, loading: true }
     case FETCH_REPORT_ME_DEFULTER_SUCCESS:
+      return { ...state, loading: false, reportMeDefulterList: payload }
+    case REPORT_ME_DEFULTER_DATA_BLANK:
       return { ...state, loading: false, reportMeDefulterList: payload }
     case FETCH_REPORT_ME_DEFULTER_FAILED:
       return { ...state, loading: false, error: payload }

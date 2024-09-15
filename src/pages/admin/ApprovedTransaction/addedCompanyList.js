@@ -33,6 +33,8 @@ import { selectUpdatedToken } from "store/auth/login/Login.selecter";
 
 import { setData } from "store/utils/reducer/sessionStorage";
 
+import { ReportDefulterDataBlank } from "store/ReportMeDefulter/ReportMeDefulter.action";
+
 const AddedCompanyList = props => {
   const dispatch = useDispatch();
   const [modal1, setModal1] = useState(false);
@@ -44,10 +46,12 @@ const AddedCompanyList = props => {
   const handleEyeIconClick = (item) => {
     setData("COMPANY-ID", item.id)
     setData("COMPANY", item.companyName)
+
     // sessionStorage.setItem("COMPANY-ID", item.id)
     // sessionStorage.setItem("COMPANY", item.companyName)
     const newPageUrl = '/company-dashboard';
-    window.location.href = newPageUrl;
+    //   window.location.href = newPageUrl;
+    //  dispatch(ReportDefulterDataBlank([]))
     dispatch(setSelectCopenOpen(!SelectCompnayOpen))
   };
   const columns = useMemo(

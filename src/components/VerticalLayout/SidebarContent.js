@@ -16,6 +16,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { SelectCompnay } from "store/selectCompany/selectCompany.selecter"
 import { setSelectCopenOpen } from "store/selectCompany/selectCompany.actiontype"
 
+import { ReportDefulterDataBlank } from "store/ReportMeDefulter/ReportMeDefulter.action"
+
+import { selectReportMeDefData } from "store/ReportMeDefulter/ReportMeDefulter.selecter"
+
 const SidebarContent = props => {
   const dispatch = useDispatch();
   const [showMenuItems, setshowMenuItems] = useState(false)
@@ -183,6 +187,15 @@ const SidebarContent = props => {
     }
   }
   // console.log("currenstStatecurrenstStatecurrenstState", currenstState)
+
+  const changeCompanyFunction = () => {
+    dispatch(setSelectCopenOpen(false))
+    dispatch(ReportDefulterDataBlank([]))
+  }
+
+  const selectReportMeDeflist = useSelector(selectReportMeDefData)
+
+  console.log("selectReportMeDeflist", selectReportMeDeflist);
   return (
     <React.Fragment>
       <SimpleBar className="h-100" ref={ref}>
@@ -211,7 +224,7 @@ const SidebarContent = props => {
             {SelectCompnayOpen == true ? (
               <>
                 <li >
-                  <Link to="/companies" onClick={() => { dispatch(setSelectCopenOpen(false)) }} >
+                  <Link to="/companies" onClick={() => { changeCompanyFunction() }} >
 
                     <i className="bx bxs-home "></i>
                     {props.isHovered && props.t("Change Company")}
