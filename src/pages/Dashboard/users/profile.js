@@ -133,10 +133,6 @@ const ContactsProfile = (props) => {
 
   const dispatch = useDispatch()
 
-  const userProfileData = useSelector(selectLoginSuccess)
-
-  console.log('userProfileData', userProfileData);
-
   const handleChange = () => {
     isEdit != undefined && isEdit != false ? setIsEdit(false) : setIsEdit(true)
     return isEdit

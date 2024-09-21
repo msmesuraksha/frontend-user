@@ -245,8 +245,7 @@ const ReportedDefaulterModel = props => {
 
     })
 
-    console.log('newPayload', newPayload);
-    console.log('newPayload2', data);
+
 
     if (newData.includes(undefined)) {
       toast.error("Please Fill All Required Fields");
@@ -543,10 +542,7 @@ const ReportedDefaulterModel = props => {
               :
               <Row className="Dragtable mt-3">
                 {data.map((row, index) => {
-                  /* 
-                   const filename = row?.invoiceDocument?.fileUrl?.split("-")[-1]
- 
-                   console.log('demo_check', filename); */
+
 
 
                   return (

@@ -287,7 +287,7 @@ const ReportedDefaulterModel = props => {
   const disableFutureDates = (date) => {
     return date > today;
   };
-  // console.log("selectedselectedselectedselected",selected)
+
 
   const [popupIsOpen, setPopupIsOpen] = useState(false)
 

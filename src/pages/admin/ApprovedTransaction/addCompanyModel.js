@@ -194,7 +194,7 @@ const ReportedDebtorsModel = props => {
         "secPhoneNumber": item.secondMobileNo,
         "emailId": logindata.emailId
       }
-      // console.log("FOREMIK DATA::::", item, selectedCity.value, selectedState.value, payload)
+
 
       let checkvalue = false;
 

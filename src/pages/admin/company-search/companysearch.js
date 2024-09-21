@@ -77,9 +77,9 @@ const CompanySearch = props => {
   const CompanySearchLoder = useSelector(selectCompanySearchLoder)
 
   const selectCompanySearchLists = useSelector(selectCompanySearchList)
-  // const getAllCompanyList = useSelector(getAllCompanyListSelector)
+
   const selectCompanySearchListMap = useSelector(selectdashboardAdminDataMap)
-  // console.log("selectCompanySearchListMap", selectCompanySearchListMap)
+
   const currentUserViewDetails = useSelector(selectCompanySearchVeiwDatilsList)
 
 

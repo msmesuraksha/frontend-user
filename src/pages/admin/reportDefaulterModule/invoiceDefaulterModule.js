@@ -89,10 +89,6 @@ export const InvoiceDetailsModule = ({ filteredCustomerDetail, selectedOption, i
 
         })
 
-        console.log('newPayload', newPayload);
-        console.log('newPayload3', newData);
-        console.log('newPayload2', data);
-
         if (newData.includes(undefined)) {
             toast.error("Please Fill All Required Fields");
             return

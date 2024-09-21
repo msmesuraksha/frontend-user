@@ -113,7 +113,7 @@ const ReportDefaulterModule = props => {
 
   const defaulterId = requestedData?.id
 
-  console.log('moduleName', data)
+
 
   function closeReporteDefulater() {
     toggle()

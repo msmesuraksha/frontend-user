@@ -195,7 +195,7 @@ const SidebarContent = props => {
 
   const selectReportMeDeflist = useSelector(selectReportMeDefData)
 
-  console.log("selectReportMeDeflist", selectReportMeDeflist);
+
   return (
     <React.Fragment>
       <SimpleBar className="h-100" ref={ref}>

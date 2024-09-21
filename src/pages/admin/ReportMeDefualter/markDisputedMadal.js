@@ -201,22 +201,6 @@ const MarkDisputedMadal = props => {
     }]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    console.log("DUMMMMMMMMMM", dummyPayload)
-
-
-
     const payload = [
       {
         "defaulterEntryId": selected.id,
@@ -286,7 +270,7 @@ const MarkDisputedMadal = props => {
         "documents": []
       }
     })
-    console.log("selected", newInvoice);
+
     setDatas(newInvoice)
   }, [selected])
 

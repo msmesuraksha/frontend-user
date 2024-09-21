@@ -44,7 +44,7 @@ export const UploadPendingLinkModule = props => {
     const [popchecked, setPopChecked] = useState(false);
     const [successPop, setSuccessPop] = useState(false);
 
-    console.log('popchecked', popchecked);
+
     const handleCheckboxChange = () => {
         setChecked(!checked);
     };
@@ -69,7 +69,7 @@ export const UploadPendingLinkModule = props => {
 
     const [docData, setDocData] = useState([])
 
-    // console.log('docData', docData);
+
 
 
 
@@ -284,7 +284,7 @@ export const UploadPendingLinkModule = props => {
             reader.onload = () => {
                 // Do whatever you want with the file contents
                 const binaryStr = reader.result
-                // console.log("BINARYYYYY", binaryStr)
+
             }
             reader.readAsArrayBuffer(file)
         })

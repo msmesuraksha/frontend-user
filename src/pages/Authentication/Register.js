@@ -62,7 +62,7 @@ const Register = props => {
       background: '#FFFFFF'
     })
   }
-  // console.log("CHECKKKKKlll", selectedCity)
+
   useEffect(() => {
     setStateData(State.getStatesOfCountry(country?.isoCode));
   }, [country]);
@@ -346,7 +346,7 @@ const Register = props => {
                             if (formik.values.name != '' && formik.values.zipcode != '' && formik.values.email != '' && gstNumber != '' && panNumber != "" && selectedState != "" && selectedCity != "") {
                               dispatch(registerUser_login(user, props.router.navigate));
                               setTimerStart(true)
-                              //  console.log("CHECKKKK", selectedCity.value, selectedState.value)
+
 
                             }
                             return false;

@@ -229,7 +229,7 @@ const UploadPendingDocModel = props => {
       reader.onload = () => {
         // Do whatever you want with the file contents
         const binaryStr = reader.result
-        // console.log("BINARYYYYY", binaryStr)
+
       }
       reader.readAsArrayBuffer(file)
     })

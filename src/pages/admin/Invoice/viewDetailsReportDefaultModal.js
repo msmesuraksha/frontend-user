@@ -50,7 +50,7 @@ const ViewDetailsReportDefaultModal = props => {
         <ModalBody>
           {filteredCustomerDetail != undefined ? <>
             <Row className="">
-              {console.log('filteredCustomerDetail', filteredCustomerDetail)}
+
               <div className="mb-2"><b className="" style={{ fontSize: '15px' }}>{name} Detail :</b></div>
               {name == 'Seller' ? <Label className="text-capitalize">
                 <b>  Customer Name :</b> {filteredCustomerDetail.companyOwner.name}

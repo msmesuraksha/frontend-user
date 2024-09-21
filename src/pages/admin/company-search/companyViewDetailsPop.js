@@ -63,7 +63,7 @@ const CompnayViewDetails = props => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedLevel, setSelectedLevel] = useState(null);
-    // console.log("selectselecteded", selected)
+
     const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
     const toggleModal = () => setModalOpen(!modalOpen);
 
@@ -173,7 +173,7 @@ const CompnayViewDetails = props => {
                                     {/*                                 <p className="mb-2">
                                         Billing Name: <span className="text-primary">{selected != "" ? selected.CompanyName : ''}</span>
                                     </p> */}
-                                    {console.log('selected', selected)}
+
                                     <p className="mb-2">
                                         <b>Buyer Name :</b>   <span className="text-primary">{selected != "" ? selected.FullName : ''}</span>
                                     </p>

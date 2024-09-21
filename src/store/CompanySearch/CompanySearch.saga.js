@@ -20,13 +20,7 @@ export function* fetchCompanySearchAsync(payload) {
 function* getAllCompanySAGA() {
   try {
     const response = yield call(getAllCompany)
-    // console.log("responseresponseresponse", response)
-    // if (response.data.response) {
     yield put(getAllCompanyListActionSuccess(response.data.response))
-    // } else {
-    //   yield put(getAllCompanyListActionSuccess(response))
-    // }
-
   } catch (error) {
     yield put(getAllCompanyListActionFail(error))
   }

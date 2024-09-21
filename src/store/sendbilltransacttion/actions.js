@@ -23,30 +23,3 @@ export const SelectAddCustomerList = (state) => {
   }
 }
 
-/*   export const addCustomerlist = (user) => {
-    console.log("USER++",user)
-    return {
-      type: "ADD_NEW_CUSTOMER",
-      payload:user[0],
-    }
-
-    user.data.response
-  }
-  
-  export const addNewCustomerSuccess = (user) => {
-     console.log("user1111",user)
-    return {
-      type: ADD_NEW_CUSTOMER_SUCCESS,
-      payload: { user },
-    }
-  }
-
-
-  
-  export const addNewCustomerFail = (user) => {
-     
-    return {
-      type: ADD_NEW_CUSTOMER_FAIL,
-      payload: { user, history },
-    }
-  } */

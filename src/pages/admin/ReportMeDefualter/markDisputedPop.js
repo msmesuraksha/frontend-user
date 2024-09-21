@@ -32,7 +32,7 @@ export const MarkDisputedPopModule = props => {
     const [radioOption, setRadioOption] = useState("")
     const [nextBtn, setNextBtn] = useState(false)
     const [submitSuccess, setSubmitSuccess] = useState(false)
-    console.log("PSOPSOPSOP", currentindex.invoices)
+
     const OtherReasonOpen = () => {
         setOtherReason(!otherReason)
     }

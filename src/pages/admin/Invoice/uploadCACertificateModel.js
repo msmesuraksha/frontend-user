@@ -84,7 +84,7 @@ const UploadCACertificateModel = props => {
     }]
 
     if (size > 0) {
-      console.log("paylosdd", payload)
+
       dispatch(uploadCACertificateID(payload[0]))
       toast.success("CA Certificate Updated")
       toggle()

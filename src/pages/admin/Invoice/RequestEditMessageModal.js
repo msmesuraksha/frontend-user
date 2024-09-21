@@ -690,10 +690,7 @@ const EditReportedDefaulterModel = props => {
 
                 <Row className=" mt-3">
                   {data.map((row, index) => {
-                    /* 
-                     const filename = row?.invoiceDocument?.fileUrl?.split("-")[-1]
-                
-                     console.log('demo_check', filename); */
+
 
 
                     return (

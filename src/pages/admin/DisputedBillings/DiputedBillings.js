@@ -332,7 +332,7 @@ const DiputedBillings = props => {
         filterable: false,
         Cell: cellProps => {
           return <div>
-            {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+
             {moment(cellProps.cell?.row?.original?.createdAt).format('DD-MM-YYYY')}
           </div>
 
@@ -346,7 +346,7 @@ const DiputedBillings = props => {
         filterable: false,
         Cell: cellProps => {
           return <div>
-            {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+
             {cellProps.cell?.row?.original?.complaintNumber}
           </div>
 

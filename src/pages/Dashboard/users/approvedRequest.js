@@ -80,20 +80,12 @@ const ApprovedTransaction = props => {
   const isLodingCompany = useSelector(selectCompanyloding)
 
   const selectCompaintsByMeList = useSelector(selectCompaintsByMes)
-  // console.log('selectCompaintsByMeListselectCompaintsByMeList', selectCompaintsByMeList)
+
   useEffect(() => {
     dispatch(fetchApproveReportMeDefaulterStart())
   }, [])
 
-  /*   useEffect(() => {
-      const timer = setTimeout(() => {
-        dispatch(getAllInvoice());
-  
-      }, 1000);
-      return () => clearTimeout(timer);
-  
-  
-    }, []) */
+
 
 
   const handleSignUp = () => {
@@ -237,7 +229,7 @@ const ApprovedTransaction = props => {
         filterable: false,
         Cell: cellProps => {
           return <div>
-            {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+
             {moment(cellProps.cell?.row?.original?.createdAt).format('DD-MM-YYYY')}
           </div>
 
@@ -251,7 +243,7 @@ const ApprovedTransaction = props => {
         filterable: false,
         Cell: cellProps => {
           return <div>
-            {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+
             {cellProps.cell?.row?.original?.complaintNumber}
           </div>
 

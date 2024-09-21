@@ -246,8 +246,7 @@ export const NewOrderModel = props => {
 
     })
 
-    console.log('newPayload', newPayload);
-    console.log('newPayload2', data);
+
 
     if (newData.includes(undefined)) {
       toast.error("Please Fill All Required Fields");

@@ -29,7 +29,7 @@ export const FeedbackQuestionModule = ({ debtorId, feedbackdataPaylod, setfeedba
 
 
   const handlefinancialdifficult = (selected) => {
-    console.log("selectedselectedselected", selected)
+
 
     const userFeedbackcheck = feedbackdataPaylod.findIndex(x => x.questionId == selected.questionId)
     if (userFeedbackcheck !== -1) {

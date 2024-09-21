@@ -53,7 +53,7 @@ const UploadPendingListModule = props => {
     }, [])
     document.title = "Upload Pending Files | MSME Suraksha"
 
-    // console.log('selectTransactionsRaisedByMe', selectTransactionsRaisedByMe);
+
 
     const [uploadFilesModelDataForUpload, setuploadFilesModelDataForUpload] = useState('')
 
@@ -111,7 +111,7 @@ const UploadPendingListModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div>
-                        {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+
                         {moment(cellProps.cell?.row?.original?.createdAt).format('DD-MM-YYYY')}
                     </div>
                 },
@@ -123,7 +123,7 @@ const UploadPendingListModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div>
-                        {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+
                         {cellProps.cell?.row?.original?.complaintNumber}
                     </div>
                 },
@@ -242,7 +242,7 @@ const UploadPendingListModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div>
-                        {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+
                         {moment(cellProps.cell?.row?.original?.createdAt).format('DD-MM-YYYY')}
                     </div>
                 },
@@ -254,7 +254,7 @@ const UploadPendingListModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div>
-                        {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+
                         {cellProps.cell?.row?.original?.complaintNumber}
                     </div>
                 },

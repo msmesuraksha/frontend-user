@@ -64,14 +64,12 @@ export const selectCompaintsByMes = createSelector(
     if (ApproveReportMeDefaulter == undefined) return []
     if (ApproveReportMeDefaulter?.approveReportMeDefaulterList.length != 0) {
       const mapinvoicelist = ApproveReportMeDefaulter?.approveReportMeDefaulterList?.complaintsByMe.map((item, index) => {
-        // console.log("ITEMMMMMM", item)
         const SrNo = index = 1
         const customerName = item.defaulterEntry.debtor.companyName
         const status = item.defaulterEntry.latestStatus
         const dueFrom = item.dueFrom
         const defaulterEntryId = item.defaulterEntry.id
         const totalAmount = item.defaulterEntry.totalAmount
-        // const Address = item.debtor.address1+", "+ item.debtor.address2 +", "+ item.debtor.city+", "+ item.debtor.state
         const invoiceList = item.defaulterEntry.invoices.map((data, i) => {
           return item.defaulterEntry.invoices.length > i + 1 ? data.invoiceNumber + "," : data.invoiceNumber
 
@@ -99,8 +97,4 @@ export const selectCompaintsByMes = createSelector(
 
   });
 
-/* export const selectDoardAdminDataLoading = createSelector(
-  [selectApproveReportMeDefaulterReducer],
-  (reportMeDefulter) => reportMeDefulter.loading
-); */
 

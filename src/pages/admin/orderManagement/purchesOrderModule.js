@@ -321,7 +321,7 @@ export const PurchaseOrderModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div>
-                        {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+
                         {cellProps.cell?.row?.original?.complaintNumber}
                     </div>
 
@@ -345,7 +345,7 @@ export const PurchaseOrderModule = props => {
                 filterable: false,
                 Cell: cellProps => {
                     return <div style={{ width: "110px" }} className="text-capitalize">
-                        {/* {console.log("cellProps.cell.row.original.debtor.companyName",cellProps.cell.row.original.debtor.companyName )} */}
+
                         {cellProps.cell?.row?.original?.customerName}
                     </div>
 

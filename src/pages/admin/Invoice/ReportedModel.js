@@ -122,7 +122,7 @@ const ReportedDebtorsModel = props => {
 
   const handlefinancialdifficult = (selected) => {
     // if(selected.questionDesc != undefined && selected.questionDesc != ""){
-    console.log("selectedselectedselected", selected)
+
 
     const userFeedbackcheck = feedbackdataPaylod.findIndex(x => x.questionId == selected.questionId)
     if (userFeedbackcheck !== -1) {

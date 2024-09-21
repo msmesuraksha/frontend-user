@@ -41,8 +41,8 @@ const CompanyName = (cell) => {
 };
 const Adddresss = (cell) => {
     // const address = cell.value.substring(0, 80) + '...';'
-    const address = cell.value.length > 30 ? cell.value.substring(0, 30) + '...':cell.value;
-    
+    const address = cell.value.length > 30 ? cell.value.substring(0, 30) + '...' : cell.value;
+
     return cell.value ? <div style={{ width: '160px' }}>{address} </div> : '';
 };
 const GST = (cell) => {
@@ -102,11 +102,11 @@ const DueSince = (cell) => {
         const differenceInMilliseconds = today - currentDate;
         const differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
         e = differenceInDays
-        // console.log("EEEKDJFKDJFD", e)
+
         return differenceInDays;
 
     };
-    console.log("CompanySearchCompanySearch", cell.value)
+
     const divStyle = {
         padding: '1px',
         fontSize: "12px" // Adjust the padding value as needed

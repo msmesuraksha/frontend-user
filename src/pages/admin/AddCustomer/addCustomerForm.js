@@ -350,7 +350,7 @@ export const AddcustomerFomr = ({ isAddCustomercheck }) => {
   }
 
 
-  console.log('userData', userData);
+
 
 
 
