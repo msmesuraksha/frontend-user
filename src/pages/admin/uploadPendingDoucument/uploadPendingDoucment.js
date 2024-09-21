@@ -7,7 +7,7 @@ import withRouter from "components/Common/withRouter"
 import Select, { components } from "react-select"
 import moment from "moment"
 import "../../Dashboard/users/send-bill-transaction/sendbillTransaction"
-import ReportedDebtorsModel from "../Invoice/ReportedModel"
+
 import ReportedDefaulterModel from "../Invoice/ReportDefaulterModel"
 /* import ReportIncoiceModel from './ReportInvoiceModel' */
 import 'react-table-6/react-table.css'

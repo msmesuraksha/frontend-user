@@ -24,7 +24,7 @@ import 'react-calendar/dist/Calendar.css';
 import './style.css';
 import { useFormik } from "formik"
 import { ToastContainer, toast } from 'react-toastify';
-import ReportedDebtorsModel from "../Invoice/ReportedModel";
+
 
 import { useEffect } from "react";
 import { getAllDebtors } from '../../../store/debtors/debtors.actions'
@@ -33,7 +33,6 @@ import Select from "react-select"
 import * as moment from "moment";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import confirmReportModal from "../Invoice/ConfirmReportDefaulterModal";
 import { selectDebtorsList } from "store/debtors/debtors.selecter";
 import { setIsCustomerFeedbackModalOpen, addInvoiceArray, } from "../../../store/debtors/debtors.actions"
 import { selectFeedbackModalOpen, addInvoiceReportDebtorSelector, } from "store/debtors/debtors.selecter"
@@ -503,10 +502,10 @@ export const NewOrderModel = props => {
     >
       <div className="modal-contents">
         <ModalHeader toggle={toggle} className="font-weight-bold" ><b style={{ fontSize: '18px' }}>{requestedData == undefined ? "Purchase order" : "Request Edit"}</b></ModalHeader>
-        {isCustomerFeedbackModalOpen && <ReportedDebtorsModel isOpen={isCustomerFeedbackModalOpen} toggle={toggleViewModal1} filteredCustomerDetail={filteredCustomerDetail} allInvoiceList={newPayload} dataForPreview={data} debtorId={selectedOption.value} moduleName={'invoice'} defaulterId={''} />}
+
 
         <ModalBody className="" >
-          {/* <ConfirmReportModal isOpen={showConfirmModal} toggle={handleConfirmClose} /> */}
+
           {
             filteredCustomerDetail.length == 0 && requestedData == undefined ? <form>
               <Row className="selectionList">

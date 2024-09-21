@@ -12,7 +12,7 @@ import { getAllInvoice, setIsReportDefOpen, setUploadFilesOpen, setCACertificate
 import { selectReportDefOpen, selectInvoiceList, uploadFilesModalOpen, selectCACertificateOpen, requestEditSelector } from "store/debtors/debtors.selecter"
 import { addInvoiceBill, addInvoiceBillSuccess } from '../../../store/actions'
 import UploadPendingFiles from "../Invoice/uploadFilesModal";
-import ReportedDebtorsModel from "../Invoice/ReportedModel";
+
 import ReportedDefaulterModel from "../Invoice/ReportDefaulterModel";
 import UploadCACertificateModel from "../Invoice/uploadCACertificateModel";
 import moment from 'moment'
@@ -464,11 +464,7 @@ const DiputedBillings = props => {
 
   return (
     <React.Fragment>
-      <ReportedDebtorsModel isOpen={modal1} toggle={toggleViewModal} additionalValue={additionalValue} selected={selected} />
       <ReportedDefaulterModel isOpen={modal2} toggle={toggleViewModal1} selected={selected} customerName={invoiceIdsForCAcertificate} requestor={'CREDITOR'} />
-      <UploadCACertificateModel isOpen={selectCACertificate} toggle={toggleViewModal2} invoiceId={invoiceIdsForCAcertificate} />
-      {/*       <UploadPendingFiles isOpen={uploadFilesModalShow} toggle={toggleUploiadFiles} /> */}
-
       <Card>
         <CardBody>
           <div className="mb-4 h4 card-title"></div>

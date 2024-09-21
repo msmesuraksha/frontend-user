@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css"
 import withRouter from "components/Common/withRouter"
 import Select, { components } from "react-select"
 import "../../Dashboard/users/send-bill-transaction/sendbillTransaction"
-import ReportedDebtorsModel from "../Invoice/ReportedModel"
+
 import ReportedDefaulterModel from "../Invoice/ReportDefaulterModel"
 import UploadCACertificateModel from "../Invoice/uploadCACertificateModel"
 
@@ -60,7 +60,7 @@ import CaImg from '../../../assets/images/newImg/CA-BG_Remove.png'
 import profileimg from '../../../assets/images/newImg/profile.png'
 import { numberFormat } from "../uploadPendingDoucument/uploadPendingDoc"
 
-import EditReportedDefaulterModel from "../Invoice/RequestEditMessageModal"
+
 import './style.css'
 // import { ToastContainer } from "react-toastify"
 
@@ -836,13 +836,12 @@ export const PurchaseOrderModule = props => {
     return (
         <React.Fragment>
             {deletePop && <InvoiceDeletePop isOpen={deletePop} toggle={toggleDeletePop} deleteValue={deleteValue} DeleteInvoiceModule={DeleteInvoiceModule} />}
-            {modal1 && <ReportedDebtorsModel isOpen={modal1} toggle={toggleViewModal} additionalValue={additionalValue} selected={selected} />}
             {modal2 && <ReportedDefaulterModel isOpen={modal2} toggle={toggleViewModal1} selected={selected} customerName={invoiceIdsForCAcertificate} requestor={'CREDITOR'} name={'Buyer'} />}
             {selectCACertificate && <UploadCACertificateModel isOpen={selectCACertificate} toggle={toggleViewModal2} invoiceId={invoiceIdsForCAcertificate} customerType={customerType} />}
             {newOrderOpen && <NewOrderModel isOpen={newOrderOpen} toggle={handleReportDefaulter} GetAllInvoice={GetAllInvoice} />}
             {uploadFilesModalShow && <UploadPendingFiles isOpen={uploadFilesModalShow} toggle={toggleUploiadFiles} uploadFilesModelDataForUpload={uploadFilesModelDataForUpload} />}
             {viewModuleOpen && <ViewDetailsOrderManagementModal isOpen={viewModuleOpen} toggle={toggleViewModuleOpen} viewModalData={viewModalData} name={'Seller'} />}
-            {isRequestEditModalOpen && <EditReportedDefaulterModel isOpen={isRequestEditModalOpen} toggle={toggleReqEdit} requestedData={requestedData} GetAllInvoice={GetAllInvoice} />}
+
 
             <Card style={{ padding: props.isClickedToOrder != undefined && props.isClickedToOrder ? "0px" : '0px' }}>
                 <CardBody style={{ padding: props.isClickedToOrder != undefined && props.isClickedToOrder ? "0px" : '0px' }}>

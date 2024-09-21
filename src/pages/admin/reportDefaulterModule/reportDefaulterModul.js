@@ -25,7 +25,7 @@ import 'react-calendar/dist/Calendar.css';
 import './style.css';
 
 import { ToastContainer, toast } from 'react-toastify';
-import ReportedDebtorsModel from "../Invoice/ReportedModel";
+
 
 import { useEffect } from "react";
 import { getAllDebtors } from '../../../store/debtors/debtors.actions'

@@ -6,10 +6,10 @@ import "react-datepicker/dist/react-datepicker.css"
 import withRouter from "components/Common/withRouter"
 import Select, { components } from "react-select"
 import "../../Dashboard/users/send-bill-transaction/sendbillTransaction"
-import ReportedDebtorsModel from "../Invoice/ReportedModel"
+
 import ReportedDefaulterModel from "../Invoice/ReportDefaulterModel"
 import UploadCACertificateModel from "../Invoice/uploadCACertificateModel"
-import ReportIncoiceModel from "../Invoice/ReportInvoiceModel"
+
 
 
 import 'react-table-6/react-table.css'
@@ -57,7 +57,7 @@ import CaImg from '../../../assets/images/newImg/CA-BG_Remove.png'
 import profileimg from '../../../assets/images/newImg/profile.png'
 import { numberFormat } from "../uploadPendingDoucument/uploadPendingDoc"
 
-import EditReportedDefaulterModel from "../Invoice/RequestEditMessageModal"
+
 import './style.css'
 // import { ToastContainer } from "react-toastify"
 

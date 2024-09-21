@@ -50,7 +50,6 @@ const ViewDetailsReportDefaultModal = props => {
         <ModalBody>
           {filteredCustomerDetail != undefined ? <>
             <Row className="">
-
               <div className="mb-2"><b className="" style={{ fontSize: '15px' }}>{name} Detail :</b></div>
               {name == 'Seller' ? <Label className="text-capitalize">
                 <b>  Customer Name :</b> {filteredCustomerDetail.companyOwner.name}
@@ -99,8 +98,6 @@ const ViewDetailsReportDefaultModal = props => {
 
               </Col>
               <Col md={2} className="text-end">
-
-                {/* <Button className="btn btn-info">Edit Invoice</Button> */}
               </Col>
             </Row>
 
@@ -111,97 +108,11 @@ const ViewDetailsReportDefaultModal = props => {
                   <Col md={3}>Due From : {moment(item.dueDate).format("DD-MMM-YYYY")}</Col>
                   <Col md={3}>Due Amount : {numberFormat(item.remainingAmount)}</Col>
                   <Col md={3}>
-
                   </Col>
-
                 </Row>
-
-                {/* <Row className="mt-2">
-                  <Col md={3}>
-                    <Row    >
-                      <Col md={8} className="pt-4">
-                        <strong>Invoice Document</strong>
-                      </Col>
-                      <Col md={4} className="mt-2">
-                        {item.invoiceDocument != null ?
-                          <a href={item.invoiceDocument.url} rel='noreferrer' target='_blank'>
-                            <img src={jpgImg} className="iconsImage shadow" />
-
-
-                          </a>
-                          :
-                          <img src={noFile} className="iconsImage shadow" />
-
-
-                        }
-                      </Col>
-                    </Row>
-
-                  </Col>
-                  <Col md={3}>
-                    <Row>
-                      <Col md={8} className="pt-4">
-                        <strong>Dispatch Document</strong>
-                      </Col>
-                      <Col md={4}>
-                        {item.challanDocument != null ? <a href={item.challanDocument.url} rel='noreferrer' target='_blank'>
-                          <img src={jpgImg} className="iconsImage shadow" />
-
-
-                        </a> :
-                          <img src={noFile} className="iconsImage shadow" />
-
-                        }
-                      </Col>
-                    </Row>
-
-                  </Col>
-                  <Col md={3}>
-                    <Row>
-                      <Col md={8} className="pt-4">
-                        <strong>Transportation Document</strong>
-                      </Col>
-                      <Col md={4} className="pt-2">
-                        {item.transportationDocument != null ? <a href={item.transportationDocument.url} rel='noreferrer' target='_blank'>
-                          <img src={pdfImg} className="iconsImage shadow" />
-
-
-                        </a>
-                          :
-                          <img src={noFile} className="iconsImage shadow" />
-
-                        }
-                      </Col>
-                    </Row>
-
-                  </Col>
-                  <Col md={3}>
-                    <Row>
-                      <Col md={8} className="pt-4">
-                        <strong>Purchase Document</strong>
-                      </Col>
-                      <Col md={4}>
-                        {item.purchaseOrderDocument != null ? <a href={item.purchaseOrderDocument.url} rel='noreferrer' target='_blank'>
-                          <img src={pdfImg} className="iconsImage shadow" />
-
-
-                        </a> :
-                          <img src={noFile} className="iconsImage shadow" />
-
-
-                        }          </Col>
-                    </Row>
-
-                  </Col>
-                </Row> */}
-
-
               </Row>
-
             })
               : ''
-
-
             }
 
             <Row className="mt-2 mb-2">

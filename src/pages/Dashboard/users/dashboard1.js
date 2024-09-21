@@ -6,10 +6,9 @@ import "react-datepicker/dist/react-datepicker.css"
 import withRouter from "components/Common/withRouter"
 import Select, { components } from "react-select"
 import "../../Dashboard/users/send-bill-transaction/sendbillTransaction"
-import ReportedDebtorsModel from "../../../../src/pages/admin/Invoice/ReportedModel"
 import ReportedDefaulterModel from '../../../../src/pages/admin/Invoice/ReportDefaulterModel'
 import UploadCACertificateModel from '../../../../src/pages/admin/Invoice/uploadCACertificateModel'
-import ReportIncoiceModel from '../../../../src/pages/admin/Invoice/ReportInvoiceModel'
+
 import 'react-table-6/react-table.css'
 import ReactTable from 'react-table-6'
 import CurrencyFormat from 'react-currency-format';
@@ -203,10 +202,9 @@ const ReportDebtor = props => {
 
   return (
     <React.Fragment>
-      <ReportedDebtorsModel isOpen={modal1} toggle={toggleViewModal} additionalValue={additionalValue} selected={selected} />
+
       <ReportedDefaulterModel isOpen={modal2} toggle={toggleViewModal1} selected={selected} />
       <UploadCACertificateModel isOpen={modal3} toggle={toggleViewModal2} />
-      <ReportIncoiceModel isOpen={isReportDefOpen} toggle={toggleViewModal3} GetAllInvoice={GetAllInvoice} />
 
 
       <Card>
