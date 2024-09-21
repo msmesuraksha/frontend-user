@@ -29,17 +29,30 @@ export const DocumentViewModule = props => {
   let docs = []
 
   if (moduleName == 'preview') {
-    currentUrlArr = currentUrl.fileUrl.split('.');
-    docs = [
-      {
-        uri: currentUrl.fileUrl,
-        fileType: currentUrlArr[currentUrlArr.length - 1],
-        fileName: currentUrl.fieldName + `.${currentUrlArr[currentUrlArr.length - 1]}`,
-      }
-    ];
+
+    if (currentUrl.url) {
+      currentUrlArr = currentUrl.name.split('.');
+
+      docs = [
+        {
+          uri: currentUrl.url,
+          fileType: currentUrlArr[currentUrlArr.length - 1],
+          fileName: currentUrl.name,
+        }
+      ];
+    } else {
+      currentUrlArr = currentUrl.fileUrl.split('.');
+      docs = [
+        {
+          uri: currentUrl.fileUrl,
+          fileType: currentUrlArr[currentUrlArr.length - 1],
+          fileName: currentUrl.fieldName + `.${currentUrlArr[currentUrlArr.length - 1]}`,
+        }
+      ];
+    }
+
   } else {
     currentUrlArr = currentUrl.name.split('.');
-
     docs = [
       {
         uri: currentUrl.url,

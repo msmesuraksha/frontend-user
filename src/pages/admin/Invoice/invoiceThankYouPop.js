@@ -30,8 +30,6 @@ import fileImg1 from '../../../assets/images/newImg/png-file-.png'
 import { getAllInvoice } from "../../../store/debtors/debtors.actions";
 
 export const InvoiceThankYouPop = ({ isOpen, toggle, closeAllTable, handleThankYouPop }) => {
-    debugger
-
 
     const closePop = () => {
         closeAllTable()

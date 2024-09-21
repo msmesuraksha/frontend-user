@@ -115,3 +115,13 @@
 .iconsImage{
   height:40px;
 }
+
+.nextBtn{
+  display: flex;
+  justify-content: end;
+}
+.backBtn{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

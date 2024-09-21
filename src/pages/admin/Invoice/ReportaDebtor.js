@@ -73,6 +73,8 @@ import { InvoiceDeletePop } from "./invoiceDeletePop"
 
 import { StatusAndOpinionObj } from "pages/Dashboard"
 
+import ReportDefaulterModule from "../reportDefaulterModule/reportDefaulterModul"
+
 export const ReportDebtor = props => {
   const [modal1, setModal1] = useState(false);
   const [getDaysArray, setgetDaysArray] = useState([]);
@@ -105,7 +107,8 @@ export const ReportDebtor = props => {
 
   const pGErElo = () => {
     dispatch(setIsReportDefOpen(!isReportDefOpen));
-    // window.location.reload()
+    setrequestedData('')
+
   }
 
   useEffect(() => {
@@ -173,15 +176,8 @@ export const ReportDebtor = props => {
   const requestEdit = (item) => {
 
     setrequestedData(item)
-    dispatch(setRequestEditModalOpen(!isRequestEditModalOpen))
-    const payload = {
-      "invoiceId": item.invoices[0].invoiceNumber
-    }
+    dispatch(setIsReportDefOpen(!isReportDefOpen))
 
-    setisRequestedEdit(true)
-
-
-    // dispatch(requestInvoiceDefEdit(payload))
   }
 
   const handleFilterdata = (filters) => {
@@ -526,7 +522,7 @@ export const ReportDebtor = props => {
       {modal1 && <ReportedDebtorsModel isOpen={modal1} toggle={toggleViewModal} additionalValue={additionalValue} selected={selected} />}
       {modal2 && <ReportedDefaulterModel isOpen={modal2} toggle={toggleViewModal1} selected={selected} customerName={invoiceIdsForCAcertificate} requestor={'CREDITOR'} name={'Buyer'} />}
       {selectCACertificate && <UploadCACertificateModel isOpen={selectCACertificate} toggle={toggleViewModal2} invoiceId={invoiceIdsForCAcertificate} customerType={customerType} />}
-      {isReportDefOpen && <ReportIncoiceModel isOpen={isReportDefOpen} toggle={toggleViewModal3} GetAllInvoice={GetAllInvoice} invoiceIsOpen={toggleViewModal3} />}
+      {isReportDefOpen && <ReportDefaulterModule isOpen={isReportDefOpen} toggle={toggleViewModal3} GetAllInvoice={GetAllInvoice} invoiceIsOpen={toggleViewModal3} requestedData={requestedData} />}
       {uploadFilesModalShow && <UploadPendingFiles isOpen={uploadFilesModalShow} toggle={toggleUploiadFiles} uploadFilesModelDataForUpload={uploadFilesModelDataForUpload} />}
       {isViewDetailModal && <ViewDetailsReportDefaultModal isOpen={isViewDetailModal} toggle={toggleDetailView} viewModalData={viewModalData} name={'Buyer'} />}
       {isRequestEditModalOpen && <EditReportedDefaulterModel isOpen={isRequestEditModalOpen} toggle={toggleReqEdit} requestedData={requestedData} GetAllInvoice={GetAllInvoice} requestEditIsOpen={toggleReqEdit} />}
