@@ -10,60 +10,23 @@ import {
   ModalHeader,
   InputGroup,
   Input,
-  Label,
-  Card,
-  CardBody,
-
-  Table,
   Row, Col
 } from "reactstrap"
 import { ToastContainer, toast } from 'react-toastify';
 import { useEffect } from "react";
 import Select from "react-select"
 import moment from "moment"
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 // import axios from "axios";
 import { useSelector, useDispatch } from "react-redux"
 import { recoredPaymentReportDefault, getAllInvoice } from "../../../store/debtors/debtors.actions"
-import { recordPaymentReportDefaulter } from "store/debtors/debtors.selecter"
-
 import "flatpickr/dist/themes/material_blue.css";
 import Flatpickr from "react-flatpickr";
 
 import { RecordPaymentSubmit } from './recordPaymentPop'
 
-const ReportedDefaulterModel = props => {
-  const [selectedOption, setSelectedOption] = useState("")
+const ReportedDefaulterModel = ({ isOpen, toggle, selected, requestor, name }) => {
 
-  const [isProceed, setisProceed] = useState(false)
-  const { isOpen, toggle, selected, requestor, name } = props
-  const dispatch = useDispatch()
-  const colourStyles = {
-    menuList: styles => ({
-      ...styles,
-      background: '#FFFFFF'
-    })
-
-  }
-  const Recordedpyment = useSelector(recordPaymentReportDefaulter)
-  const checkboxStyle = {
-    border: '2px solid #3498db', // Set the border color (change #3498db to your desired color)
-    borderRadius: '4px', // Optional: Add rounded corners for a nicer look
-    padding: '5px', // Optional: Add padding to the checkbox
-    marginRight: '5px', // Optional: Add some spacing between the checkbox and label
-  };
-  const [salutations, setsalutations] = useState([
-    { label: "Cash", value: "CASH" },
-
-    { label: "Bank Transfer", value: "BANK_TRANSFER" },
-    { label: "Cheque Payment", value: "CHEQUE_PAYMENT" },
-
-  ])
-
-  useEffect(() => {
-    // dispatch()
-  }, [])
   const [amount, setAmount] = useState('')
   const [date, setDate] = useState('')
   const [payentMode, setPaymentMode] = useState('')
@@ -77,28 +40,42 @@ const ReportedDefaulterModel = props => {
   const [chequeNo, setChequeNo] = useState('')
   const [checkCheque, setCheckCheque] = useState('')
 
-  const [chequePhoto, setChequePhoto] = useState('')
-
-  const [beneficiaryBankName, setBeneficiaryBankName] = useState('')
-
-
-
-
-
-
-
-
-
+  // const [chequePhoto, setChequePhoto] = useState('')
+  //  const [beneficiaryBankName, setBeneficiaryBankName] = useState('')
 
   const [amountValid, setAmountValid] = useState(false)
   const [payMentDateValid, setpayMentDateValid] = useState(false)
   const [payMentModeValid, setpayMentModeValid] = useState(false)
 
-
   const [accountNumberValid, setaccountNumberValid] = useState(false)
   const [accountTransactionValid, setaccountTransactionValid] = useState(false)
-
   const [checkAmount, setCheckAmount] = useState(false)
+
+
+  const dispatch = useDispatch()
+  const colourStyles = {
+    menuList: styles => ({
+      ...styles,
+      background: '#FFFFFF'
+    })
+
+  }
+
+  const checkboxStyle = {
+    border: '2px solid #3498db', // Set the border color (change #3498db to your desired color)
+    borderRadius: '4px', // Optional: Add rounded corners for a nicer look
+    padding: '5px', // Optional: Add padding to the checkbox
+    marginRight: '5px', // Optional: Add some spacing between the checkbox and label
+  };
+
+  const [salutations, setsalutations] = useState([
+    { label: "Cash", value: "CASH" },
+
+    { label: "Bank Transfer", value: "BANK_TRANSFER" },
+    { label: "Cheque Payment", value: "CHEQUE_PAYMENT" },
+
+  ])
+
 
 
 
@@ -133,10 +110,10 @@ const ReportedDefaulterModel = props => {
           toast.success("File Upload Successfully")
         }
 
-        if (response.data.response.fieldName == "cheque_photo") {
-          setChequePhoto(response.data.response)
-          toast.success("File Upload Successfully")
-        }
+        /*  if (response.data.response.fieldName == "cheque_photo") {
+           setChequePhoto(response.data.response)
+           toast.success("File Upload Successfully")
+         } */
 
       })
       .catch((error) => {
@@ -379,14 +356,11 @@ const ReportedDefaulterModel = props => {
               </Col>
               <Col md={5}>
                 <div className="d-inline">
-
                   <Input type="checkbox" className="" style={checkboxStyle} onClick={() => setAmount(selected.totalAmount + '')} />
-
                   <span>Full amount ({numberFormat(selected.totalAmount)})</span>
                 </div>
               </Col>
               <Col md={3}>
-
               </Col>
             </Row>
 
@@ -402,22 +376,9 @@ const ReportedDefaulterModel = props => {
                   >
                     Select Customer
                   </label>
-
-                  {/*                   <DatePicker
-                    selected={new Date()}
-                    value={date}
-                    onChange={(date) =>
-                      handleDateChange(date)
-                    }
-
-                    dateFormat="dd-MMM-yyyy" // Format to display year, month, and day
-                    className="form-control custom-content"
-
-                  /> */}
                   <InputGroup>
                     <Flatpickr
                       className="form-control d-block"
-                      // value={data[index].date == '' ? new Date() : data[index].date}
                       placeholder="Select Date"
                       options={{
                         /*  altInput: true, */
@@ -472,11 +433,6 @@ const ReportedDefaulterModel = props => {
               </Col>
 
             </Row>
-
-
-
-
-
 
             {payentMode == "BANK_TRANSFER" ?
               <>
@@ -598,38 +554,6 @@ const ReportedDefaulterModel = props => {
 
                   </Col>
                 </Row>
-                {/* <Row className="selectionListss">
-                  <Col md={3}>
-                    <div className="mb-2"><b className="mt-2">Cheque Photo</b></div>
-                  </Col>
-                  <Col md={5}>
-                    <div className="d-inline">
-                      <label
-                        className="visually-hidden custom-content"
-                        htmlFor="customerSelect"
-                      >
-                        Select Customer
-                      </label>
-                      <InputGroup className="">
-                        <input
-                          type="file"
-                          className="form-control"
-                          id=""
-                          accept=".png, .jpg, .jpeg"
-                          aria-describedby="fileUploadHelp"
-                          onChange={e =>
-                            handleFileChange(e, "cheque_photo")
-                          }
-                        />
-                      </InputGroup>
-
-                    </div>
-                  </Col>
-                  <Col md={3}>
-
-                  </Col>
-
-                </Row> */}
                 <Row className="selectionListss">
                   <Col md={3}>
                     <div className="mb-2"><b className="mt-2">Beneficiary Bank Name<span style={{ color: 'red' }}>*</span></b></div>

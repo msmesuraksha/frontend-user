@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react"
 import "react-datepicker/dist/react-datepicker.css"
 import withRouter from "components/Common/withRouter"
-import "../../Dashboard/users/send-bill-transaction/sendbillTransaction"
 import ReportedDefaulterModel from '../Invoice/ReportDefaulterModel'
 import UploadCACertificateModel from '../Invoice/uploadCACertificateModel'
 import 'react-table-6/react-table.css'

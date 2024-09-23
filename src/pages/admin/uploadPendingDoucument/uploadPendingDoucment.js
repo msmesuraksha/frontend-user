@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css"
 import withRouter from "components/Common/withRouter"
 import Select, { components } from "react-select"
 import moment from "moment"
-import "../../Dashboard/users/send-bill-transaction/sendbillTransaction"
+
 
 import ReportedDefaulterModel from "../Invoice/ReportDefaulterModel"
 /* import ReportIncoiceModel from './ReportInvoiceModel' */

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { useLocation } from 'react-router-dom'
 import axios from "axios";
 import "react-datepicker/dist/react-datepicker.css"
-import "../../Dashboard/users/send-bill-transaction/sendbillTransaction"
 import 'react-table-6/react-table.css'
 import { numberFormat } from "../uploadPendingDoucument/uploadPendingDoc";
 import moment from 'moment'

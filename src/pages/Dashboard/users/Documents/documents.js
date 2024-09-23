@@ -11,55 +11,32 @@ import {
   Button,
   CardHeader,
 } from "reactstrap";
-import Dropzone from "react-dropzone";
-import { Link } from "react-router-dom";
-import TableContainer from "./TableContainer";
+
 import UploadDocumentModel from './uploadDocumentsmodel'
 import { useDispatch, useSelector } from "react-redux";
 import { getGeneralDoucments } from "../../../../store/Documents/documents.actions"
 import { getGeneralDocumentsSelector } from "../../../../store/Documents/documents.selector"
 import pdfImg from '../../../../assets/images/newImg/pdf.png'
-// import { selectReportDefOpen } from "store/debtors/debtors.selecter"
 import './Gallary.css'
 
 const Document = (props) => {
   const [selectedFiles, setSelectedFiles] = useState([]);
-  const [uploadSuccess, setUploadSuccess] = useState(false);
-  const [genralDocs, setgenralDocs] = useState([]);
   const [modal1, setModal1] = useState(false);
   const toggleViewModal = () => setModal1(!modal1);
 
-  const handleAcceptedFiles = (acceptedFiles) => {
-
-    setSelectedFiles([...selectedFiles, ...acceptedFiles]);
-  };
   document.title = "Documents | MSME Suraksha - React Admin & Dashboard Template";
 
   const dispatch = useDispatch();
   const GetDocument = useSelector(getGeneralDocumentsSelector);
 
-  const removeFile = (index) => {
-    const newFiles = [...selectedFiles];
-    newFiles.splice(index);
-
-
-    setSelectedFiles(newFiles);
-  };
   useEffect(() => {
     dispatch(getGeneralDoucments())
-    setgenralDocs(GetDocument)
-
   }, [])
-
-
-
-
 
   const reciveDocument = (item) => {
     setSelectedFiles([...selectedFiles, ...item]);
-
-
   }
+
   return (
     <React.Fragment>
       <UploadDocumentModel isOpen={modal1} toggle={toggleViewModal} Document={reciveDocument} />
@@ -84,33 +61,17 @@ const Document = (props) => {
 
                   <div className="gallery mt-3 mr-5">
                     <div className="row">
-
-
-
-
                       <Row>
-                        {GetDocument != undefined  && GetDocument.length != 0 ?
+                        {GetDocument != undefined && GetDocument.length != 0 ?
                           GetDocument.map((item) => {
                             return <Col md={3} key={item}>
-
-
-
-
                               <Row>
                                 <Col md={4} className="text-end p-3">
-
-                                  {/* <a >
-                      <i className='bx bxs-file mt-2 fileSizing'></i></a> */}
                                   <a href={item.url} rel='noreferrer' target='_blank'>
-
-
-
                                     <button type="button" className="btn btn-white" data-toggle="tooltip" data-placement="top" title="View Document" rel='noreferrer' target='_blank'>
-                                      {/* <i className='bx bxs-file mt-2 fileSizing '></i> */}
                                       <img src={pdfImg} className="imgsizing" />
                                     </button>
                                   </a>
-
                                 </Col>
                                 <Col md={8} className="pt-3">
                                   <b>{item.name}</b>

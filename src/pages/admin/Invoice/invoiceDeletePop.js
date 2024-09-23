@@ -1,31 +1,13 @@
-import React, { useEffect, useState, useCallback } from "react"
-import PropTypes from "prop-types"
-import moment from 'moment'
-import axios from "axios";
-import { useDispatch, useSelector } from 'react-redux'
-import { setUploadPednigDocOpen, uploadUploadPednigDocID } from "../../../store/UploadPendingDocList/UploadPendingDocList.action"
-import { selectUploadPendigDocOpen, uploadPendigDocSelector } from "store/UploadPendingDocList/UploadPendingDocList.selecter"
-import CurrencyFormat from 'react-currency-format';
-import { useDropzone } from 'react-dropzone'
-
+import React from "react"
 
 import {
     Button,
     Modal,
     ModalBody,
-    ModalFooter,
     ModalHeader,
-    InputGroup,
-    Input,
     Label,
-    Card,
-    CardBody,
-    Table,
     Row, Col
 } from "reactstrap"
-
-import fileImg2 from '../../../assets/images/newImg/pdf.png'
-import fileImg1 from '../../../assets/images/newImg/png-file-.png'
 
 export const InvoiceDeletePop = ({ isOpen, toggle, deleteValue, DeleteInvoiceModule }) => {
 

@@ -30,13 +30,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 const uploadDocumentsModel = props => {
   const { isOpen, toggle, additionalValue } = props
-  const [selectedFiles, setSelectedFiles] = useState([]);
   const [uploadSuccess, setUploadSuccess] = useState(false);
-  const [modal1, setModal1] = useState(false);
-  const [error, setError] = useState('');
   const [uploadDocumentID, setuploadDocumentID] = useState('');
-  const [uploadedFile, setuploadedFile] = useState([]);
-  const toggleViewModal = () => setModal1(!modal1);
+  //const [uploadedFile, setuploadedFile] = useState([]);
   const dispatch = useDispatch();
 
   const handleFileChange = (event) => {
@@ -58,12 +54,6 @@ const uploadDocumentsModel = props => {
     setuploadDocumentID(formData)
   }
 
-
-
-
-
-
-
   function uploadFile(formData) {
     const token = sessionStorage.getItem("tokenemployeeRegister")
     const headers = {
@@ -75,7 +65,7 @@ const uploadDocumentsModel = props => {
       headers: headers
     })
       .then((response) => {
-        setuploadedFile(response.data.response)
+        //  setuploadedFile(response.data.response)
         // toggle()
 
       })
@@ -91,9 +81,6 @@ const uploadDocumentsModel = props => {
       dispatch(getGeneralDoucments())
       toggle()
     }, 1000);
-
-    // dispatch(uploadCACertificateID(payload))
-
 
   }
 
@@ -111,48 +98,9 @@ const uploadDocumentsModel = props => {
       <div className="modal-content">
         <ModalHeader toggle={toggle}>Upload Document</ModalHeader>
         <ModalBody>
-          {/* <h6 className="card-title"></h6> */}
-
-
-
-
-          {/* 
-<div {...getRootProps()}  className='text-center'>
-      <input {...getInputProps()} 
-      type='file'
-    //  accept="image/png, image/gif, image/jpeg"
-    accept=
-"application/msword, application/vnd.ms-excel,text/plain, application/pdf, image/*"
-      min={"200002"}
-      max={2303020}
-      />
-   <i className="display-4 text-muted bx bxs-cloud-upload" />
-
-      {
-        isDragActive ?
-        
-          <p>Drop the files here ...</p> :
-          <p>Drag 'n' drop some files here, or click to select files
-<br/>
-<span>
-    {selectedFiles.length != 0 ? selectedFiles[0].name:''}
-
-</span>
-<br/>
-<span className='text-danger'>
-    {error}
-</span>
-
-          </p>
-      }
-    </div> */}
-
-
           <Row className="mt-4 mb-4">
             <Col md={3}></Col>
-            <Col md={6}>
-
-
+            <Col md={10}>
               <InputGroup className="text-capitalize">
                 <input
                   type="file"
@@ -165,18 +113,12 @@ const uploadDocumentsModel = props => {
                   }
                 />
               </InputGroup>
-
               <div id="fileUploadHelp" className="form-text">
                 Choose a file to upload (PDF, PNG, JPG, JPEG, DOC, XLS, XLSX).
               </div>
-
-
             </Col>
             <Col md={3}></Col>
           </Row>
-
-
-
         </ModalBody>
         <ModalFooter>
           <div className="text-center">

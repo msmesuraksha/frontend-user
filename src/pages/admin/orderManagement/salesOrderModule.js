@@ -5,7 +5,7 @@ import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import withRouter from "components/Common/withRouter"
 import Select, { components } from "react-select"
-import "../../Dashboard/users/send-bill-transaction/sendbillTransaction"
+
 
 import ReportedDefaulterModel from "../Invoice/ReportDefaulterModel"
 import UploadCACertificateModel from "../Invoice/uploadCACertificateModel"
