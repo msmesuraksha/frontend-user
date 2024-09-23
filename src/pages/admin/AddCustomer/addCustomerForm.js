@@ -356,7 +356,7 @@ export const AddcustomerFomr = ({ isAddCustomercheck }) => {
 
 
   return (
-    <Modal isOpen={isAddCustomerOpen}>
+    <Modal isOpen={isAddCustomerOpen} size="lg">
       <ModalHeader toggle={() => toggleAddCustomer()}>
         Add New Members{" "}
       </ModalHeader>
@@ -436,25 +436,6 @@ export const AddcustomerFomr = ({ isAddCustomercheck }) => {
             <Col xs={12} md={2} className="mt-2">
               <Label for="customerType">Member Name<span style={{ color: 'red' }}>*</span></Label>
             </Col>
-            {/* <Col xs={6} md={2}>
-              <div className="d-inline">
-                <label
-                  className="visually-hidden custom-content"
-                  htmlFor="primaryContact"
-                >
-                  Select Customer
-                </label>
-                <Select
-                  id="primaryContact"
-                  className="custom-content"
-                  options={salutations}
-                  styles={colourStyles}
-                  value={selectedOption.value == undefined ? salutations : selectedOption}
-                  onChange={selected => setSelectedOption(selected)}
-                  onInputChange={handleInputChange}
-                />
-              </div>
-            </Col> */}
             <Col xs={12} md={8}>
               <FormGroup>
                 <Input
@@ -477,36 +458,9 @@ export const AddcustomerFomr = ({ isAddCustomercheck }) => {
                   )}
               </FormGroup>
             </Col>
-            {/*             <Col xs={12} md={3}>
-              <FormGroup>
-                <Input
-                  type="text"
-                  id="lastname"
-                  name="lastname"
-                  autoComplete="off"
-                  value={formikModal.values.lastname}
-                  onChange={formikModal.handleChange}
-                  className="text-capitalize"
-
-                  onBlur={formikModal.handleBlur}
-                  placeholder="Last Name"
-                />
-                {formikModal.touched.lastname &&
-                  formikModal.errors.lastname && (
-                    <div className="text-danger">
-                      {formikModal.errors.lastname}
-                    </div>
-                  )}
-              </FormGroup>
-            </Col> */}
           </Row>
-          {/* <Row>
-          <Col xs="12">
-            <hr className="bdr-light xlg"></hr>
-          </Col>
-        </Row> */}
           <Row>
-            <Col xs={12} md={4} className="mt-2">
+            <Col xs={12} md={2} className="mt-2">
               <Label for="companyName">Company Name<span style={{ color: 'red' }}>*</span></Label>
             </Col>
             <Col xs={12} md={8}>
@@ -615,7 +569,6 @@ export const AddcustomerFomr = ({ isAddCustomercheck }) => {
               </FormGroup>
             </Col>
           </Row>
-          {/* Add similar code for the rest of the fields */}
           <Row>
             <Col xs="12">
               <hr className="bdr-light xlg"></hr>

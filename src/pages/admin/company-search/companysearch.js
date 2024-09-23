@@ -10,7 +10,7 @@ import {
   Card,
   CardBody,
 } from "reactstrap";
-import { ApprovedTranctionData } from "../../../common/data/approvedTransactions";
+
 import { useSelector, useDispatch } from "react-redux";
 import CompnayViewDetails from "./companyViewDetailsPop";
 

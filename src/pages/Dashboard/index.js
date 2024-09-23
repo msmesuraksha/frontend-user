@@ -116,16 +116,10 @@ export const StatusAndOpinionObj = {
 }
 
 export const CapitalizeWords = (str) => {
-  // Split the string into an array of words
   let words = str.split(" ");
-
-  // Iterate over each word in the array
   for (let i = 0; i < words.length; i++) {
-    // Capitalize the first letter of each word and make the rest of the letters lowercase
     words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1);
   }
-
-  // Join the words back into a single string and return it
   return words.join(" ");
 }
 

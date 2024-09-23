@@ -19,53 +19,25 @@ import { getAllDebtors } from "../../../store/debtors/debtors.actions"
 import { selectDebtorsList, selectDebtorsListMap } from "store/debtors/debtors.selecter"
 import { SelectAddCustomer } from "store/addCustomer/addCustomer.selecter"
 import { setAddCustomerOpen } from "store/addCustomer/addCustomer.actiontype"
-import { SelectAddCustomerList } from "store/actions"
 
 import { CapitalizeWords } from "pages/Dashboard"
 
 
 
 const AddCustomer = props => {
-
-  const [getDaysArray, setgetDaysArray] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
   const dispatch = useDispatch();
-
   const isAddCustomerOpen = useSelector(SelectAddCustomer);
   const toggleAddCustomer = () => dispatch(setAddCustomerOpen(!isAddCustomerOpen));
 
-  const GetAllDebtors = useSelector(selectDebtorsList)
   let GetAllDebtorsMap = useSelector(selectDebtorsListMap)
 
   GetAllDebtorsMap = GetAllDebtorsMap.sort((a, b) => b.customerName.localeCompare(a.customerName));
-  /*   const selectNewCustomerList = useSelector(SelectAddCustomerList) */
-
-  /*   let GetAllDebtors
-    if (selectNewCustomerList.length > 0) {
-      GetAllDebtors = [...selectGetAllDebtors, ...selectNewCustomerList]
-    } else {
-      GetAllDebtors = selectGetAllDebtors
-    } */
 
   document.title = "Customer list | MSME Suraksha"
 
   useEffect(() => {
     dispatch(getAllDebtors());
-    setFilteredData(GetAllDebtorsMap)
   }, [])
-
-
-
-  const handleFilterdata = (filters) => {
-    if (GetAllDebtorsMap.length > 0) {
-      const filteredResults = GetAllDebtorsMap.filter(item => {
-        const fullname = item.customerName.toLocaleLowerCase()
-        return fullname.toLocaleLowerCase().includes(filters);
-      });
-      setFilteredData(filteredResults);
-    }
-
-  };
 
   const CompanyName = (cell, index) => {
 
@@ -87,15 +59,6 @@ const AddCustomer = props => {
 
   const columns = useMemo(
     () => [
-      // {
-      //   Header: "Sr No",
-      //   accessor: "SrNo",
-      //   filterable: false,
-      //   disableFilters: true,
-      //   Cell: cellProps => {
-      //     return <CompanyName {...cellProps} />;
-      //   },
-      // },
       {
         Header: "Members NAME",
         accessor: "customerName",

@@ -18,10 +18,6 @@ import {
 
 import { getAllInvoice } from "store/actions";
 
-
-
-
-
 export const RecordPaymentSubmit = ({ isOpen, toggle }) => {
     const dispatch = useDispatch()
 

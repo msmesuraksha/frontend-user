@@ -19,7 +19,6 @@ import moment from 'moment'
 import CurrencyFormat from 'react-currency-format';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Disputeddata } from "../../../common/data/disputedData";
 import { ToastContainer, toast } from 'react-toastify';
 import {
 
