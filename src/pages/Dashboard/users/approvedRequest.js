@@ -43,17 +43,7 @@ import { selectCompanyloding } from "store/auth/companySearch/companySearch.sele
 import { setUploadFilesOpen, setCACertificateOpen, requestInvoiceDefEdit, setIsViewDetailModalOpen, markAsDisputedModalOpenAction } from "../../../store/debtors/debtors.actions"
 import { uploadFilesModalOpen, selectCACertificateOpen, isViewDetailMOdalOpenSelector, markAsDisputedModalOpenSelector } from "store/debtors/debtors.selecter"
 import { Spinner } from "pages/admin/spinner/spinner"
-import {
-  CheckBox,
-  SrNo,
-  PANCARD,
-  AADHAR,
-  GST,
-  CompanyName,
-  DueSince,
-  DueAmount,
-  Reating
-} from "../companyssearchColl";
+
 
 import { selectCompaintsByMes } from "store/ApprovedReportMeDefulter/ApprovedReportMeDefulter.selecter"
 
@@ -364,30 +354,16 @@ const ApprovedTransaction = props => {
               <h5 className="m-1" style={{ textTransform: "capitalize" }}><b>Company Approved Transaction</b></h5>
             </Col>
             <Col md={4}>
-              {/* <Link to="/companies">
-                <Button style={{ float: 'right' }} className="'btn bg-primary  " onClick={() => {
-                  handleMainDashboard()
-                }}>
-                  <i className='bx bx-arrow-back'></i> Change Company
-                </Button>
-              </Link> */}
-
             </Col>
-
-
           </Row>
           <br />
           <div style={{ border: "1px solid gray" }} className="p-3">
-
-
             <Row className="text-center" >
               <Col md={12}>
                 <div className="btn-group" role="group" aria-label="Basic example">
                   <button type="button" className="btn btn-info backtoHomeButton " style={{ background: isClickedToReported == false ? " #1aa3ff" : "	 #707274", border: "none", width: "" }} onClick={() => setisClickedToReported(false)} >Complaints Against Me</button>
                   <button type="button" className="btn btn-info  backtoHomeButton" style={{ background: isClickedToReported != false ? "#1aa3ff" : "	 #707274", border: "none", width: "" }} onClick={() => setisClickedToReported(true)} >My Complaints</button>
                 </div>
-
-
               </Col>
               <Col md={12} className="">
                 <div className="btn-group" role="group" aria-label="Basic example">
@@ -395,21 +371,13 @@ const ApprovedTransaction = props => {
                   <span style={{ width: '70px', height: "5px", background: isClickedToReported != false ? " #1aa3ff" : "", marginLeft: "50px" }}></span>
                 </div>
                 <br />
-
               </Col>
-
-
-
             </Row>
-
             {isClickedToReported != true ?
-
               <Row style={{}} className="p-0">
                 <ApprovedReportMeDefaulterComponent isClickedToReported={isClickedToReported} />
               </Row>
               : <>
-
-
                 <Row className="p-0 ml-5">
                   <TableContainer
                     columns={columns}
@@ -418,10 +386,8 @@ const ApprovedTransaction = props => {
                     isAddOptions={false}
                     customPageSize={10}
                   />
-
                 </Row>
               </>
-
             }
             <p className="">Due From : The number of due days is calculated from date of oldest invoice.
             </p>

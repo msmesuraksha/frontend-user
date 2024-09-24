@@ -1,19 +1,12 @@
 import PropTypes from "prop-types"
 import React, { useEffect, useState, useRef, useMemo } from "react"
 import {
-  Container,
+
   Row,
   Col,
-  Button,
   Card,
   CardBody,
-  Input,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  CardHeader,
-  Table,
+
 } from "reactstrap"
 
 import { searchCompany as onsearchCompany } from "../../../src/store/actions";

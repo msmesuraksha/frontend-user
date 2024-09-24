@@ -21,7 +21,6 @@ import {
 } from "reactstrap";
 import Dropzone from "react-dropzone";
 import { Link } from "react-router-dom";
-import TableContainer from "./TableContainer";
 import UploadDocumentModel from './uploadDocumentsmodel'
 import { getGeneralDoucments } from "../../../../store/Documents/documents.actions"
 import { useDispatch, useSelector } from "react-redux";
