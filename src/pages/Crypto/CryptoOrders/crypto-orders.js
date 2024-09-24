@@ -26,7 +26,7 @@ import TableContainer from "../../../components/Common/TableContainer";
 //Date Picker
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import "assets/scss/datatables.scss";
+
 
 // import { cryptoOrderData } from "../../../common/data";
 

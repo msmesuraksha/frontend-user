@@ -30,7 +30,7 @@ import { recordPaymentReportDefaulter } from "store/debtors/debtors.selecter"
 
 import { approveTransactionReopenStart } from "store/ApprovedTransactionReopen/ApprovedTransactionReopen.action";
 import { fetchApproveReportMeDefaulterStart } from "store/ApprovedReportMeDefulter/ApprovedReportMeDefulter.action";
-import index from "pages/Dashboard-Blog";
+
 
 
 const ApprovedRaiseTicketModel = props => {

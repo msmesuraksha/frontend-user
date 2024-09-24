@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { isEmpty } from "lodash";
 import { Card, CardBody, Col, Container, Row } from "reactstrap";
 import withRouter from "components/Common/withRouter";
-import "assets/scss/datatables.scss";
+
 
 //Import Breadcrumb
 import Breadcrumbs from "components/Common/Breadcrumb";
