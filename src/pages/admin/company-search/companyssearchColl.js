@@ -7,18 +7,6 @@ import { numberFormat } from '../uploadPendingDoucument/uploadPendingDoc';
 import { CapitalizeWords } from "pages/Dashboard";
 
 
-
-const dateFormat = (date, format) => {
-    const dateFormat = format ? format : "DD MMM Y";
-    const date1 = moment(new Date(date)).format(dateFormat);
-    return date1;
-};
-const toLowerCase1 = str => {
-    return (
-        str === "" || str === undefined ? "" : str.toLowerCase()
-    );
-};
-
 const CheckBox = (cell) => {
     return cell.value ? cell.value : '';
 };
@@ -75,10 +63,8 @@ const daysSinceReference = (cellValue, referenceDate) => {
 };
 
 const DueSince = (cell) => {
-    /*  const [startDate, setStartDate] = useState(new Date('1965-04-05')); */
-    //const startDate = new Date('2019-10-07'); // October 7, 2019
     const today = new Date(); // Current date
-    // const currentDate = moment(today).format('YYYY-MM-DD')
+
     const daysSince = daysSinceReference(cell.value, today);
 
     let badgeClassName = "font-size-11 badge ";
@@ -89,12 +75,6 @@ const DueSince = (cell) => {
     } else {
         badgeClassName += "bg-danger text-white";
     }
-    /*     const formattedDate = new Date(cell.value).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
-        }); */
-
     const newDate = cell.value != undefined ? cell.value.split("-").reverse().join("-") : "";
     const currentDate = new Date(newDate);
     let e = ""
@@ -105,11 +85,6 @@ const DueSince = (cell) => {
 
         return differenceInDays;
 
-    };
-
-    const divStyle = {
-        padding: '1px',
-        fontSize: "12px" // Adjust the padding value as needed
     };
 
     return (

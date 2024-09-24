@@ -33,7 +33,7 @@ import {
 import CaImg from '../../../assets/images/newImg/CA-BG_Remove.png'
 import { numberFormat } from "../uploadPendingDoucument/uploadPendingDoc";
 import TableContainer from "../../../components/Common/TableContainer";
-import DisputedViewModal from "./NewPaymentModel";
+
 import { selectInvoiceListMap } from "store/debtors/debtors.selecter";
 import {
   CheckBox,
