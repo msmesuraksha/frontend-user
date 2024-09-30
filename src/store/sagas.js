@@ -10,7 +10,6 @@ import ProfileSaga from "./auth/profile/saga";
 import LayoutSaga from "./layout/saga";
 import ecommerceSaga from "./e-commerce/saga";
 import calendarSaga from "./calendar/saga";
-import chatSaga from "./chat/saga";
 import cryptoSaga from "./crypto/saga";
 import invoiceSaga from "./invoices/saga";
 import jobsSaga from "./jobs/saga";
@@ -40,7 +39,7 @@ import { subscriptionSaga } from "./Subscription/CompanySearch/SubscriptionSaga"
 import ForgetchangePasswordSaga from "./forgetPassword/forgetPassword.saga";
 
 import { ApproveReportMeDefaulterSaga } from "./ApprovedReportMeDefulter/ApprovedReportMeDefulter.saga";
-import { ApproveReportDefaulterSaga } from "./ApprovedReportDefulter/ApprovedReportDefulter.saga";
+
 import { ApproveTransactionReopenSaga } from "./ApprovedTransactionReopen/ApprovedTransactionReopen.saga";
 
 import { FetchGstDetailsSaga } from "./fatchGstDetails/fatchGstDetails.saga";
@@ -66,7 +65,6 @@ export default function* rootSaga() {
     fork(LayoutSaga),
     fork(ecommerceSaga),
     fork(calendarSaga),
-    fork(chatSaga),
     fork(mailsSaga),
     fork(cryptoSaga),
     fork(invoiceSaga),
@@ -88,7 +86,6 @@ export default function* rootSaga() {
     fork(CompanySearchViewSaga),
     fork(ForgetchangePasswordSaga),
     fork(ApproveReportMeDefaulterSaga),
-    /*    fork(ApproveReportDefaulterSaga), */
     fork(ApproveTransactionReopenSaga),
     fork(FetchGstDetailsSaga),
     fork(DeleteInvoiceSaga),

@@ -29,27 +29,27 @@ function GlobalFilter({
   return (
 
     <div className="search-box me-2">
-    <div className="position-relative">
-      <label htmlFor="search-bar-0" className="search-label">
-        <span id="search-bar-0-label" className="sr-only">
-          Search this table
-        </span>
-        <input
-          onChange={e => {
-            setValue(e.target.value);
-            onChange(e.target.value);
-          }}
-          id="search-bar-0"
-          type="text"
-          className="form-control"
-          placeholder={`Search Here...`}
-          value={value || ""}
-        />
-      </label>
-      <i className="bx bx-search-alt search-icon"></i>
+      <div className="position-relative">
+        <label htmlFor="search-bar-0" className="search-label">
+          <span id="search-bar-0-label" className="sr-only">
+            Search this table
+          </span>
+          <input
+            onChange={e => {
+              setValue(e.target.value);
+              onChange(e.target.value);
+            }}
+            id="search-bar-0"
+            type="text"
+            className="form-control"
+            placeholder={`Search Here...`}
+            value={value || ""}
+          />
+        </label>
+        <i className="bx bx-search-alt search-icon"></i>
+      </div>
     </div>
-  </div>
-  
+
   );
 }
 
@@ -130,25 +130,25 @@ const TableContainer = ({
             value={pageSize}
             onChange={onChangeInSelect}
           >
-            {[5,10,15, 20, 30, 40, 50].map(pageSize => (
+            {[5, 10, 15, 20, 30, 40, 50].map(pageSize => (
               <option key={pageSize} value={pageSize}>
                 Show {pageSize}
               </option>
             ))}
           </select>
         </Col>
-        
+
         <Col md={6} className="d-flex align-items-center">
-        {isGlobalFilter && (
-        <GlobalFilter
-        preGlobalFilteredRows={preGlobalFilteredRows}
-        globalFilter={state.globalFilter}
-        setGlobalFilter={setGlobalFilter}
-        isJobListGlobalFilter={isJobListGlobalFilter}
-        />
-        )}
-         <style>
-  </style>
+          {isGlobalFilter && (
+            <GlobalFilter
+              preGlobalFilteredRows={preGlobalFilteredRows}
+              globalFilter={state.globalFilter}
+              setGlobalFilter={setGlobalFilter}
+              isJobListGlobalFilter={isJobListGlobalFilter}
+            />
+          )}
+          <style>
+          </style>
         </Col>
         {/* {isAddOptions && (
           <Col sm="7">

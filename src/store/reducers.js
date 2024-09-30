@@ -16,8 +16,6 @@ import ecommerce from "./e-commerce/reducer";
 //Calendar
 import calendar from "./calendar/reducer";
 
-//chat
-import chat from "./chat/reducer";
 
 //crypto
 import crypto from "./crypto/reducer";
@@ -50,7 +48,7 @@ import DashboardSaas from "./dashboard-saas/reducer";
 //Dasboard crypto
 import DashboardCrypto from "./dashboard-crypto/reducer";
 
-//Dasboard blog
+
 import DashboardBlog from "./dashboard-blog/reducer";
 
 //Dasboard job
@@ -72,7 +70,6 @@ import { SelectCompanyReducer } from "./selectCompany/selectCompany.reducer";
 import { SubscriptionReducer } from "./Subscription/CompanySearch/SubscriptionReducer";
 import ForgetchangePasswordReducer from "./forgetPassword/forgetPassword.reducer";
 import { ApproveReportMeDefaulterReducer } from "./ApprovedReportMeDefulter/ApprovedReportMeDefulter.reducer";
-import { ApproveReportDefaulterReducer } from "./ApprovedReportDefulter/ApprovedReportDefulter.reducer";
 import { ApprovedTransactionReopenReducer } from "./ApprovedTransactionReopen/ApprovedTransactionReopen.reducer";
 import { FetchGstDetailsReducer } from "./fatchGstDetails/fatchGstDetails.reducer";
 
@@ -94,7 +91,6 @@ const rootReducer = combineReducers({
   Profile,
   ecommerce,
   calendar,
-  chat,
   mails,
   crypto,
   documentsReducer,
@@ -122,7 +118,6 @@ const rootReducer = combineReducers({
   SelectCompanyReducer,
   ForgetchangePasswordReducer,
   ApproveReportMeDefaulterReducer,
-  /*  ApproveReportDefaulterReducer, */
   ApprovedTransactionReopenReducer,
   FetchGstDetailsReducer,
   DeleteInvoiceReducer,
