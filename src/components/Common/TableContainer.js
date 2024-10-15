@@ -18,8 +18,7 @@ function GlobalFilter({
   preGlobalFilteredRows,
   globalFilter,
   setGlobalFilter,
-  isJobListGlobalFilter,
-  isCompany
+  isJobListGlobalFilter
 }) {
   const count = preGlobalFilteredRows.length;
   const [value, setValue] = React.useState(globalFilter);
@@ -28,30 +27,36 @@ function GlobalFilter({
   }, 200);
 
   return (
+    <React.Fragment>
+      <Col md={4}>
+        <div className="search-box me-xxl-2 my-3 my-xxl-0 d-inline-block">
+          <div className="position-relative">
+            <label htmlFor="search-bar-0" className="search-label">
+              <span id="search-bar-0-label" className="sr-only">
+                Search this table
+              </span>
+              <input
+                onChange={e => {
+                  setValue(e.target.value);
+                  onChange(e.target.value);
+                }}
+                id="search-bar-0"
+                type="text"
+                className="form-control"
+                placeholder={`Search here...`}
+                value={value || ""}
+              />
+            </label>
+            <i className="bx bx-search-alt search-icon"></i>
+          </div>
+        </div>
 
-    <div className="search-box me-2">
-      <div className="position-relative">
-        <label htmlFor="search-bar-0" className="search-label">
-          <span id="search-bar-0-label" className="sr-only">
-            Search this table
-          </span>
-          <input
-            onChange={e => {
-              setValue(e.target.value);
-              onChange(e.target.value);
-            }}
-            id="search-bar-0"
-            type="text"
-            className="form-control "
-            style={{ width: '370px' }}
-            placeholder={isCompany ? "Search from company Name/GST no /PAN no" : `Search Here...`}
-            value={value || ""}
-          />
-        </label>
-        <i className="bx bx-search-alt search-icon"></i>
-      </div>
-    </div>
+      </Col>
+      {isJobListGlobalFilter && (
+        <JobListGlobalFilter />
+      )}
 
+    </React.Fragment>
   );
 }
 
@@ -69,7 +74,8 @@ const TableContainer = ({
   customPageSize,
   className,
   customPageSizeOptions,
-  isCompany
+  isCompany,
+  addCompany
 
 }) => {
   const {
@@ -126,8 +132,8 @@ const TableContainer = ({
   };
   return (
     <Fragment>
-      <Row className="mb-8 justify-content-start mb-4">
-        <Col md={2}>
+      <Row className="mb-2">
+        <Col sm={2}>
           <select
             className="form-select"
             value={pageSize}
@@ -141,8 +147,8 @@ const TableContainer = ({
           </select>
         </Col>
 
-        <Col md={6} className="d-flex align-items-center">
-          {isGlobalFilter && (
+        <Col sm={6}>
+        {isGlobalFilter && (
             <GlobalFilter
               preGlobalFilteredRows={preGlobalFilteredRows}
               globalFilter={state.globalFilter}
@@ -151,54 +157,23 @@ const TableContainer = ({
               isCompany={isCompany}
             />
           )}
-          <style>
-          </style>
+        
         </Col>
-        {/* {isAddOptions && (
-          <Col sm="7">
-            <div className="text-sm-end">
-              <Button
-                type="button"
-                color="success"
-                className="btn-rounded  mb-2 me-2"
-                onClick={handleOrderClicks}
-              >
-                <i className="mdi mdi-plus me-1" />
-                Add New Order
-              </Button>
-            </div>
-          </Col>
-        )}
-        {isAddUserList && (
-          <Col sm="7">
+        {isAddOptions && (
+          <Col md={4}>
             <div className="text-sm-end">
               <Button
                 type="button"
                 color="primary"
-                className="btn mb-2 me-2"
-                onClick={handleUserClick}
+                className="btn-rounded  mb-2 me-2"
+                onClick={()=>addCompany(true)}
               >
-                <i className="mdi mdi-plus-circle-outline me-1" />
-                Create New User
+                <i className="mdi mdi-plus me-1" />
+                Add New Company
               </Button>
             </div>
           </Col>
         )}
-        {isAddCustList && (
-          <Col sm="7">
-            <div className="text-sm-end">
-              <Button
-                type="button"
-                color="success"
-                className="btn-rounded mb-2 me-2"
-                onClick={handleCustomerClick}
-              >
-                <i className="mdi mdi-plus me-1" />
-                New Customers
-              </Button>
-            </div>
-          </Col>
-        )} */}
       </Row>
 
       <div className="table-responsive react-table">

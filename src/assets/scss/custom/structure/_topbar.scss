@@ -32,7 +32,7 @@
   }
   
   .navbar-brand-box {
-      padding: 0 1.5rem;
+      padding: 0 0.5rem;
       text-align: center;
       width: $navbar-brand-box-width;
   }
@@ -242,7 +242,7 @@
   
   body[data-sidebar="dark"] {
       .navbar-brand-box {
-          background: $sidebar-dark-bg;
+          background: #fff;
       }
   
       .logo-dark {

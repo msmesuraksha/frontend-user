@@ -3,21 +3,26 @@ import PropTypes from 'prop-types'
 import { Link } from "react-router-dom"
 import { Row, Col, BreadcrumbItem } from "reactstrap"
 
+import { getData } from "store/utils/reducer/sessionStorage"
+
 const Breadcrumb = props => {
+  const CompanyName = getData('COMPANY')
   return (
     <Row>
       <Col className="col-12">
         <div className="page-title-box d-sm-flex align-items-center justify-content-between">
           <h4 className="mb-sm-0 font-size-18">{props.breadcrumbItem}</h4>
           <div className="page-title-right">
-            <ol className="breadcrumb m-0">
-              <BreadcrumbItem>
-                <Link to="#">{props.title}</Link>
+            
+              {CompanyName && (<ol className="breadcrumb m-0"><BreadcrumbItem>
+                <Link to="#">{CompanyName}</Link>
               </BreadcrumbItem>
               <BreadcrumbItem active>
                 <Link to="#">{props.breadcrumbItem}</Link>
               </BreadcrumbItem>
-            </ol>
+            </ol>)
+              }
+              
           </div>
         </div>
       </Col>
