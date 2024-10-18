@@ -69,13 +69,13 @@ export const MarkDisputedPopModule = props => {
             <Modal
                 isOpen={isOpen}
                 role="dialog"
-                size="sm"
+                size="lg"
                 autoFocus={true}
                 centered={true}
                 className="exampleModal"
                 tabIndex="-1"
                 toggle={toggle}
-                fullscreen="sm"
+                
             >
                 <div className="modal-content">
                     <ModalHeader toggle={toggle}>  <span style={{ fontSize: '18px' }}>Reasons for Dispute</span></ModalHeader>

@@ -164,7 +164,7 @@ const ReportDefaulterModule = props => {
     control: (provided, state) => ({
       ...provided,
       background: "#FAFAFA",
-      width: "300px",
+      /* width: "300px", */
       // match with the menu
       borderRadius: state.isFocused ? "3px 3px 0 0" : 3,
       // Overwrittes the different states of border
@@ -265,11 +265,11 @@ const ReportDefaulterModule = props => {
           {
             filteredCustomerDetail.length == 0 && requestedData == '' ? <form>
               <Row className="selectionList">
-                <Col xs={12} md={2}>
-                  <div className="mt-2"><b className="mt-2">Customer Name*</b></div>
+                <Col xs={12} md={2} className="mb-2">
+                  <div className="mt-2"><b >Customer Name*</b></div>
                 </Col>
-                <Col xs={12} md={4}>
-                  <div className="d-inline">
+                <Col xs={12} md={4} className="mb-2">
+                  
                     <label
                       className="visually-hidden custom-content"
                       htmlFor="customerSelect"
@@ -284,15 +284,14 @@ const ReportDefaulterModule = props => {
                       onChange={selected => handleSelectCustomer(selected)}
                     />
 
-                  </div>
+                  
                 </Col>
-                <Col xs={12} md={3}>
-                  <div className="d-inline">
-                    <Button variant="link" onClick={() => toggleAddCustomer()}>
+                <Col xs={12} md={3} >
+                    <Button variant="link" onClick={() => toggleAddCustomer()} className="  mb-2 me-2">
                       <i className="fas fa-plus-circle" />{" Add New Customer"}
                     </Button>
                     {isAddCustomerOpen && <AddcustomerFomr />}
-                  </div>
+                  
                 </Col>
 
               </Row>

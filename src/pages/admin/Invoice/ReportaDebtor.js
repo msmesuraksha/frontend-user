@@ -317,9 +317,6 @@ export const ReportDebtor = props => {
             <Col md={10} className="pl-2" style={{ textTransform: "capitalize" }}>
               {props.isClickedToReported == undefined && !props.isClickedToReported ? <h5 className="m-1"><b>My Complaints</b></h5> : ""}
             </Col>
-            <Col md={2}>
-              <Button className="btn btn-md btn-info" onClick={() => handleReportDefaulter()}>Report a Defaulter</Button>
-            </Col>
           </Row>
 
           <Row className="">
@@ -330,6 +327,8 @@ export const ReportDebtor = props => {
               isGlobalFilter={true}
               isAddOptions={false}
               customPageSize={10}
+              isReportDefOpen={true}
+              handleReportDefaulter={handleReportDefaulter}
             />)}
 
             <p className="">Due From : The number of due days is calculated from date of oldest invoice.

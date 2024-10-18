@@ -55,7 +55,7 @@ const Dashboard = props => {
                         style={{
                           background:
                             isClickedToReported == false
-                              ? " #1aa3ff"
+                              ? " #50a5f1"
                               : "	 #707274",
                           border: "none",
                           width: "",
@@ -70,7 +70,7 @@ const Dashboard = props => {
                         style={{
                           background:
                             isClickedToReported != false
-                              ? "#1aa3ff"
+                              ? "#50a5f1"
                               : "	 #707274",
                           border: "none",
                           width: "",
@@ -158,6 +158,7 @@ export const StatusAndOpinionObj = {
 }
 
 export const CapitalizeWords = str => {
+  if(!str) return
   let words = str.split(" ")
   for (let i = 0; i < words.length; i++) {
     words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1)

@@ -16,7 +16,7 @@ export const selectCompaintsForMe = createSelector(
     if (ApproveReportMeDefaulter?.approveReportMeDefaulterList.length != 0) {
       const mapinvoicelist = ApproveReportMeDefaulter?.approveReportMeDefaulterList?.compaintsForMe.map((item, index) => {
         const SrNo = index = 1
-        const customerName = item.defaulterEntry.creditor.companyName
+        const customerName = item.defaulterEntry.creditor?.companyName
         const status = item.defaulterEntry.latestStatus
         const defaulterEntryId = item.defaulterEntry.id
         const dueFrom = item.dueFrom
@@ -29,15 +29,15 @@ export const selectCompaintsForMe = createSelector(
         const defaulterEntry = item.defaulterEntry
         const pHArray = item.pHArray
         const creditor = item.defaulterEntry?.creditor
-        const address2 = item.defaulterEntry.creditor.address2 != undefined ? item.defaulterEntry.creditor.address2 + ', ' : ''
-        const address1 = item.defaulterEntry.creditor.address1 != undefined ? item.defaulterEntry.creditor.address1 + ', ' : ''
+        const address2 = item.defaulterEntry.creditor?.address2 != undefined ? item.defaulterEntry.creditor?.address2 + ', ' : ''
+        const address1 = item.defaulterEntry.creditor?.address1 != undefined ? item.defaulterEntry.creditor?.address1 + ', ' : ''
 
-        const Address = item.defaulterEntry != null ? address1 + address2 + item.defaulterEntry.creditor.city + ", " + item.defaulterEntry.creditor.state : ""
+        const Address = item.defaulterEntry != null ? address1 + address2 + item.defaulterEntry.creditor?.city + ", " + item.defaulterEntry.creditor?.state : ""
 
         const complaintNumber = item.defaulterEntry.complaintNumber != undefined ? item.defaulterEntry.complaintNumber : ''
 
-        // const Address = creditor.address1 != undefined ? creditor.address1 + ", " : '' +creditor.address2 != undefined ?creditor.address2 + ", " : "" + creditor.city != undefined ?creditor.city + ", " : ''  + creditor.state != undefined ? creditor.state : ''
-        const createdAt = item.defaulterEntry.createdAt
+        // const Address = creditor?.address1 != undefined ? creditor?.address1 + ", " : '' +creditor?.address2 != undefined ?creditor?.address2 + ", " : "" + creditor?.city != undefined ?creditor?.city + ", " : ''  + creditor?.state != undefined ? creditor?.state : ''
+        const createdAt = item.defaulterEntry?.createdAt
 
 
         return { SrNo, customerName, Address, status, dueFrom, totalAmount, defaulterEntry, createdAt, complaintNumber, invoiceList, pHArray, defaulterEntryId }
@@ -65,7 +65,7 @@ export const selectCompaintsByMes = createSelector(
     if (ApproveReportMeDefaulter?.approveReportMeDefaulterList.length != 0) {
       const mapinvoicelist = ApproveReportMeDefaulter?.approveReportMeDefaulterList?.complaintsByMe.map((item, index) => {
         const SrNo = index = 1
-        const customerName = item.defaulterEntry.debtor.companyName
+        const customerName = item.defaulterEntry.debtor?.companyName
         const status = item.defaulterEntry.latestStatus
         const dueFrom = item.dueFrom
         const defaulterEntryId = item.defaulterEntry.id

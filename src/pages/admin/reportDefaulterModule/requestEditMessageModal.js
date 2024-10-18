@@ -392,7 +392,7 @@ export const EditReportedDefaulterModel = props => {
 
       <Row className="tableRow">
 
-        <Row className=" mt-3">
+        <div className=" mt-3">
           {data.map((row, index) => {
 
             return (
@@ -586,7 +586,7 @@ export const EditReportedDefaulterModel = props => {
               </h5>
             </Col>
           </Row>
-        </Row>
+        </div>
       </Row>
 
       <Row>

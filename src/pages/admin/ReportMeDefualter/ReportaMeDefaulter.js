@@ -441,7 +441,7 @@ const ReportMedefulterComponent = props => {
 
       <Card style={{ padding: props.isClickedToReported == undefined && props.isClickedToReported != false ? "" : "" }}>
         <CardBody style={{ padding: props.isClickedToReported == undefined && props.isClickedToReported != false ? "25px" : "0px" }}>
-          <div className="mb-4 h4 card-title"></div>
+          
           {props.isClickedToReported == undefined && props.isClickedToReported != false ?
             <div>
               <br />
@@ -452,9 +452,9 @@ const ReportMedefulterComponent = props => {
             : ""
           }
 
-          {props.isClickedToReported == undefined && props.isClickedToReported != false ? <Row className="mt-4">
-            <Col md={3} className="pl-3 pt-4" style={{ textTransform: "capitalize" }}>
-              <h5 className="mt-2"><b>Complaints Against Me</b></h5>
+          {props.isClickedToReported == undefined && props.isClickedToReported != false ? <Row >
+            <Col md={3} className="pl-2" style={{ textTransform: "capitalize" }}>
+              <h5 className="m-1"><b>Complaints Against Me</b></h5>
             </Col>
 
           </Row> : ""}

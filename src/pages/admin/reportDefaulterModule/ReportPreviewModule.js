@@ -96,24 +96,24 @@ export const ReportDefPreviewModule = props => {
 
             return (
               <div className="bg-white pl-3" key={index}>
-                <Row>
-                  <Col md={3}>
+                <Row className="mb-3">
+                  <Col md={3} className="mb-2">
                     <span>{index + 1}. Invoice Number : {item.itemDetail}</span>
                   </Col>
-                  <Col md={3}>
+                  <Col md={3} className="mb-2">
                     <span>Due Date : {item.date}</span>
                   </Col>
-                  <Col md={3}>
+                  <Col md={3} className="mb-2">
                     <span>Due Amount : {numberFormat(item.amount)}</span>
                   </Col>
                 </Row>
                 <Row className="mt-2">
                   <Col md={3}>
                     <Row>
-                      <Col md={8} className="d-flex align-items-end">
+                      <Col md={8} className="d-flex align-items-end mb-2">
                         <span>Invoice Document</span>
                       </Col>
-                      <Col md={4}>
+                      <Col md={4} className="mb-2">
                         {item.invoiceDocument && item.invoiceDocument !== '' ? (
                           <img src={pdfImgType(item.invoiceDocument)} alt="PDF" className="iconsImage shadow" style={{ cursor: 'pointer' }} onClick={() => documentView(item.invoiceDocument)} />
                         ) : (
@@ -124,10 +124,10 @@ export const ReportDefPreviewModule = props => {
                   </Col>
                   <Col md={3}>
                     <Row>
-                      <Col md={8} className="d-flex align-items-end">
+                      <Col md={8} className="d-flex align-items-end mb-2">
                         <span>Dispatch Document</span>
                       </Col>
-                      <Col md={4}>
+                      <Col md={4} className="mb-2">
                         {item.DispatchDocument && item.DispatchDocument !== '' ? (
                           < img src={pdfImgType(item.DispatchDocument)} alt="PDF" className="iconsImage shadow" style={{ cursor: 'pointer' }} onClick={() => documentView(item.DispatchDocument)} />
                         ) : (
@@ -138,10 +138,10 @@ export const ReportDefPreviewModule = props => {
                   </Col>
                   <Col md={3}>
                     <Row>
-                      <Col md={8} className="d-flex align-items-end">
+                      <Col md={8} className="d-flex align-items-end mb-2">
                         <span>Transportation Document</span>
                       </Col>
-                      <Col md={4}>
+                      <Col md={4} className="mb-2">
                         {item.DeliveryDocument && item.DeliveryDocument !== '' ? (
 
                           < img src={pdfImgType(item.DeliveryDocument)} alt="PDF" className="iconsImage shadow" style={{ cursor: 'pointer' }} onClick={() => documentView(item.DeliveryDocument)} />
@@ -153,10 +153,10 @@ export const ReportDefPreviewModule = props => {
                   </Col>
                   <Col md={3}>
                     <Row>
-                      <Col md={8} className="d-flex align-items-end">
+                      <Col md={8} className="d-flex align-items-end mb-2">
                         <span>Purchase Document</span>
                       </Col>
-                      <Col md={4}>
+                      <Col md={4} className="mb-2">
                         {item.purchaseOrderDocument && item.purchaseOrderDocument !== '' ? (
                           < img src={pdfImgType(item.purchaseOrderDocument)} alt="PDF" className="iconsImage shadow" style={{ cursor: 'pointer' }} onClick={() => documentView(item.purchaseOrderDocument)} />
                         ) : (

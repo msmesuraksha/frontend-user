@@ -191,11 +191,11 @@ const RatingModule = ({ item, indx, handlefinancialdifficult, handlefinancialdif
       <div className="mb-1 mt-2">
 
         <Row key={indx} className="pt-1">
-          <Col md={9} >
+          <Col md={9} xs={5} >
             <span className="text-capitalize">
               {indx + 1}.   {`${item.questionDesc} `}</span>
           </Col>
-          <Col md={3} className="d-flex justify-content-center">
+          <Col md={3} xs={3} className="d-flex justify-content-center">
             <span>
               <i className='bx bxs-star'
                 //   onClick={()=>{

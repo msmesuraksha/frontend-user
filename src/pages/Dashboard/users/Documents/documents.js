@@ -59,7 +59,7 @@ const Document = props => {
               <div className="text-sm-end">
               <Button
                 type="button"
-                color="primary"
+                color="info"
                 className="btn-rounded  mb-2 me-2"
                 onClick={() => setModal1(true)}
               >

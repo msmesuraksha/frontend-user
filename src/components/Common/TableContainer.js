@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
+import React, { Fragment } from "react"
+import PropTypes from "prop-types"
 import {
   useTable,
   useGlobalFilter,
@@ -8,28 +8,29 @@ import {
   useFilters,
   useExpanded,
   usePagination,
-} from "react-table";
-import { Table, Row, Col, Button, Input, CardBody } from "reactstrap";
-import { Filter, DefaultColumnFilter } from "./filters";
-import JobListGlobalFilter from "../../components/Common/GlobalSearchFilter";
+} from "react-table"
+import { Table, Row, Col, Button, Input, CardBody } from "reactstrap"
+import { Filter, DefaultColumnFilter } from "./filters"
+import JobListGlobalFilter from "../../components/Common/GlobalSearchFilter"
+import { setIsReportDefOpen } from "store/actions"
 
 // Define a default UI for filtering
 function GlobalFilter({
   preGlobalFilteredRows,
   globalFilter,
   setGlobalFilter,
-  isJobListGlobalFilter
+  isJobListGlobalFilter,
 }) {
-  const count = preGlobalFilteredRows.length;
-  const [value, setValue] = React.useState(globalFilter);
+  const count = preGlobalFilteredRows.length
+  const [value, setValue] = React.useState(globalFilter)
   const onChange = useAsyncDebounce(value => {
-    setGlobalFilter(value || undefined);
-  }, 200);
+    setGlobalFilter(value || undefined)
+  }, 200)
 
   return (
     <React.Fragment>
       <Col md={4}>
-        <div className="search-box me-xxl-2 my-3 my-xxl-0 d-inline-block">
+        <div className="search-box me-xxl-2  my-xxl-0 d-inline-block">
           <div className="position-relative">
             <label htmlFor="search-bar-0" className="search-label">
               <span id="search-bar-0-label" className="sr-only">
@@ -37,8 +38,8 @@ function GlobalFilter({
               </span>
               <input
                 onChange={e => {
-                  setValue(e.target.value);
-                  onChange(e.target.value);
+                  setValue(e.target.value)
+                  onChange(e.target.value)
                 }}
                 id="search-bar-0"
                 type="text"
@@ -50,14 +51,10 @@ function GlobalFilter({
             <i className="bx bx-search-alt search-icon"></i>
           </div>
         </div>
-
       </Col>
-      {isJobListGlobalFilter && (
-        <JobListGlobalFilter />
-      )}
-
+      {isJobListGlobalFilter && <JobListGlobalFilter />}
     </React.Fragment>
-  );
+  )
 }
 
 const TableContainer = ({
@@ -75,8 +72,13 @@ const TableContainer = ({
   className,
   customPageSizeOptions,
   isCompany,
-  addCompany
-
+  addCompany,
+  isReportDefOpen,
+  handleReportDefaulter,
+  isAddMemberOpen,
+  isNewOrderOpen,
+  handleNewOrder,
+  toggleAddCustomer,
 }) => {
   const {
     getTableProps,
@@ -116,24 +118,24 @@ const TableContainer = ({
     useSortBy,
     useExpanded,
     usePagination
-  );
+  )
 
   const generateSortingIndicator = column => {
-    return column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : "";
-  };
+    return column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""
+  }
 
   const onChangeInSelect = event => {
-    setPageSize(Number(event.target.value));
-  };
+    setPageSize(Number(event.target.value))
+  }
 
   const onChangeInInput = event => {
-    const page = event.target.value ? Number(event.target.value) - 1 : 0;
-    gotoPage(page);
-  };
+    const page = event.target.value ? Number(event.target.value) - 1 : 0
+    gotoPage(page)
+  }
   return (
     <Fragment>
       <Row className="mb-2">
-        <Col sm={2}>
+        <Col sm="12" md={2} className="mb-2">
           <select
             className="form-select"
             value={pageSize}
@@ -147,8 +149,8 @@ const TableContainer = ({
           </select>
         </Col>
 
-        <Col sm={6}>
-        {isGlobalFilter && (
+        <Col sm="12" md={6} className="mb-2">
+          {isGlobalFilter && (
             <GlobalFilter
               preGlobalFilteredRows={preGlobalFilteredRows}
               globalFilter={state.globalFilter}
@@ -157,19 +159,63 @@ const TableContainer = ({
               isCompany={isCompany}
             />
           )}
-        
         </Col>
         {isAddOptions && (
-          <Col md={4}>
+          <Col sm="12" md={4} className="mb-2">
             <div className="text-sm-end">
               <Button
                 type="button"
-                color="primary"
+                color="info"
                 className="btn-rounded  mb-2 me-2"
-                onClick={()=>addCompany(true)}
+                onClick={() => addCompany(true)}
               >
                 <i className="mdi mdi-plus me-1" />
                 Add New Company
+              </Button>
+            </div>
+          </Col>
+        )}
+        {isReportDefOpen && (
+          <Col sm="12" md={4}>
+            <div className="text-sm-end">
+              <Button
+                type="button"
+                color="info"
+                className="btn-rounded mb-2 me-2"
+                onClick={() => handleReportDefaulter()}
+              >
+                <i className="mdi mdi-plus me-1" />
+                Report a Defaulter
+              </Button>
+            </div>
+          </Col>
+        )}
+        {isAddMemberOpen && (
+          <Col sm="12" md={4}>
+            <div className="text-sm-end">
+              <Button
+                type="button"
+                color="info"
+                className="btn-rounded mb-2 me-2"
+                onClick={() => toggleAddCustomer()}
+              >
+                <i className="mdi mdi-plus me-1" />
+                Add New Member
+              </Button>
+            </div>
+          </Col>
+        )}
+        {isNewOrderOpen && (
+          <Col sm="12" md={4}>
+            <div className="text-sm-end">
+              <Button
+                type="button"
+                color="info"
+                className="btn-rounded mb-2 me-2"
+                onClick={() => handleNewOrder()}
+              >
+                <i className="mdi mdi-plus me-1" />
+                New order
               </Button>
             </div>
           </Col>
@@ -196,7 +242,7 @@ const TableContainer = ({
 
           <tbody {...getTableBodyProps()}>
             {page.map(row => {
-              prepareRow(row);
+              prepareRow(row)
               return (
                 <Fragment key={row.getRowProps().key}>
                   <tr>
@@ -205,11 +251,11 @@ const TableContainer = ({
                         <td key={cell.id} {...cell.getCellProps()}>
                           {cell.render("Cell")}
                         </td>
-                      );
+                      )
                     })}
                   </tr>
                 </Fragment>
-              );
+              )
             })}
           </tbody>
         </Table>
@@ -237,7 +283,8 @@ const TableContainer = ({
         <Col className="col-md-auto d-none d-md-block">
           Page{" "}
           <strong>
-            {pageIndex + 1} of {pageOptions.length == 0 ? 1 : pageOptions.length}
+            {pageIndex + 1} of{" "}
+            {pageOptions.length == 0 ? 1 : pageOptions.length}
           </strong>
         </Col>
         <Col className="col-md-auto">
@@ -267,11 +314,11 @@ const TableContainer = ({
         </Col>
       </Row>
     </Fragment>
-  );
-};
+  )
+}
 
 TableContainer.propTypes = {
   preGlobalFilteredRows: PropTypes.any,
-};
+}
 
-export default TableContainer;
+export default TableContainer

@@ -154,10 +154,10 @@ const UploadPendingFiles = props => {
                   {
                     item.invoiceDocument == null ?
                       <Col md={3}>
-                        <Col className="d-flex justify-content-center ">
+                        <Col className="d-flex justify-content-center mb-2">
                           <b>Invoice Document</b>
                         </Col>
-                        <Col md={12} className='pt-2'>
+                        <Col md={12} className='pt-2 mb-2'>
                           <InputGroup className="text-capitalize">
                             <input
                               type="file"
@@ -175,10 +175,10 @@ const UploadPendingFiles = props => {
                       </Col>
                       :
                       <Col md={2} className="text-center" style={{ marginLeft: '-15px' }}>
-                        <Col className="d-flex justify-content-center">
+                        <Col className="d-flex justify-content-center mb-2">
                           <b>Invoice Document</b>
                         </Col>
-                        <Col className='pt-2'>
+                        <Col className='pt-2 mb-2'>
                           <img src={pdfImgType(item.invoiceDocument)} className="iconsImage" style={{ cursor: 'pointer' }} onClick={() => documentView(item.invoiceDocument)} />
 
                         </Col>
@@ -190,10 +190,10 @@ const UploadPendingFiles = props => {
                   {item.challanDocument == null ?
                     <Col md={3}>
 
-                      <Col className="d-flex justify-content-center ">
+                      <Col className="d-flex justify-content-center mb-2">
                         <b>Dispatch Document</b>
                       </Col>
-                      <Col md={12} className='pt-2'>
+                      <Col md={12} className='pt-2 mb-2'>
 
                         <InputGroup className="text-capitalize">
                           <input
@@ -215,10 +215,10 @@ const UploadPendingFiles = props => {
                     :
 
                     <Col md={2} className="text-center">
-                      <Col className="d-flex justify-content-center">
+                      <Col className="d-flex justify-content-center mb-2">
                         <b>Dispatch Document</b>
                       </Col>
-                      <Col className='pt-2'>
+                      <Col className='pt-2 mb-2'>
                         <img src={pdfImgType(item.challanDocument)} className="iconsImage shadow" style={{ cursor: 'pointer' }} onClick={() => documentView(item.challanDocument)} />
                       </Col>
 
@@ -229,10 +229,10 @@ const UploadPendingFiles = props => {
 
 
                     <Col md={3}>
-                      <Col className="d-flex justify-content-center ">
+                      <Col className="d-flex justify-content-center mb-2">
                         <b>Transportation Document</b>
                       </Col>
-                      <Col md={12} className='pt-2'>
+                      <Col md={12} className='pt-2 mb-2'>
                         <InputGroup className="text-capitalize">
                           <input
                             type="file"
@@ -252,11 +252,11 @@ const UploadPendingFiles = props => {
 
                     </Col>
                     :
-                    <Col md={2} className="text-center">
-                      <Col className="d-flex justify-content-center">
+                    <Col md={3} className="text-center">
+                      <Col className="d-flex justify-content-center mb-2">
                         <b>Transportation Document</b>
                       </Col>
-                      <Col className='pt-2'>
+                      <Col className='pt-2 mb-2'>
                         <img src={pdfImgType(item.transportationDocument)} className="iconsImage shadow" style={{ cursor: 'pointer' }} onClick={() => documentView(item.transportationDocument)} />
                       </Col>
 
@@ -268,10 +268,10 @@ const UploadPendingFiles = props => {
 
 
                     <Col md={3}>
-                      <Col className="d-flex justify-content-center">
+                      <Col className="d-flex justify-content-center mb-2">
                         <b>Purchase Order</b>
                       </Col>
-                      <Col md={12} className='pt-2'>
+                      <Col md={12} className='pt-2 mb-2'>
                         <InputGroup className="text-capitalize">
                           <input
                             type="file"
@@ -291,10 +291,10 @@ const UploadPendingFiles = props => {
                     </Col>
                     :
                     <Col md={2} className="text-center">
-                      <Col className="d-flex justify-content-center">
+                      <Col className="d-flex justify-content-center mb-2">
                         <b>Purchase Order</b>
                       </Col>
-                      <Col className='pt-2'>
+                      <Col className='pt-2 mb-2'>
                         <img src={pdfImgType(item.purchaseOrderDocument)} className="iconsImage shadow" style={{ cursor: 'pointer' }} onClick={() => documentView(item.purchaseOrderDocument)} />
                       </Col>
 

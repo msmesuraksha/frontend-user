@@ -370,7 +370,7 @@ const ApprovedReportMeDefaulterComponent = props => {
         accessor: "view",
         Cell: cellProps => {
           return (
-            <div className="">
+            <div  style={{ width: "180px" }}>
               <div className="pt-2">
                 <Button onClick={() => viewModel(cellProps.cell.row.original)
                 } className="btn btn-sm btn-info">
@@ -397,7 +397,7 @@ const ApprovedReportMeDefaulterComponent = props => {
       {markAsDisputed && <ApprovedRaiseTicketModel isOpen={markAsDisputed} toggle={toggleMarkAsDisputed} currentIndexData={currentIndexData} requestType={"CREDITOR"} />}
       <Card style={{ padding: props.isClickedToReported == undefined && props.isClickedToReported != false ? '' : "0px" }}>
         <CardBody style={{ padding: props.isClickedToReported == undefined && props.isClickedToReported != false ? '' : "0px" }}>
-          <div className="mb-4 h4 card-title"></div>
+          
           {props.isClickedToReported == undefined && props.isClickedToReported != false ?
             <div>
               <br />

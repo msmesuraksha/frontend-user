@@ -83,7 +83,7 @@ const ContactsProfile = props => {
                         <div className="text-sm-end">
                           <Button
                             type="button"
-                            color="primary"
+                            color="info"
                             className="btn-rounded  mb-2 me-2"
                             onClick={() => handleChange()}
                           >
@@ -173,7 +173,7 @@ const ContactsProfile = props => {
                         <div className="text-left mt-3">
                           <Button
                             type="button"
-                            color="primary"
+                            color="info"
                             className="mb-2 me-2"
                             disabled={fullName.length > 0 ? false : true}
                             onClick={() => submitForm()}
