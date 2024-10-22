@@ -228,7 +228,7 @@ const ApprovedTransaction = props => {
   const columns = useMemo(
     () => [
       {
-        Header: "Sr No.....",
+        Header: "Sr No.",
         accessor: "SrNo",
         filterable: false,
         disableFilters: true,
