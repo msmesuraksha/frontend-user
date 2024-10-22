@@ -50,7 +50,7 @@ export const OrderManagementModule = props => {
                         className="btn btn-info  "
                         style={{
                           background:
-                            isClickedToOrder == false ? " #1aa3ff" : "#707274",
+                            isClickedToOrder == false ? " #50a5f1" : "#707274",
                           border: "none",
                           width: "",
                         }}
@@ -62,7 +62,7 @@ export const OrderManagementModule = props => {
                         className="btn btn-info  "
                         style={{
                           background:
-                            isClickedToOrder != false ? "#1aa3ff" : "#707274",
+                            isClickedToOrder != false ? "#50a5f1" : "#707274",
                           border: "none",
                           width: "",
                         }}
@@ -83,7 +83,7 @@ export const OrderManagementModule = props => {
                           width: "70px",
                           height: "5px",
                           background:
-                            isClickedToOrder == false ? " #1aa3ff" : "",
+                            isClickedToOrder == false ? " #50a5f1" : "",
                           marginLeft: "30px",
                         }}
                       ></span>
@@ -92,7 +92,7 @@ export const OrderManagementModule = props => {
                           width: "70px",
                           height: "5px",
                           background:
-                            isClickedToOrder != false ? " #1aa3ff" : "",
+                            isClickedToOrder != false ? " #50a5f1" : "",
                           marginLeft: "30px",
                         }}
                       ></span>

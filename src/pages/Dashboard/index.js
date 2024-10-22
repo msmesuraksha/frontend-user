@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import React, { useEffect, useState, useRef, useMemo } from "react"
-import { Row, Col, Card, CardBody,Container } from "reactstrap"
+import { Row, Col, Card, CardBody, Container ,Button} from "reactstrap"
 
 import { searchCompany as onsearchCompany } from "../../../src/store/actions"
 //i18n
@@ -16,7 +16,7 @@ import { Spinner } from "pages/admin/spinner/spinner"
 import { ReportDebtor } from "pages/admin/Invoice/ReportaDebtor"
 import { getData } from "store/utils/reducer/sessionStorage"
 
-import Breadcrumbs from '../../components/Common/Breadcrumb';
+import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const Dashboard = props => {
   const companyIdSession = getData("COMPANY-ID")
@@ -49,8 +49,8 @@ const Dashboard = props => {
                       role="group"
                       aria-label="Basic example"
                     >
-                      <button
-                        type="button"
+                      <Button
+                        
                         className="btn btn-info backtoHomeButton "
                         style={{
                           background:
@@ -63,9 +63,9 @@ const Dashboard = props => {
                         onClick={() => setisClickedToReported(false)}
                       >
                         Complaints Against Me
-                      </button>
-                      <button
-                        type="button"
+                      </Button>
+                      <Button
+                        
                         className="btn btn-info  backtoHomeButton"
                         style={{
                           background:
@@ -78,7 +78,7 @@ const Dashboard = props => {
                         onClick={() => setisClickedToReported(true)}
                       >
                         My Complaints
-                      </button>
+                      </Button>
                     </div>
                   </Col>
                   <Col md={12} className="">
@@ -110,6 +110,7 @@ const Dashboard = props => {
                     <br />
                   </Col>
                 </Row>
+
                 {isClickedToReported != true ? (
                   <Row style={{ display: "contents" }} className="p-0">
                     {isLodingCompany ? (
@@ -158,7 +159,7 @@ export const StatusAndOpinionObj = {
 }
 
 export const CapitalizeWords = str => {
-  if(!str) return
+  if (!str) return
   let words = str.split(" ")
   for (let i = 0; i < words.length; i++) {
     words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1)
