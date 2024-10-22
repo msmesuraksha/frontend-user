@@ -59,7 +59,6 @@ const Dashboard = props => {
                               : "	 #707274",
                           border: "none",
                           width: "",
-                          
                         }}
                         onClick={() => setisClickedToReported(false)}
                       >

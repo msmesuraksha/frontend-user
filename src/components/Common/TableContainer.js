@@ -14,6 +14,8 @@ import { Filter, DefaultColumnFilter } from "./filters"
 import JobListGlobalFilter from "../../components/Common/GlobalSearchFilter"
 import { setIsReportDefOpen } from "store/actions"
 
+import "../../pages/admin/Common.scss"
+
 // Define a default UI for filtering
 function GlobalFilter({
   preGlobalFilteredRows,
