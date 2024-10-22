@@ -45,7 +45,7 @@ const Dashboard = props => {
                 <Row className="text-center">
                   <Col md={12}>
                     <div
-                      className="btn-group"
+                      className="btn-group buttonWidth"
                       role="group"
                       aria-label="Basic example"
                     >
@@ -59,13 +59,14 @@ const Dashboard = props => {
                               : "	 #707274",
                           border: "none",
                           width: "",
+                          
                         }}
                         onClick={() => setisClickedToReported(false)}
                       >
                         Complaints Against Me
                       </Button>
                       <Button
-                        
+                        type="button"
                         className="btn btn-info  backtoHomeButton"
                         style={{
                           background:
@@ -92,7 +93,7 @@ const Dashboard = props => {
                           width: "70px",
                           height: "5px",
                           background:
-                            isClickedToReported == false ? " #1aa3ff" : "",
+                            isClickedToReported == false ? " #50a5f1" : "",
                           marginRight: "30px",
                           marginLeft: "30px",
                         }}
@@ -102,7 +103,7 @@ const Dashboard = props => {
                           width: "70px",
                           height: "5px",
                           background:
-                            isClickedToReported != false ? " #1aa3ff" : "",
+                            isClickedToReported != false ? " #50a5f1" : "",
                           marginLeft: "50px",
                         }}
                       ></span>

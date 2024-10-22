@@ -48,7 +48,7 @@
     
   }
   .AddiNVOICEcARD{
-    background: #f1f7ff;
+    background: #fff;
   }
   .custom-content1{
     border-radius: 14px;
@@ -117,10 +117,12 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .backtoHomeButton {
-      width:  150px!important;
+  .buttonWidth {
+    display: flex;
+      width: 100%;
   }
   }
+
   .backtoHomeButton{
       width: 180px;
   }

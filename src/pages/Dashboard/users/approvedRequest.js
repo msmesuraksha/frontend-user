@@ -392,11 +392,11 @@ const ApprovedTransaction = props => {
                 <Row className="text-center">
                   <Col md={12}>
                     <div
-                      className="btn-group"
+                      className="btn-group buttonWidth"
                       role="group"
                       aria-label="Basic example"
                     >
-                      <button
+                      <Button
                         type="button"
                         className="btn btn-info backtoHomeButton "
                         style={{
@@ -410,8 +410,8 @@ const ApprovedTransaction = props => {
                         onClick={() => setisClickedToReported(false)}
                       >
                         Complaints Against Me
-                      </button>
-                      <button
+                      </Button>
+                      <Button
                         type="button"
                         className="btn btn-info  backtoHomeButton"
                         style={{
@@ -425,7 +425,7 @@ const ApprovedTransaction = props => {
                         onClick={() => setisClickedToReported(true)}
                       >
                         My Complaints
-                      </button>
+                      </Button>
                     </div>
                   </Col>
                   <Col md={12} className="">
