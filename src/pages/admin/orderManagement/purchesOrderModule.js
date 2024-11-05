@@ -376,7 +376,7 @@ export const PurchaseOrderModule = props => {
         disableFilters: true,
         filterable: false,
         Cell: cellProps => {
-          return <div>{cellProps.cell?.row?.original?.complaintNumber}</div>
+          return <div style={{ width: "120px" }}>{cellProps.cell?.row?.original?.complaintNumber}</div>
         },
       },
       {
